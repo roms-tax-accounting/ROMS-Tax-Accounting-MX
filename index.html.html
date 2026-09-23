@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROMS | Tax & Accounting MX - LCF Jocelyn Odet Romero Dguez</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#1E3E62',
+                            900: '#0B192C',
+                        },
+                        sky: {
+                            400: '#41C9E2',
+                            500: '#008DDA',
+                        },
+                        surface: '#F8FAFC',
+                        mainText: '#1E293B'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #1E293B; background-color: #F8FAFC; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0B192C 0%, #1E3E62 60%, #008DDA 100%);
+        }
+        .accent-gradient-text {
+            background: linear-gradient(90deg, #008DDA 0%, #41C9E2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #008DDA; }
+    </style>
+</head>
+<body class="antialiased selection:bg-sky-500 selection:text-white">
+
+    <!-- HEADER & NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo -->
+                <a href="#inicio" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 bg-navy-900 rounded-xl flex items-center justify-center text-sky-400 font-extrabold text-xl shadow-md group-hover:bg-sky-500 group-hover:text-white transition-all duration-300">
+                        R
+                    </div>
+                    <div>
+                        <span class="text-xl font-black tracking-tight text-navy-900 block leading-none">ROMS</span>
+                        <span class="text-xs font-semibold text-sky-500 tracking-wider uppercase">Tax & Accounting MX</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <a href="#inicio" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-sky-500 rounded-lg hover:bg-slate-100 transition-all">Inicio</a>
+                    <a href="#servicios" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-sky-500 rounded-lg hover:bg-slate-100 transition-all">Servicios</a>
+                    <a href="#nosotros" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-sky-500 rounded-lg hover:bg-slate-100 transition-all">Nosotros</a>
+                    <a href="#calculadora" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-sky-500 rounded-lg hover:bg-slate-100 transition-all">Calculadora RESICO</a>
+                    <a href="#expediente" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-sky-500 rounded-lg hover:bg-slate-100 transition-all">Checklist SAT</a>
+                    <a href="#contacto" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-sky-500 rounded-lg hover:bg-slate-100 transition-all">Contacto</a>
+                </nav>
+
+                <!-- Actions Header -->
+                <div class="hidden lg:flex items-center gap-3">
+                    <a href="#contacto" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-md shadow-sky-500/20 hover:shadow-lg hover:shadow-sky-500/30 transition-all flex items-center gap-2">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        Agendar Consulta
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="text-slate-700 hover:text-navy-900 focus:outline-none p-2 rounded-lg hover:bg-slate-100" aria-label="Abrir menú">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Container -->
+        <div class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-2" id="mobile-menu">
+            <a href="#inicio" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:text-sky-500 hover:bg-slate-50">Inicio</a>
+            <a href="#servicios" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:text-sky-500 hover:bg-slate-50">Servicios</a>
+            <a href="#nosotros" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:text-sky-500 hover:bg-slate-50">Nosotros</a>
+            <a href="#calculadora" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:text-sky-500 hover:bg-slate-50">Calculadora RESICO vs PFAE</a>
+            <a href="#expediente" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:text-sky-500 hover:bg-slate-50">Checklist SAT</a>
+            <a href="#contacto" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:text-sky-500 hover:bg-slate-50">Contacto</a>
+            <div class="pt-2">
+                <a href="#contacto" class="w-full bg-sky-500 hover:bg-sky-600 text-white font-semibold text-center px-4 py-2.5 rounded-xl block shadow-sm">
+                    Agendar Consulta
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative hero-gradient text-white overflow-hidden py-20 lg:py-28">
+        <!-- Background Grid pattern overlay -->
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:32px_32px]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Main Copy -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-sky-300 text-xs sm:text-sm font-medium px-4 py-1.5 rounded-full">
+                        <span class="flex h-2 w-2 rounded-full bg-sky-400 animate-ping"></span>
+                        <span>Despacho Contable & Fiscal en León, Guanajuato</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Estrategia Fiscal, Cumplimiento y <span class="accent-gradient-text">Tranquilidad</span> para tu Empresa
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                        Especialistas en prevención de discrepancia fiscal, régimen RESICO, Personas Morales y optimización de procesos contables ante el SAT y SATEG.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                        <a href="#contacto" class="bg-sky-500 hover:bg-sky-400 text-white font-bold px-7 py-3.5 rounded-xl shadow-lg shadow-sky-500/30 hover:scale-[1.02] transition-all text-center flex items-center justify-center gap-2">
+                            <span>Agendar Diagnóstico Gratuito</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#calculadora" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-7 py-3.5 rounded-xl backdrop-blur-md hover:scale-[1.02] transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calculator text-sky-300"></i>
+                            <span>Calculadora RESICO</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust indicators -->
+                    <div class="pt-8 border-t border-white/10 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white">100%</div>
+                            <div class="text-xs text-slate-300">Alineado al SAT y SATEG</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white">+10 Años</div>
+                            <div class="text-xs text-slate-300">Experiencia combinada</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white">0%</div>
+                            <div class="text-xs text-slate-300">Riesgos de sanción con blindaje</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Cards Banner -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Main Card -->
+                        <div class="glass-card rounded-3xl p-6 shadow-2xl text-slate-800 space-y-5 border border-white/40">
+                            <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-navy-900 text-sky-400 flex items-center justify-center font-bold">
+                                        LCF
+                                    </div>
+                                    <div>
+                                        <h2 class="font-bold text-navy-900 text-sm">LCF Jocelyn Odet Romero Dguez</h2>
+                                        <p class="text-xs text-slate-500">Directora & Especialista Fiscal</p>
+                                    </div>
+                                </div>
+                                <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span> Activo SAT
+                                </span>
+                            </div>
+
+                            <div class="space-y-3">
+                                <div class="bg-slate-50 p-3.5 rounded-2xl flex items-center justify-between border border-slate-100">
+                                    <div class="flex items-center gap-3">
+                                        <div class="p-2 bg-sky-100 text-sky-600 rounded-xl">
+                                            <i class="fa-solid fa-shield-halved"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-xs font-semibold text-slate-800">Blindaje Fiscal</div>
+                                            <div class="text-[11px] text-slate-500">Monitoreo CFDI 4.0 & Opinión</div>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs font-bold text-emerald-600">Positiva</span>
+                                </div>
+
+                                <div class="bg-slate-50 p-3.5 rounded-2xl flex items-center justify-between border border-slate-100">
+                                    <div class="flex items-center gap-3">
+                                        <div class="p-2 bg-indigo-100 text-indigo-600 rounded-xl">
+                                            <i class="fa-solid fa-chart-line"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-xs font-semibold text-slate-800">Optimización RESICO</div>
+                                            <div class="text-[11px] text-slate-500">Tasa de impuesto preferencial</div>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs font-bold text-sky-600">1% - 2.5%</span>
+                                </div>
+                            </div>
+
+                            <div class="bg-navy-900 text-white rounded-2xl p-4 text-xs space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-300">Atención Personalizada en León:</span>
+                                    <span class="font-bold text-sky-300">Guanajuato</span>
+                                </div>
+                                <p class="text-slate-400 text-[11px]">Empresas, Honorarios, Arrendamiento, PFAE y RESICO.</p>
+                            </div>
+                        </div>
+
+                        <!-- Badge Overlay 1 -->
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden sm:flex items-center gap-3">
+                            <div class="p-3 bg-emerald-500 text-white rounded-xl">
+                                <i class="fa-solid fa-file-invoice-dollar text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs font-bold text-slate-900">Devoluciones SAT</div>
+                                <div class="text-[11px] text-slate-500">Gestión de saldos a favor</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="servicios" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-sky-500 uppercase tracking-widest mb-2">Nuestros Servicios</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-navy-900">Soluciones Especializadas para tu Seguridad Fiscal</p>
+                <p class="text-slate-600 mt-3 text-base">Atendemos con estricto rigor técnico y tecnología contable moderna para optimizar tus recursos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-sky-50 text-sky-500 group-hover:bg-sky-500 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl transition-all duration-300 mb-6 shadow-sm">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 mb-3">Estrategia & Discrepancia Fiscal</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Prevención de discrepancia fiscal para PFAE, RESICO y Personas Morales. Análisis preventivo de depósitos e ingresos no declarados.
+                        </p>
+                        <ul class="text-xs text-slate-500 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-500"></i> Planificación RESICO vs PFAE</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-500"></i> Diagnóstico de Riesgo Patrimonial</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-500"></i> Estrategias conforme a Ley</li>
+                        </ul>
+                    </div>
+                    <button onclick="openServiceModal('Estrategia & Discrepancia Fiscal')" class="w-full py-2.5 px-4 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700 hover:bg-navy-900 hover:text-white transition-all text-center">
+                        Solicitar Información
+                    </button>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-sky-50 text-sky-500 group-hover:bg-sky-500 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl transition-all duration-300 mb-6 shadow-sm">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 mb-3">Contabilidad & CFDI 4.0</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Procesamiento contable mensual, conciliaciones bancarias, emisión y validación de facturación electrónica CFDI 4.0 sin errores.
+                        </p>
+                        <ul class="text-xs text-slate-500 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-500"></i> Declaraciones Mensuales y Anuales</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-500"></i> Complementos de Pago e Impuestos</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-500"></i> Estados Financieros Mensuales</li>
+                        </ul>
+                    </div>
+                    <button onclick="openServiceModal('Contabilidad & CFDI 4.0')" class="w-full py-2.5 px-4 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700 hover:bg-navy-900 hover:text-white transition-all text-center">
+                        Solicitar Información
+                    </button>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-sky-50 text-sky-500 group-hover:bg-sky-500 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl transition-all duration-300 mb-6 shadow-sm">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 mb-3">Devoluciones SAT y SATEG</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Trámite de devolución de saldos a favor en ISR e IVA ante el Servicio de Administración Tributaria (SAT) y SATEG Guanajuato.
+                        </p>
+                        <ul class="text-xs text-slate-500 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-500"></i> Devolución Automática y Manual</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-500"></i> Atención a Requerimientos</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-500"></i> Solución a Rechazos Injustificados</li>
+                        </ul>
+                    </div>
+                    <button onclick="openServiceModal('Devoluciones SAT y SATEG')" class="w-full py-2.5 px-4 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700 hover:bg-navy-900 hover:text-white transition-all text-center">
+                        Solicitar Información
+                    </button>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-sky-50 text-sky-500 group-hover:bg-sky-500 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl transition-all duration-300 mb-6 shadow-sm">
+                            <i class="fa-solid fa-building-user"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 mb-3">Trámites Municipales León</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Gestión integral de regularización de negocios en León, Gto. Licencias de Funcionamiento, Permisos de Desarrollo Urbano y Protección Civil.
+                        </p>
+                        <ul class="text-xs text-slate-500 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-500"></i> Licencias de Uso de Suelo</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-500"></i> Permisos Comerciales y Padrones</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-500"></i> Cumplimiento Normativo Local</li>
+                        </ul>
+                    </div>
+                    <button onclick="openServiceModal('Trámites Municipales León')" class="w-full py-2.5 px-4 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700 hover:bg-navy-900 hover:text-white transition-all text-center">
+                        Solicitar Información
+                    </button>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-sky-50 text-sky-500 group-hover:bg-sky-500 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl transition-all duration-300 mb-6 shadow-sm">
+                            <i class="fa-solid fa-users-gear"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 mb-3">Nómina e IMSS / INFONAVIT</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Cálculo preciso de nómina laboral, timbrado de recibos, altas/bajas IMSS (SUA / IDSE) y aseguramiento de obligaciones patronales.
+                        </p>
+                        <ul class="text-xs text-slate-500 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-500"></i> Emisión de Recibos CFDI Nómina</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-500"></i> Determinación de Cuotas Patronales</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-500"></i> Asesoría en Contratos Laborales</li>
+                        </ul>
+                    </div>
+                    <button onclick="openServiceModal('Nómina e IMSS / INFONAVIT')" class="w-full py-2.5 px-4 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700 hover:bg-navy-900 hover:text-white transition-all text-center">
+                        Solicitar Información
+                    </button>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-sky-50 text-sky-500 group-hover:bg-sky-500 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl transition-all duration-300 mb-6 shadow-sm">
+                            <i class="fa-solid fa-folder-closed"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 mb-3">Defensoría & Auditorías</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Integración de Expedientes de Defensa Fiscal ante cartas invitación, revisiones profundas o cartas de discrepancia del SAT.
+                        </p>
+                        <ul class="text-xs text-slate-500 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-500"></i> Respuesta a Cartas Invitación</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-500"></i> Armado de Materialidad Operativa</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-500"></i> Acompañamiento en Revisiones</li>
+                        </ul>
+                    </div>
+                    <button onclick="openServiceModal('Defensoría & Auditorías')" class="w-full py-2.5 px-4 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700 hover:bg-navy-900 hover:text-white transition-all text-center">
+                        Solicitar Información
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE TAX CALCULATOR SECTION -->
+    <section id="calculadora" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="bg-gradient-to-br from-navy-900 via-navy-800 to-sky-900 rounded-3xl p-6 sm:p-10 lg:p-12 text-white shadow-2xl relative overflow-hidden">
+                <!-- Decorative background elements -->
+                <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="max-w-3xl mb-10">
+                    <span class="bg-sky-500/20 text-sky-300 border border-sky-400/30 text-xs font-bold px-3 me-2 py-1 rounded-full uppercase tracking-wider">
+                        Herramienta de Simulación Interactivas
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-4">
+                        Calculadora Comparativa: RESICO vs PFAE
+                    </h2>
+                    <p class="text-slate-300 text-sm sm:text-base mt-2">
+                        Compara tu carga fiscal estimada mensual. Visualiza el ahorro potencial al tributar bajo el Régimen Simplificado de Confianza (RESICO) frente a Persona Física con Actividad Empresarial (PFAE).
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Controls Form -->
+                    <div class="lg:col-span-6 bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-white/10 space-y-6">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-sky-300 mb-2">
+                                Ingreso Mensual Estimado (Sin IVA)
+                            </label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400 font-bold">$</span>
+                                <input type="number" id="calc-income" value="65000" min="1000" max="290000" step="5000" 
+                                    class="w-full pl-9 pr-4 py-3 bg-white/90 text-navy-900 font-extrabold text-lg rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-400 transition-all">
+                            </div>
+                            <input type="range" id="calc-range" min="5000" max="290000" step="5000" value="65000" class="w-full mt-3 accent-sky-400 cursor-pointer">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-sky-300 mb-2">
+                                Gastos / Deducibles Estimados Mensuales (Para PFAE)
+                            </label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400 font-bold">$</span>
+                                <input type="number" id="calc-expenses" value="25000" min="0" step="2000" 
+                                    class="w-full pl-9 pr-4 py-3 bg-white/90 text-navy-900 font-extrabold text-lg rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-400 transition-all">
+                            </div>
+                            <p class="text-[11px] text-slate-400 mt-1">*Nota: En RESICO no deduces gastos para ISR, pagas sobre el ingreso bruto acumulado.</p>
+                        </div>
+
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/10 text-xs text-slate-300">
+                            <i class="fa-solid fa-circle-info text-sky-400 me-1"></i>
+                            El límite máximo de ingresos para RESICO Persona Física es de <strong>$3,500,000 MXN anuales</strong> (~$291,000 mensuales).
+                        </div>
+                    </div>
+
+                    <!-- Comparison Results Dashboard -->
+                    <div class="lg:col-span-6 space-y-4">
+                        
+                        <!-- RESICO Card -->
+                        <div class="bg-emerald-500/10 border-2 border-emerald-400/40 p-6 rounded-2xl relative overflow-hidden backdrop-blur-md">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-xs font-bold text-emerald-300 uppercase tracking-widest block">Régimen RESICO</span>
+                                    <h3 class="text-lg font-bold text-white">ISR Estimado Mensual</h3>
+                                </div>
+                                <span class="bg-emerald-400/20 text-emerald-300 text-xs font-bold px-3 py-1 rounded-full border border-emerald-400/30" id="resico-rate-badge">
+                                    Tasa 1.50%
+                                </span>
+                            </div>
+                            <div class="mt-4 flex items-baseline gap-2">
+                                <span class="text-3xl sm:text-4xl font-extrabold text-emerald-300" id="resico-tax-val">$975</span>
+                                <span class="text-xs text-slate-300">MXN / mes</span>
+                            </div>
+                            <p class="text-xs text-slate-300 mt-2">Basado en las tablas fijas del Art. 113-E de la Ley del ISR.</p>
+                        </div>
+
+                        <!-- PFAE Card -->
+                        <div class="bg-white/5 border border-white/15 p-6 rounded-2xl backdrop-blur-md">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest block">Actividad Empresarial (PFAE)</span>
+                                    <h3 class="text-lg font-bold text-white">ISR Estimado Mensual</h3>
+                                </div>
+                                <span class="bg-white/10 text-slate-300 text-xs font-bold px-3 py-1 rounded-full" id="pfae-rate-badge">
+                                    Tasa Ef. ~16%
+                                </span>
+                            </div>
+                            <div class="mt-4 flex items-baseline gap-2">
+                                <span class="text-3xl sm:text-4xl font-extrabold text-slate-200" id="pfae-tax-val">$6,400</span>
+                                <span class="text-xs text-slate-300">MXN / mes</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mt-2">Calculado sobre Utilidad Fiscal (Ingresos menos Gastos deducibles).</p>
+                        </div>
+
+                        <!-- Difference Highlight -->
+                        <div class="bg-gradient-to-r from-sky-500 to-sky-600 p-5 rounded-2xl shadow-lg text-white flex items-center justify-between">
+                            <div>
+                                <div class="text-xs uppercase font-bold opacity-80">Ahorro Mensual Estimado en RESICO</div>
+                                <div class="text-2xl font-black" id="savings-val">$5,425 MXN</div>
+                            </div>
+                            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-piggy-bank"></i>
+                            </div>
+                        </div>
+
+                        <div class="text-center pt-2">
+                            <a href="#contacto" onclick="prefillContactForm()" class="inline-flex items-center gap-2 text-xs font-bold text-sky-300 hover:text-white transition-all underline underline-offset-4">
+                                <span>¿Quieres cambiarte a RESICO de forma segura? Contáctanos aquí</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FISCAL DEFENSE CHECKLIST SECTION -->
+    <section id="expediente" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs font-bold text-sky-500 uppercase tracking-widest mb-2 block">Prevención Anti-SAT</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900">Checklist de Expediente de Defensa Fiscal</h2>
+                <p class="text-slate-600 mt-3 text-sm sm:text-base">
+                    Verifica si cuentas con el expediente soporte para acreditar la <strong>materialidad y razón de negocios</strong> de tus operaciones ante una revisión del SAT o SATEG.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200/80 max-w-4xl mx-auto">
+                <!-- Progress bar -->
+                <div class="mb-8">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs font-bold text-slate-700 uppercase">Nivel de Blindaje Fiscal</span>
+                        <span class="text-xs font-black text-sky-500" id="checklist-score">0% Completado</span>
+                    </div>
+                    <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
+                        <div id="checklist-progress-bar" class="h-full bg-sky-500 w-0 transition-all duration-500"></div>
+                    </div>
+                </div>
+
+                <!-- Checklist items -->
+                <div class="space-y-4" id="checklist-items-container">
+                    
+                    <label class="flex items-start gap-4 p-4 rounded-2xl border border-slate-150 hover:bg-slate-50 transition-all cursor-pointer">
+                        <input type="checkbox" class="chk-item mt-1 w-5 h-5 text-sky-500 rounded border-slate-300 focus:ring-sky-400" onchange="updateChecklistProgress()">
+                        <div>
+                            <span class="text-sm font-bold text-navy-900 block">Constancia de Situación Fiscal y Opinión de Cumplimiento Positiva</span>
+                            <span class="text-xs text-slate-500">Actualizada al mes en curso y con actividades económicas correctas.</span>
+                        </div>
+                    </label>
+
+                    <label class="flex items-start gap-4 p-4 rounded-2xl border border-slate-150 hover:bg-slate-50 transition-all cursor-pointer">
+                        <input type="checkbox" class="chk-item mt-1 w-5 h-5 text-sky-500 rounded border-slate-300 focus:ring-sky-400" onchange="updateChecklistProgress()">
+                        <div>
+                            <span class="text-sm font-bold text-navy-900 block">Contratos Firmados y Ratificados (Materialidad)</span>
+                            <span class="text-xs text-slate-500">Contratos de prestación de servicios, arrendamiento o proveedores clave con fecha cierta.</span>
+                        </div>
+                    </label>
+
+                    <label class="flex items-start gap-4 p-4 rounded-2xl border border-slate-150 hover:bg-slate-50 transition-all cursor-pointer">
+                        <input type="checkbox" class="chk-item mt-1 w-5 h-5 text-sky-500 rounded border-slate-300 focus:ring-sky-400" onchange="updateChecklistProgress()">
+                        <div>
+                            <span class="text-sm font-bold text-navy-900 block">Estados de Cuenta Bancarios Conciliados con Facturación CFDI</span>
+                            <span class="text-xs text-slate-500">Coincidencia exacta entre ingresos cobrados, facturas emitidas y complementos de pago (REP).</span>
+                        </div>
+                    </label>
+
+                    <label class="flex items-start gap-4 p-4 rounded-2xl border border-slate-150 hover:bg-slate-50 transition-all cursor-pointer">
+                        <input type="checkbox" class="chk-item mt-1 w-5 h-5 text-sky-500 rounded border-slate-300 focus:ring-sky-400" onchange="updateChecklistProgress()">
+                        <div>
+                            <span class="text-sm font-bold text-navy-900 block">Bitácoras de Entrega / Entregables de Servicios</span>
+                            <span class="text-xs text-slate-500">Evidencia fotográfica, correos, reportes de trabajo o guías de envío que prueben que el servicio realmente existió.</span>
+                        </div>
+                    </label>
+
+                    <label class="flex items-start gap-4 p-4 rounded-2xl border border-slate-150 hover:bg-slate-50 transition-all cursor-pointer">
+                        <input type="checkbox" class="chk-item mt-1 w-5 h-5 text-sky-500 rounded border-slate-300 focus:ring-sky-400" onchange="updateChecklistProgress()">
+                        <div>
+                            <span class="text-sm font-bold text-navy-900 block">Expediente de Nómina e IMSS (Si aplica)</span>
+                            <span class="text-xs text-slate-500">Recibos timbrados, comprobantes de pago de cuotas SUA/SIPARE y expedientes laborales actualizados.</span>
+                        </div>
+                    </label>
+
+                </div>
+
+                <!-- Diagnosis Box -->
+                <div id="checklist-result-box" class="mt-8 p-5 bg-slate-100 rounded-2xl border border-slate-200 text-center">
+                    <h3 class="text-sm font-bold text-slate-800" id="result-status-title">Selecciona las casillas que cumples actualmente</h3>
+                    <p class="text-xs text-slate-600 mt-1" id="result-status-desc">Te indicaremos si tu negocio requiere atención urgente para evitar multas o congelamiento de sellos digitales.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section id="nosotros" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="bg-navy-900 rounded-3xl p-8 text-white relative z-10 shadow-xl overflow-hidden">
+                            <div class="absolute -right-10 -top-10 w-40 h-40 bg-sky-500/20 rounded-full blur-2xl"></div>
+                            
+                            <div class="w-20 h-20 bg-sky-500 text-navy-900 rounded-2xl flex items-center justify-center text-3xl font-black mb-6">
+                                ROMS
+                            </div>
+
+                            <h3 class="text-2xl font-bold mb-1">LCF Jocelyn Odet Romero Dguez</h3>
+                            <p class="text-sky-400 text-xs font-semibold uppercase tracking-wider mb-6">Directora & Consultora Fiscal</p>
+
+                            <p class="text-slate-300 text-sm leading-relaxed mb-6 font-light">
+                                "Nuestra misión es transformar la contabilidad en una herramienta estratégica de crecimiento y protección patrimonial, eliminando la incertidumbre ante las autoridades fiscales."
+                            </p>
+
+                            <div class="border-t border-white/10 pt-4 space-y-2 text-xs text-slate-300">
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-location-dot text-sky-400"></i>
+                                    <span>Base operativa en León, Guanajuato.</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-graduation-cap text-sky-400"></i>
+                                    <span>Licenciada en Contaduría y Finanzas.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accent background block -->
+                        <div class="absolute -bottom-4 -right-4 w-full h-full bg-sky-500 rounded-3xl -z-0"></div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-xs font-bold text-sky-500 uppercase tracking-widest">Nuestra Filosofía</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 leading-tight">
+                        Rigor Técnico, Tecnología y Protección Integral
+                    </h2>
+                    
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        En <strong>ROMS | Tax & Accounting MX</strong>, entendemos que las leyes fiscales en México evolucionan de forma continua. Por ello, combinamos el conocimiento normativo profundo con herramientas tecnológicas de automatización para ofrecer un servicio transparente, puntual y sin sorpresas.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center shrink-0 font-bold">
+                                01
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-navy-900 text-sm mb-1">Visión Preventiva</h3>
+                                <p class="text-xs text-slate-500">Auditamos tus operaciones antes que el SAT para corregir cualquier discrepancia de forma anticipada.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center shrink-0 font-bold">
+                                02
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-navy-900 text-sm mb-1">Cercanía y Claridad</h3>
+                                <p class="text-xs text-slate-500">Explicamos tus impuestos en lenguaje claro, con reportes comprensibles y asesoría continua.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center shrink-0 font-bold">
+                                03
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-navy-900 text-sm mb-1">Especialización Local</h3>
+                                <p class="text-xs text-slate-500">Amplio conocimiento de los trámites y exigencias ante SATEG y el Municipio de León, Gto.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center shrink-0 font-bold">
+                                04
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-navy-900 text-sm mb-1">Confidencialidad Total</h3>
+                                <p class="text-xs text-slate-500">Manejo estrictamente confidencial y profesional de la información financiera de tu negocio.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & BOOKING SECTION -->
+    <section id="contacto" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info Panel -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-xs font-bold text-sky-500 uppercase tracking-widest block mb-2">Contacto Directo</span>
+                        <h2 class="text-3xl font-extrabold text-navy-900">Agenda tu Consulta Fiscal</h2>
+                        <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                            Ponte en contacto con nuestro equipo especialista para resolver tus dudas contables o coordinar una sesión de diagnóstico para tu empresa.
+                        </p>
+                    </div>
+
+                    <div class="space-y-5">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-sky-50 text-sky-500 rounded-xl flex items-center justify-center shrink-0 text-lg">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold uppercase text-slate-400">Ubicación</h3>
+                                <p class="text-sm font-semibold text-navy-900">León, Guanajuato, México.</p>
+                                <p class="text-xs text-slate-500">Atención presencial previa cita y asesoría remota a nivel nacional.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-emerald-50 text-emerald-500 rounded-xl flex items-center justify-center shrink-0 text-lg">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold uppercase text-slate-400">WhatsApp Directo</h3>
+                                <p class="text-sm font-semibold text-navy-900">Atención Rápida por Mensaje</p>
+                                <a href="https://wa.me/5214770000000?text=Hola,%20me%20gustaría%20agendar%20una%20consulta%20fiscal%20con%20ROMS" target="_blank" class="text-xs font-bold text-emerald-600 hover:underline">
+                                    Iniciar chat en WhatsApp &rarr;
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-sky-50 text-sky-500 rounded-xl flex items-center justify-center shrink-0 text-lg">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold uppercase text-slate-400">Titular del Despacho</h3>
+                                <p class="text-sm font-semibold text-navy-900">LCF Jocelyn Odet Romero Dguez</p>
+                                <p class="text-xs text-slate-500">Tax & Accounting Specialist</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Call Card -->
+                    <div class="p-6 bg-navy-900 text-white rounded-2xl relative overflow-hidden">
+                        <div class="relative z-10">
+                            <h3 class="font-bold text-base mb-1">¿Tienes una urgencia o requerimiento del SAT?</h3>
+                            <p class="text-xs text-slate-300 mb-4">Escríbenos directamente para asesorarte antes de responder a la autoridad.</p>
+                            <a href="https://wa.me/5214770000000?text=Tengo%20un%20requerimiento%20urgente%20del%20SAT" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs px-4 py-2.5 rounded-xl inline-flex items-center gap-2">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <span>Atención Prioritaria</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Interactive Form -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200/80">
+                        <h3 class="text-xl font-bold text-navy-900 mb-6">Formulario de Solicitud de Cita / Diagnóstico</h3>
+
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nombre Completo *</label>
+                                    <input type="text" required placeholder="Ej. Ana Martínez" class="w-full px-4 py-3 bg-slate-50 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Teléfono / WhatsApp *</label>
+                                    <input type="tel" required placeholder="477 123 4567" class="w-full px-4 py-3 bg-slate-50 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Correo Electrónico *</label>
+                                    <input type="email" required placeholder="correo@empresa.com" class="w-full px-4 py-3 bg-slate-50 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Régimen Fiscal Actual</label>
+                                    <select id="form-regimen" class="w-full px-4 py-3 bg-slate-50 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-700">
+                                        <option value="RESICO">RESICO (Confianza)</option>
+                                        <option value="PFAE">Persona Física Act. Empresarial / Servicios</option>
+                                        <option value="Persona Morales">Persona Moral (S.A. de C.V., S.A.S., etc.)</option>
+                                        <option value="Arrendamiento">Arrendamiento de Inmuebles</option>
+                                        <option value="Sueldos">Sueldos y Salarios / Asimilados</option>
+                                        <option value="Sin Registro">Aún no estoy dado de alta en SAT</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Servicio de Interés</label>
+                                <select id="form-servicio" class="w-full px-4 py-3 bg-slate-50 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-700">
+                                    <option value="Diagnostico RESICO">Diagnóstico u Optimización RESICO</option>
+                                    <option value="Contabilidad Mensual">Contabilidad Mensual Integral</option>
+                                    <option value="Devolución de Saldos">Devolución de Saldos a Favor (SAT/SATEG)</option>
+                                    <option value="Trámites Municipales">Trámites Municipales León (Licencias)</option>
+                                    <option value="Defensa / Requerimiento">Defensa o Respuesta a Requerimiento SAT</option>
+                                    <option value="Otro">Otro / Consulta General</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Detalles de tu mensaje o duda fiscal</label>
+                                <textarea id="form-mensaje" rows="4" placeholder="Describe brevemente tus necesidades contables..." class="w-full px-4 py-3 bg-slate-50 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 bg-navy-900 hover:bg-sky-500 text-white font-bold rounded-xl shadow-lg transition-all text-sm flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Enviar Solicitud de Consulta</span>
+                            </button>
+                        </form>
+
+                        <!-- Confirmation Message Holder -->
+                        <div id="form-success-msg" class="hidden mt-4 p-4 bg-emerald-50 text-emerald-800 rounded-xl border border-emerald-200 text-xs font-semibold text-center">
+                            ¡Gracias por escribirnos! Tu mensaje ha sido recibido. Nos comunicaremos contigo en breve para confirmar tu cita.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-900 text-slate-400 py-12 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                
+                <div class="md:col-span-2 space-y-3">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-sky-500 rounded-lg flex items-center justify-center text-navy-900 font-black text-sm">
+                            R
+                        </div>
+                        <span class="text-white font-bold text-base tracking-tight">ROMS | Tax & Accounting MX</span>
+                    </div>
+                    <p class="text-slate-400 text-xs max-w-sm">
+                        Despacho Contable Fiscal con sede en León, Guanajuato. Liderado por la LCF Jocelyn Odet Romero Dguez.
+                    </p>
+                    <p class="text-slate-500 text-[11px]">
+                        Especialistas en RESICO, PFAE, Personas Morales, Trámites Municipales y Devoluciones ante el SAT.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Navegación Rápida</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="hover:text-sky-400 transition-all">Inicio</a></li>
+                        <li><a href="#servicios" class="hover:text-sky-400 transition-all">Servicios Principales</a></li>
+                        <li><a href="#calculadora" class="hover:text-sky-400 transition-all">Calculadora RESICO</a></li>
+                        <li><a href="#expediente" class="hover:text-sky-400 transition-all">Checklist SAT</a></li>
+                        <li><a href="#contacto" class="hover:text-sky-400 transition-all">Agendar Cita</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Ubicación & Cobertura</h3>
+                    <p class="text-slate-400 mb-2">León, Guanajuato, México.</p>
+                    <p class="text-slate-500 text-[11px] mb-3">Atención presencial en León y virtual para todo Guanajuato y México.</p>
+                    <div class="flex gap-3">
+                        <a href="https://wa.me/5214770000000" target="_blank" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-emerald-500 hover:text-white flex items-center justify-center text-sm transition-all" aria-label="WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="#contacto" class="w-8 h-8 rounded-lg bg-white/10 hover:bg-sky-500 hover:text-white flex items-center justify-center text-sm transition-all" aria-label="Contacto">
+                            <i class="fa-regular fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 text-center md:flex md:justify-between text-slate-500 text-[11px]">
+                <p>&copy; 2026 ROMS | Tax & Accounting MX. Todos los derechos reservados.</p>
+                <p class="mt-2 md:mt-0">Dirección General: LCF Jocelyn Odet Romero Dguez</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SERVICE MODAL -->
+    <div id="service-modal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative border border-slate-100 animate-fadeIn">
+            <button onclick="closeServiceModal()" class="absolute top-4 right-4 text-slate-400 hover:text-navy-900 p-2 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="w-12 h-12 bg-sky-100 text-sky-600 rounded-2xl flex items-center justify-center text-xl font-bold mb-4" id="modal-icon">
+                <i class="fa-solid fa-briefcase"></i>
+            </div>
+            <h3 class="text-xl font-bold text-navy-900" id="modal-title">Nombre del Servicio</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed" id="modal-desc">
+                Solicita un presupuesto adaptado al volumen de facturación y régimen de tu negocio.
+            </p>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex flex-col gap-2">
+                <a href="#contacto" onclick="closeServiceModal()" class="w-full bg-navy-900 hover:bg-sky-500 text-white font-bold py-3 text-center rounded-xl text-xs transition-all">
+                    Solicitar Cotización Directa
+                </a>
+                <button onclick="closeServiceModal()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-2.5 text-center rounded-xl text-xs transition-all">
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT INTERACTIVE LOGIC -->
+    <script>
+        // 1. Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if(mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // 2. RESICO vs PFAE Interactive Tax Calculator
+        const calcIncome = document.getElementById('calc-income');
+        const calcRange = document.getElementById('calc-range');
+        const calcExpenses = document.getElementById('calc-expenses');
+        
+        const resicoTaxVal = document.getElementById('resico-tax-val');
+        const pfaeTaxVal = document.getElementById('pfae-tax-val');
+        const savingsVal = document.getElementById('savings-val');
+        const resicoRateBadge = document.getElementById('resico-rate-badge');
+
+        function getResicoRate(monthlyIncome) {
+            // Art. 113-E Ley ISR Mensual
+            if (monthlyIncome <= 25000) return 0.010; // 1.0%
+            if (monthlyIncome <= 50000) return 0.011; // 1.1%
+            if (monthlyIncome <= 83333.33) return 0.015; // 1.5%
+            if (monthlyIncome <= 208333.33) return 0.020; // 2.0%
+            if (monthlyIncome <= 291666.66) return 0.025; // 2.5%
+            return 0.025;
+        }
+
+        function calculateTaxes() {
+            let income = parseFloat(calcIncome.value) || 0;
+            let expenses = parseFloat(calcExpenses.value) || 0;
+
+            if (expenses > income) expenses = income;
+
+            // RESICO Calculation
+            const resicoRate = getResicoRate(income);
+            const resicoTax = income * resicoRate;
+
+            // PFAE Approximate Calculation (Marginal Rate estimation based on profit)
+            const profit = Math.max(0, income - expenses);
+            let pfaeTax = 0;
+            if (profit > 0) {
+                // Progressive scale simulation
+                if (profit <= 10000) pfaeTax = profit * 0.06;
+                else if (profit <= 30000) pfaeTax = profit * 0.16;
+                else if (profit <= 60000) pfaeTax = profit * 0.23;
+                else if (profit <= 100000) pfaeTax = profit * 0.28;
+                else pfaeTax = profit * 0.32;
+            }
+
+            const savings = Math.max(0, pfaeTax - resicoTax);
+
+            // Format Currency
+            resicoTaxVal.textContent = `$${Math.round(resicoTax).toLocaleString('es-MX')}`;
+            pfaeTaxVal.textContent = `$${Math.round(pfaeTax).toLocaleString('es-MX')}`;
+            savingsVal.textContent = `$${Math.round(savings).toLocaleString('es-MX')} MXN`;
+            resicoRateBadge.textContent = `Tasa ${(resicoRate * 100).toFixed(1)}%`;
+        }
+
+        // Sync inputs
+        calcIncome.addEventListener('input', (e) => {
+            calcRange.value = e.target.value;
+            calculateTaxes();
+        });
+
+        calcRange.addEventListener('input', (e) => {
+            calcIncome.value = e.target.value;
+            calculateTaxes();
+        });
+
+        calcExpenses.addEventListener('input', calculateTaxes);
+
+        // Initial Calculation
+        calculateTaxes();
+
+        // 3. Fiscal Defense Checklist Progress
+        function updateChecklistProgress() {
+            const checkboxes = document.querySelectorAll('.chk-item');
+            const total = checkboxes.length;
+            let checked = 0;
+
+            checkboxes.forEach(chk => {
+                if(chk.checked) checked++;
+            });
+
+            const percentage = Math.round((checked / total) * 100);
+            
+            const progressBar = document.getElementById('checklist-progress-bar');
+            const scoreText = document.getElementById('checklist-score');
+            const statusTitle = document.getElementById('result-status-title');
+            const statusDesc = document.getElementById('result-status-desc');
+            const resultBox = document.getElementById('checklist-result-box');
+
+            progressBar.style.width = `${percentage}%`;
+            scoreText.textContent = `${percentage}% Completado`;
+
+            if (percentage === 0) {
+                statusTitle.textContent = 'Selecciona las casillas que cumples actualmente';
+                statusDesc.textContent = 'Te indicaremos si tu negocio requiere atención urgente.';
+                resultBox.className = "mt-8 p-5 bg-slate-100 rounded-2xl border border-slate-200 text-center";
+            } else if (percentage < 60) {
+                statusTitle.textContent = '⚠️ Alerta de Riesgo Fiscal Medio/Alto';
+                statusDesc.textContent = 'Falta documentación clave. Ante una revisión del SAT, tus deducciones o facturas podrían ser cuestionadas.';
+                resultBox.className = "mt-8 p-5 bg-amber-50 text-amber-900 rounded-2xl border border-amber-200 text-center";
+            } else if (percentage < 100) {
+                statusTitle.textContent = '⚡ Avance Aceptable - Requiere Afinar Detalles';
+                statusDesc.textContent = 'Cuentas con la base principal. Te recomendamos blindar la prueba de entregables y contratos.';
+                resultBox.className = "mt-8 p-5 bg-sky-50 text-sky-900 rounded-2xl border border-sky-200 text-center";
+            } else {
+                statusTitle.textContent = '🎉 ¡Felicidades! Blindaje Fiscal Óptimo';
+                statusDesc.textContent = 'Tu expediente cumple con los requerimientos de la autoridad tributaria para respaldar tu operación.';
+                resultBox.className = "mt-8 p-5 bg-emerald-50 text-emerald-900 rounded-2xl border border-emerald-200 text-center";
+            }
+        }
+
+        // 4. Modal Handler
+        function openServiceModal(serviceName) {
+            const modal = document.getElementById('service-modal');
+            const title = document.getElementById('modal-title');
+            const desc = document.getElementById('modal-desc');
+            
+            title.textContent = serviceName;
+            desc.textContent = `Has seleccionado el servicio: "${serviceName}". En ROMS analizados tus antecedentes en León, Guanajuato para enviarte una propuesta a la medida.`;
+            
+            modal.classList.remove('hidden');
+        }
+
+        function closeServiceModal() {
+            document.getElementById('service-modal').classList.add('hidden');
+        }
+
+        // Prefill contact select from calculator
+        function prefillContactForm() {
+            const regimenSelect = document.getElementById('form-regimen');
+            const servicioSelect = document.getElementById('form-servicio');
+            if (regimenSelect) regimenSelect.value = 'RESICO';
+            if (servicioSelect) servicioSelect.value = 'Diagnostico RESICO';
+        }
+
+        // 5. Form submission simulator
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const msgBox = document.getElementById('form-success-msg');
+            msgBox.classList.remove('hidden');
+            event.target.reset();
+            setTimeout(() => {
+                msgBox.classList.add('hidden');
+            }, 6000);
+        }
+    </script>
+</body>
+</html>

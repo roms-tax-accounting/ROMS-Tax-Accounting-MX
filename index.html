@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Despacho Contable en León Gto | Calculadoras, RESICO, IMSS y LLC - ROMS</title>
+    <title>Despacho Contable en León Gto | Contabilidad RESICO, IMSS y LLC - ROMS</title>
     
-    <meta name="description" content="Despacho contable en León, Guanajuato. Herramientas interactivas para cálculo de finiquito, cuotas patronales IMSS, buscador de gastos deducibles, asesoría en LLCs y Comercio Exterior.">
-    <meta name="keywords" content="calculadora finiquito mexico, cuotas patronales imss, gastos deducibles sat, llc estados unidos mexico, comercio exterior leon, despacho contable leon">
+    <!-- Meta Etiquetas SEO -->
+    <meta name="description" content="Despacho contable en León, Guanajuato. Especialistas en RESICO, PFAE, Personas Morales, cálculo de cuotas patronales IMSS por clase de riesgo, finiquitos, LLCs y comercio exterior.">
+    <meta name="keywords" content="despacho contable leon, contador leon gto, resico leon, cuotas patronales imss construccion, riesgo de trabajo imss, finiquito mexico, llc estados unidos mexico">
     <meta name="author" content="L.C.F. Jocelyn Odet Romero Dguez.">
     <meta name="robots" content="index, follow">
 
-    <meta property="og:title" content="ROMS | Tax & Accounting MX - Herramientas y Asesoría Fiscal">
-    <meta property="og:description" content="Calculadoras fiscales, cuotas IMSS, gastos deducibles, LLCs en EE. UU. y comercio exterior en León, Guanajuato.">
+    <!-- Meta Etiquetas Redes Sociales -->
+    <meta property="og:title" content="ROMS | Tax & Accounting MX - Estrategia Fiscal y Herramientas">
+    <meta property="og:description" content="Tranquilidad fiscal, calculadoras de RESICO, IMSS por prima de riesgo, blindaje fiscal, LLCs y comercio exterior.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://roms-impuestos-contabilidad.github.io/ROMS-Tax-Accounting-MX/">
 
+    <!-- Verificación Google Search Console -->
     <meta name="google-site-verification" content="ABhALwZ_3EfXuhB36F06tSeqLC3-Wf1L6EX90azKBak" />
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -32,14 +35,17 @@
             }
         }
     </script>
+    <style>
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-sky-500 selection:text-white">
 
     <!-- Navegación -->
     <header class="sticky top-0 z-40 bg-navy-900/95 backdrop-blur-md border-b border-slate-800 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 bg-gradient-to-tr from-sky-500 to-sky-400 rounded-xl flex items-center justify-center font-bold text-navy-900 text-xl shadow-lg">R</div>
+                <div class="w-10 h-10 bg-gradient-to-tr from-sky-500 to-sky-400 rounded-xl flex items-center justify-center font-bold text-navy-900 text-xl shadow-lg shadow-sky-500/20">R</div>
                 <div>
                     <span class="text-xl font-extrabold tracking-tight block leading-none">ROMS</span>
                     <span class="text-[10px] tracking-widest text-sky-400 font-semibold uppercase block mt-1">Tax & Accounting MX</span>
@@ -47,310 +53,43 @@
             </div>
 
             <nav class="hidden lg:flex space-x-6 text-xs font-semibold text-slate-300">
-                <a href="#herramientas" class="hover:text-sky-400 transition-colors">Herramientas Interactivas</a>
-                <a href="#deducibles" class="hover:text-sky-400 transition-colors">Buscador Deducibles</a>
+                <a href="#servicios" class="hover:text-sky-400 transition-colors">Servicios</a>
+                <a href="#calculadora-resico" class="hover:text-sky-400 transition-colors">Calculadora RESICO</a>
+                <a href="#imss-simulador" class="hover:text-sky-400 transition-colors">Cuotas IMSS</a>
+                <a href="#finiquito-simulador" class="hover:text-sky-400 transition-colors">Finiquitos</a>
+                <a href="#defensa" class="hover:text-sky-400 transition-colors">Blindaje Fiscal</a>
                 <a href="#internacional" class="hover:text-sky-400 transition-colors">LLC & Comercio Exterior</a>
                 <a href="#contacto" class="hover:text-sky-400 transition-colors">Contacto</a>
             </nav>
 
-            <a href="https://wa.me/524776461540" target="_blank" class="px-4 py-2.5 rounded-xl text-xs font-bold bg-sky-500 hover:bg-sky-400 text-navy-900 transition-all">
-                Consulta Directa
-            </a>
+            <div class="flex items-center space-x-3">
+                <a href="https://www.facebook.com/share/1CEn8w9cEr/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" title="Facebook" class="p-2 bg-navy-800 hover:bg-sky-500/20 text-slate-300 hover:text-sky-400 rounded-lg transition-all border border-slate-700/50">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/romerointegratedservices?stkn=MTVmcHBvOGlqaHd3Mg==" target="_blank" rel="noopener noreferrer" title="Instagram" class="p-2 bg-navy-800 hover:bg-sky-500/20 text-slate-300 hover:text-sky-400 rounded-lg transition-all border border-slate-700/50">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="https://wa.me/524776461540" target="_blank" class="hidden sm:inline-flex items-center px-4 py-2.5 rounded-xl text-xs font-bold bg-sky-500 hover:bg-sky-400 text-navy-900 transition-all shadow-md shadow-sky-500/20">
+                    Agendar Cita
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- Hero -->
-    <section class="bg-navy-900 text-white py-16 lg:py-24 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <span class="px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-semibold">Plataforma Interactiva de Servicios Contables</span>
-            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mt-4 max-w-4xl mx-auto">
-                Estrategia Fiscal, Nómina, LLCs y Herramientas Digitales para tu Negocio
-            </h1>
-            <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mt-4 font-normal">
-                Utiliza nuestros simuladores para calcular finiquitos, aportaciones patronales al IMSS y consultar gastos deducibles ante el SAT.
-            </p>
-            <div class="mt-8 flex flex-wrap justify-center gap-4">
-                <a href="#herramientas" class="px-6 py-3.5 bg-sky-500 hover:bg-sky-400 text-navy-900 rounded-xl font-bold text-xs uppercase tracking-wider">Usar Calculadoras</a>
-                <a href="#deducibles" class="px-6 py-3.5 bg-navy-800 border border-slate-700 hover:bg-slate-800 text-white rounded-xl font-bold text-xs uppercase tracking-wider">Buscador de Deducibles</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Herramientas Interactivas -->
-    <section id="herramientas" class="py-16 bg-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <span class="text-xs font-bold text-sky-500 uppercase tracking-widest">Simuladores Fiscales y Laborales</span>
-                <h2 class="text-3xl font-extrabold text-navy-900 mt-1">Calculadoras Interactivas</h2>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-8">
-                <!-- 1. Calculadora Finiquito vs Liquidación -->
-                <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-slate-200">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <span class="text-2xl">⚖️</span>
-                        <h3 class="text-xl font-bold text-navy-900">Simulador de Finiquito e Indemnización</h3>
+    <!-- Hero Section -->
+    <section class="relative bg-navy-900 text-white overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#38bec9_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-semibold">
+                        <span>Líderes en Estrategia y Cumplimiento Fiscal</span>
                     </div>
-                    <p class="text-xs text-slate-500 mb-6">Calcula estimaciones bajo la Ley Federal del Trabajo.</p>
-
-                    <div class="space-y-4 text-xs">
-                        <div>
-                            <label class="block font-bold text-slate-700 uppercase mb-1">Salario Mensual Bruto ($)</label>
-                            <input type="number" id="fin-salario" value="18000" class="w-full p-3 bg-slate-50 rounded-xl border font-bold">
-                        </div>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label class="block font-bold text-slate-700 uppercase mb-1">Años Trabajados</label>
-                                <input type="number" id="fin-anios" value="3" min="0" class="w-full p-3 bg-slate-50 rounded-xl border font-bold">
-                            </div>
-                            <div>
-                                <label class="block font-bold text-slate-700 uppercase mb-1">Motivo de Separación</label>
-                                <select id="fin-motivo" class="w-full p-3 bg-slate-50 rounded-xl border font-bold">
-                                    <option value="renuncia">Renuncia Voluntaria</option>
-                                    <option value="despido">Despido Injustificado</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <button onclick="calcularFiniquito()" class="w-full py-3 bg-navy-900 hover:bg-navy-800 text-white rounded-xl font-bold uppercase tracking-wider">
-                            Calcular Importe Estimado
-                        </button>
-
-                        <div class="p-4 bg-slate-50 rounded-2xl border space-y-2 mt-4">
-                            <div class="flex justify-between font-bold text-slate-700">
-                                <span>Finiquito (Prestaciones Proporcionales):</span>
-                                <span id="res-finiquito" class="text-sky-600">$0.00</span>
-                            </div>
-                            <div class="flex justify-between font-bold text-slate-700">
-                                <span>Indemnización / Liquidación:</span>
-                                <span id="res-liquidacion" class="text-emerald-600">$0.00</span>
-                            </div>
-                            <div class="flex justify-between font-extrabold text-navy-900 pt-2 border-t text-sm">
-                                <span>Total Estimado Bruto:</span>
-                                <span id="res-total-fin">$0.00</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. Simulador de Cuotas Patronales IMSS e Infonavit -->
-                <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-slate-200">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <span class="text-2xl">🏢</span>
-                        <h3 class="text-xl font-bold text-navy-900">Simulador de Aportaciones Patronales (IMSS/Infonavit)</h3>
-                    </div>
-                    <p class="text-xs text-slate-500 mb-6">Estima el costo social adicional por dar de alta a tus empleados.</p>
-
-                    <div class="space-y-4 text-xs">
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label class="block font-bold text-slate-700 uppercase mb-1">Número de Empleados</label>
-                                <input type="number" id="imss-empleados" value="5" min="1" class="w-full p-3 bg-slate-50 rounded-xl border font-bold">
-                            </div>
-                            <div>
-                                <label class="block font-bold text-slate-700 uppercase mb-1">Sueldo Mensual Promedio ($)</label>
-                                <input type="number" id="imss-sueldo" value="12000" class="w-full p-3 bg-slate-50 rounded-xl border font-bold">
-                            </div>
-                        </div>
-
-                        <button onclick="calcularCuotasIMSS()" class="w-full py-3 bg-sky-500 hover:bg-sky-400 text-navy-900 rounded-xl font-bold uppercase tracking-wider">
-                            Calcular Carga Patronal
-                        </button>
-
-                        <div class="p-4 bg-slate-50 rounded-2xl border space-y-2 mt-4">
-                            <div class="flex justify-between text-slate-700 font-semibold">
-                                <span>Nómina Bruta Mensual:</span>
-                                <span id="res-nomina-bruta" class="font-bold">$0.00</span>
-                            </div>
-                            <div class="flex justify-between text-slate-700 font-semibold">
-                                <span>Carga Social Patronal Est. (~28%-32%):</span>
-                                <span id="res-cuota-imss" class="font-bold text-sky-600">$0.00</span>
-                            </div>
-                            <div class="flex justify-between text-navy-900 font-extrabold pt-2 border-t text-sm">
-                                <span>Costo Total Mensual Empresa:</span>
-                                <span id="res-costo-total-empresa">$0.00</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Buscador de Gastos Deducibles -->
-    <section id="deducibles" class="py-16 bg-white">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10">
-                <span class="text-xs font-bold text-sky-500 uppercase tracking-widest">Optimización Fiscal SAT</span>
-                <h2 class="text-3xl font-extrabold text-navy-900 mt-1">Buscador de Gastos Deducibles</h2>
-                <p class="text-slate-600 text-xs mt-2">Consulta los requisitos clave para la deducción de tus comprobantes fiscales.</p>
-            </div>
-
-            <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200">
-                <div class="flex flex-col sm:flex-row gap-4 mb-6">
-                    <input type="text" id="input-busqueda-deducible" onkeyup="buscarDeducible()" placeholder="Escribe un concepto (ej. gasolina, colegiatura, médico, laptop)..." class="flex-1 p-3.5 bg-white rounded-xl border border-slate-300 font-medium text-xs focus:ring-2 focus:ring-sky-500 outline-none">
-                    <select id="select-regimen-deducible" onchange="buscarDeducible()" class="p-3.5 bg-white rounded-xl border border-slate-300 font-bold text-xs">
-                        <option value="todos">Todos los Regímenes</option>
-                        <option value="resico">Persona Física RESICO</option>
-                        <option value="pfae">Persona Física Act. Empresarial</option>
-                        <option value="moral">Persona Moral (Empresas)</option>
-                    </select>
-                </div>
-
-                <div id="lista-deducibles" class="space-y-3">
-                    <!-- Los resultados se cargan dinámicamente con JS -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- LLC en EE. UU. y Comercio Exterior -->
-    <section id="internacional" class="py-16 bg-navy-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-xs font-bold text-sky-400 uppercase tracking-widest">Expansión Estratégica</span>
-                <h2 class="text-3xl font-extrabold mt-1">Estructura de LLCs en EE. UU. & Comercio Exterior</h2>
-                <p class="text-slate-300 text-xs mt-2">Soluciones para emprendedores y empresas con visión global desde México.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- LLC Card -->
-                <div class="bg-navy-800 p-8 rounded-3xl border border-slate-700/60">
-                    <div class="w-12 h-12 bg-sky-500/10 text-sky-400 rounded-2xl flex items-center justify-center mb-4 text-2xl">🇺🇸</div>
-                    <h3 class="text-xl font-bold text-white mb-3">Constitución e Impuestos de LLC para Residentes en México</h3>
-                    <p class="text-slate-300 text-xs leading-relaxed mb-4">
-                        Abre tu empresa en EE. UU. (Wyoming, Delaware, Nuevo México) de manera legal sin salir de México. Ideal para cobros en dólares por Stripe, PayPal, servicios digitales y Amazon/e-Commerce.
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Tranquilidad Fiscal y Control Financiero para tu Negocio.
+                    </h1>
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal">
+                        Especialistas en CFDI 4.0, RESICO, Personas Morales, Seguridad Social (IMSS) y Blindaje Antidiscrepancia Fiscal. Respaldamos a empresas y profesionistas en León y todo México.
                     </p>
-                    <ul class="text-xs text-slate-300 space-y-2 mb-6">
-                        <li class="flex items-center gap-2"><span class="text-sky-400">✓</span> Obtención de EIN y cuenta bancaria empresarial (Mercury, Relay).</li>
-                        <li class="flex items-center gap-2"><span class="text-sky-400">✓</span> Reporte Form 1120 / 5472 ante el IRS de Estados Unidos.</li>
-                        <li class="flex items-center gap-2"><span class="text-sky-400">✓</span> Estrategia para evitar la doble tributación con el SAT (LISR).</li>
-                    </ul>
-                    <a href="https://wa.me/524776461540?text=Hola,%20requiero%20asesoría%20para%20crear/administrar%20mi%20LLC%20en%20EEUU" target="_blank" class="inline-block px-5 py-3 bg-sky-500 hover:bg-sky-400 text-navy-900 font-bold text-xs rounded-xl uppercase">
-                        Asesoría para Crear LLC
-                    </a>
-                </div>
-
-                <!-- Comercio Exterior Card -->
-                <div class="bg-navy-800 p-8 rounded-3xl border border-slate-700/60">
-                    <div class="w-12 h-12 bg-sky-500/10 text-sky-400 rounded-2xl flex items-center justify-center mb-4 text-2xl">⚓</div>
-                    <h3 class="text-xl font-bold text-white mb-3">Comercio Exterior y Padrón de Importadores</h3>
-                    <p class="text-slate-300 text-xs leading-relaxed mb-4">
-                        Acompañamos a importadores y exportadores en León y todo Guanajuato para cumplir con la normatividad aduanera y la correcta deducibilidad de sus operaciones internacionales.
-                    </p>
-                    <ul class="text-xs text-slate-300 space-y-2 mb-6">
-                        <li class="flex items-center gap-2"><span class="text-sky-400">✓</span> Alta en Padrón de Importadores General y Sectores Específicos.</li>
-                        <li class="flex items-center gap-2"><span class="text-sky-400">✓</span> Validación de Pedimentos, Incoterms y Carta Cita.</li>
-                        <li class="flex items-center gap-2"><span class="text-sky-400">✓</span> Acreditación de IVA en Importaciones e Impuestos al Comercio Exterior.</li>
-                    </ul>
-                    <a href="https://wa.me/524776461540?text=Hola,%20requiero%20asesoría%20en%20Padrón%20de%20Importadores%20y%20Comercio%20Exterior" target="_blank" class="inline-block px-5 py-3 bg-sky-500 hover:bg-sky-400 text-navy-900 font-bold text-xs rounded-xl uppercase">
-                        Consultar Comercio Exterior
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contacto" class="py-16 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-extrabold text-navy-900">¿Necesitas un Diagnóstico Personalizado?</h2>
-            <p class="text-slate-600 text-xs mt-2 mb-6">Ponte en contacto con nuestro equipo experto liderado por la L.C.F. Jocelyn Odet Romero Dguez.</p>
-            <a href="https://wa.me/524776461540?text=Hola,%20me%20gustaría%20agendar%20una%20sesión%20de%20diagnóstico%20fiscal" target="_blank" class="inline-block px-8 py-4 bg-sky-500 hover:bg-sky-400 text-navy-900 font-extrabold text-xs uppercase tracking-wider rounded-2xl shadow-lg">
-                📲 Enviar Mensaje por WhatsApp
-            </a>
-        </div>
-    </section>
-
-    <footer class="bg-navy-900 text-slate-400 text-xs py-6 border-t border-slate-800 text-center">
-        <p>&copy; 2026 ROMS | Tax & Accounting MX. León, Guanajuato.</p>
-    </footer>
-
-    <!-- Lógica JS para Calculadoras y Buscador -->
-    <script>
-        // 1. Lógica Finiquito
-        function calcularFiniquito() {
-            const salario = parseFloat(document.getElementById('fin-salario').value) || 0;
-            const anios = parseFloat(document.getElementById('fin-anios').value) || 0;
-            const motivo = document.getElementById('fin-motivo').value;
-
-            const diario = salario / 30;
-            // Proporcionales estimados de aguinaldo y vacaciones
-            const aguinaldoProp = diario * 15 * 0.5;
-            const vacacionesProp = diario * 12 * 0.5;
-            const primaVacProp = vacacionesProp * 0.25;
-
-            const finiquitoEst = aguinaldoProp + vacacionesProp + primaVacProp;
-            let liquidacionEst = 0;
-
-            if (motivo === 'despido') {
-                const tresMeses = diario * 90;
-                const primaAntiguedad = diario * 12 * anios;
-                liquidacionEst = tresMeses + primaAntiguedad;
-            }
-
-            document.getElementById('res-finiquito').textContent = `$${finiquitoEst.toLocaleString('es-MX', {maximumFractionDigits: 2})}`;
-            document.getElementById('res-liquidacion').textContent = `$${liquidacionEst.toLocaleString('es-MX', {maximumFractionDigits: 2})}`;
-            document.getElementById('res-total-fin').textContent = `$${(finiquitoEst + liquidacionEst).toLocaleString('es-MX', {maximumFractionDigits: 2})}`;
-        }
-
-        // 2. Lógica Cuotas IMSS
-        function calcularCuotasIMSS() {
-            const empleados = parseInt(document.getElementById('imss-empleados').value) || 0;
-            const sueldo = parseFloat(document.getElementById('imss-sueldo').value) || 0;
-
-            const nominaBruta = empleados * sueldo;
-            const estimacionCargaSocial = nominaBruta * 0.30; // Promedio global patronal 30%
-
-            document.getElementById('res-nomina-bruta').textContent = `$${nominaBruta.toLocaleString('es-MX', {maximumFractionDigits: 2})}`;
-            document.getElementById('res-cuota-imss').textContent = `$${estimacionCargaSocial.toLocaleString('es-MX', {maximumFractionDigits: 2})}`;
-            document.getElementById('res-costo-total-empresa').textContent = `$${(nominaBruta + estimacionCargaSocial).toLocaleString('es-MX', {maximumFractionDigits: 2})}`;
-        }
-
-        // 3. Base de Datos de Gastos Deducibles
-        const deduciblesDB = [
-            { concepto: "Combustible / Gasolina", regimen: ["pfae", "moral"], requisito: "Pago 100% bancarizado (Tarjeta, Transferencia, Cheque) y CFDI. Invalido pago en efectivo." },
-            { concepto: "Honorarios Médicos / Dentales", regimen: ["pfae", "moral"], requisito: "Deducción personal en declaración anual. Pago por medios electrónicos (no efectivo)." },
-            { concepto: "Equipo de Cómputo / Laptops", regimen: ["resico", "pfae", "moral"], requisito: "Para RESICO aplica como acreditamiento de IVA. Para PFAE/Moral es deducción por inversión." },
-            { concepto: "Colegiaturas", regimen: ["pfae"], requisito: "Aplica para hijos/cónyuge. Limites por nivel educativo (Preescolar a Bachillerato) con CFDI." },
-            { concepto: "Renta de Local / Oficina", regimen: ["resico", "pfae", "moral"], requisito: "CFDI indispensable. Para acreditación de IVA en RESICO y gasto operativo en PFAE/Moral." },
-            { concepto: "Seguro de Gastos Médicos Mayores", regimen: ["pfae"], requisito: "Deducción personal anual. Debe ser pagado por el titular." }
-        ];
-
-        function buscarDeducible() {
-            const texto = document.getElementById('input-busqueda-deducible').value.toLowerCase();
-            const regimen = document.getElementById('select-regimen-deducible').value;
-            const contenedor = document.getElementById('lista-deducibles');
-            
-            contenedor.innerHTML = '';
-
-            const filtrados = deduciblesDB.filter(item => {
-                const coincideTexto = item.concepto.toLowerCase().includes(texto) || item.requisito.toLowerCase().includes(texto);
-                const coincideRegimen = regimen === 'todos' || item.regimen.includes(regimen);
-                return coincideTexto && coincideRegimen;
-            });
-
-            if (filtrados.length === 0) {
-                contenedor.innerHTML = `<div class="p-4 bg-white rounded-xl border text-slate-500 text-xs">No se encontraron conceptos. Escríbenos por WhatsApp para validar tu gasto específico.</div>`;
-                return;
-            }
-
-            filtrados.forEach(item => {
-                contenedor.innerHTML += `
-                    <div class="p-4 bg-white rounded-xl border border-slate-200 text-xs">
-                        <div class="font-bold text-navy-900 text-sm mb-1">📌 ${item.concepto}</div>
-                        <div class="text-slate-600 leading-relaxed">${item.requisito}</div>
-                    </div>
-                `;
-            });
-        }
-
-        // Carga Inicial
-        window.onload = function() {
-            calcularFiniquito();
-            calcularCuotasIMSS();
-            buscarDeducible();
-        };
-    </script>
-</body>
-</html>
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#contacto" class="px-8 py-4 bg-sky-50

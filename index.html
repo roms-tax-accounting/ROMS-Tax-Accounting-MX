@@ -32,7 +32,7 @@
             theme: {
                 extend: {
                     colors: {
-                        navy: { 50: '#f0f4f8', 100: '#d9e2ec', 800: '#102a43', 900: '#0b1b2b' },
+                        navy: { 50: '#f0f4f8', 100: '#d9e2ec', 800: '#102a43', 900: '#0b1b2b', 950: '#060d16' },
                         brand: { 400: '#f87171', 500: '#ef4444', 600: '#dc2626', 700: '#b91c1c' }
                     },
                     fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] }
@@ -41,23 +41,25 @@
         }
     </script>
     <style>
-        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .glass-card { background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(12px); }
+        .oxford-card { background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(16px); }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-red-600 selection:text-white overflow-x-hidden">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-red-600 selection:text-white overflow-x-hidden min-h-screen">
 
     <!-- Navegación -->
-    <header class="sticky top-0 z-40 bg-navy-900/95 backdrop-blur-md border-b border-slate-800 text-white">
+    <header class="sticky top-0 z-40 bg-navy-950/90 backdrop-blur-md border-b border-slate-800/80 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 bg-gradient-to-tr from-red-600 to-red-500 rounded-xl flex items-center justify-center font-bold text-white text-xl shadow-lg shadow-red-600/20">R</div>
-                <div>
-                    <span class="text-xl font-extrabold tracking-tight block leading-none">ROMS</span>
-                    <span class="text-[10px] tracking-widest text-red-400 font-semibold uppercase block mt-1">Tax & Accounting MX</span>
-                </div>
+            
+            <!-- Marca ROMS Estilo Corporativo -->
+            <div class="flex items-center">
+                <a href="#" class="group">
+                    <span class="text-2xl font-black tracking-tight block leading-none text-white group-hover:text-red-400 transition-colors">ROMS</span>
+                    <span class="text-[9px] tracking-[0.25em] text-red-500 font-bold uppercase block mt-1">Tax & Accounting MX</span>
+                </a>
             </div>
 
-            <nav class="hidden lg:flex space-x-5 text-xs font-semibold text-slate-300">
+            <nav class="hidden lg:flex space-x-6 text-xs font-semibold text-slate-300">
                 <a href="#servicios" class="hover:text-red-400 transition-colors">Servicios</a>
                 <a href="#calculadora-resico" class="hover:text-red-400 transition-colors">Calculadora RESICO</a>
                 <a href="#imss-simulador" class="hover:text-red-400 transition-colors">Cuotas IMSS</a>
@@ -70,11 +72,11 @@
 
             <div class="flex items-center space-x-3">
                 <!-- Botón Facebook -->
-                <a href="https://www.facebook.com/share/1CEn8w9cEr/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" title="Facebook" class="p-2 bg-navy-800 hover:bg-red-500/20 text-slate-300 hover:text-red-400 rounded-lg transition-all border border-slate-700/50">
+                <a href="https://www.facebook.com/share/1CEn8w9cEr/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" title="Facebook" class="p-2 bg-navy-800/80 hover:bg-red-500/20 text-slate-300 hover:text-red-400 rounded-lg transition-all border border-slate-700/50">
                     <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 </a>
                 <!-- Botón Instagram -->
-                <a href="https://www.instagram.com/romerointegratedservices?stkn=MTVmcHBvOGlqaHd3Mg==" target="_blank" rel="noopener noreferrer" title="Instagram" class="p-2 bg-navy-800 hover:bg-red-500/20 text-slate-300 hover:text-red-400 rounded-lg transition-all border border-slate-700/50">
+                <a href="https://www.instagram.com/romerointegratedservices?stkn=MTVmcHBvOGlqaHd3Mg==" target="_blank" rel="noopener noreferrer" title="Instagram" class="p-2 bg-navy-800/80 hover:bg-red-500/20 text-slate-300 hover:text-red-400 rounded-lg transition-all border border-slate-700/50">
                     <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                 </a>
                 <a href="https://wa.me/524776461540" target="_blank" class="hidden sm:inline-flex items-center px-4 py-2.5 rounded-xl text-xs font-bold bg-red-600 hover:bg-red-500 text-white transition-all shadow-md shadow-red-600/20">
@@ -84,52 +86,58 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative bg-navy-900 text-white overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ef4444_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <!-- Hero Section con Malla de Puntitos Rojos -->
+    <section class="relative bg-gradient-to-b from-slate-950 via-navy-900 to-slate-900 text-white overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 border-b border-slate-800/80">
+        <!-- Malla de Puntitos Rojos Degradados -->
+        <div class="absolute inset-0 opacity-25 bg-[radial-gradient(#ef4444_1.2px,transparent_1.2px)] [background-size:20px_20px] pointer-events-none"></div>
+        
+        <!-- Luces y destellos rojos de fondo -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-red-600/20 to-rose-500/10 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute top-10 right-10 w-[350px] h-[350px] bg-red-700/15 rounded-full blur-[100px] pointer-events-none"></div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-left" data-aos="fade-right">
-                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-semibold">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-semibold backdrop-blur-md">
                         <span>Líderes en Estrategia y Cumplimiento Fiscal</span>
                     </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight drop-shadow-lg">
                         Tranquilidad Fiscal y Control Financiero para tu Negocio.
                     </h1>
                     <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal">
                         Especialistas en CFDI 4.0, RESICO, Personas Morales, Seguridad Social (IMSS) y Blindaje Antidiscrepancia Fiscal. Respaldamos a empresas y profesionistas en León y todo México.
                     </p>
                     <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#contacto" class="px-8 py-4 bg-red-600 hover:bg-red-500 text-white rounded-xl font-bold text-sm shadow-xl shadow-red-600/25 transition-all text-center">
+                        <a href="#contacto" class="px-8 py-4 bg-red-600 hover:bg-red-500 text-white rounded-xl font-bold text-sm shadow-xl shadow-red-600/30 transition-all text-center hover:scale-105">
                             Solicitar Diagnóstico Inicial
                         </a>
-                        <a href="#calculadora-resico" class="px-8 py-4 bg-navy-800 hover:bg-slate-800 text-white border border-slate-700 rounded-xl font-bold text-sm transition-all text-center">
+                        <a href="#calculadora-resico" class="px-8 py-4 bg-navy-800/90 hover:bg-slate-800 text-white border border-slate-700/80 rounded-xl font-bold text-sm transition-all text-center">
                             Calcular Impuestos RESICO
                         </a>
                     </div>
                 </div>
 
                 <div class="lg:col-span-5" data-aos="fade-left" data-aos-delay="200">
-                    <div class="glass-card p-6 sm:p-8 rounded-3xl text-slate-800 shadow-2xl border border-white/20">
+                    <div class="glass-card p-6 sm:p-8 rounded-3xl text-slate-800 shadow-2xl border border-white/30">
                         <h3 class="text-xl font-bold text-navy-900 mb-2">Diagnóstico Fiscal Rápido</h3>
                         <p class="text-xs text-slate-500 mb-6">Evita discrepancias con el SAT y mantén tu opinión de cumplimiento en positivo.</p>
                         
                         <div class="space-y-4">
-                            <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex items-start space-x-3">
+                            <div class="p-4 bg-slate-50/80 rounded-2xl border border-slate-200/60 flex items-start space-x-3">
                                 <div class="w-8 h-8 rounded-lg bg-red-100 text-red-600 flex items-center justify-center font-bold text-sm shrink-0">1</div>
                                 <div>
                                     <h4 class="text-sm font-bold text-navy-900">Análisis de Régimen</h4>
                                     <p class="text-xs text-slate-500">Evaluación de RESICO vs PFAE o Persona Moral.</p>
                                 </div>
                             </div>
-                            <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex items-start space-x-3">
+                            <div class="p-4 bg-slate-50/80 rounded-2xl border border-slate-200/60 flex items-start space-x-3">
                                 <div class="w-8 h-8 rounded-lg bg-red-100 text-red-600 flex items-center justify-center font-bold text-sm shrink-0">2</div>
                                 <div>
                                     <h4 class="text-sm font-bold text-navy-900">Validación de CFDIs</h4>
                                     <p class="text-xs text-slate-500">Revisión de facturación 4.0 y nóminas.</p>
                                 </div>
                             </div>
-                            <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex items-start space-x-3">
+                            <div class="p-4 bg-slate-50/80 rounded-2xl border border-slate-200/60 flex items-start space-x-3">
                                 <div class="w-8 h-8 rounded-lg bg-red-100 text-red-600 flex items-center justify-center font-bold text-sm shrink-0">3</div>
                                 <div>
                                     <h4 class="text-sm font-bold text-navy-900">Expediente de Defensa</h4>
@@ -147,93 +155,93 @@
         </div>
     </section>
 
-    <!-- Servicios Principales (Animación Flip 3D) -->
-    <section id="servicios" class="py-20 bg-white">
+    <!-- SECCIÓN 1: SERVICIOS PRINCIPALES (Gris Oxford Grafito) -->
+    <section id="servicios" class="py-20 bg-slate-900 border-b border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-                <h2 class="text-xs font-bold tracking-widest text-red-600 uppercase mb-2">Servicios Integrales</h2>
-                <p class="text-3xl sm:text-4xl font-extrabold text-navy-900">Soluciones Contables y Fiscales para cada etapa</p>
+                <h2 class="text-xs font-bold tracking-widest text-red-500 uppercase mb-2">Servicios Integrales</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Soluciones Contables y Fiscales para cada etapa</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:border-red-300 transition-all hover:shadow-xl group" data-aos="flip-left" data-aos-delay="100">
-                    <div class="w-12 h-12 bg-red-500/10 text-red-600 rounded-2xl flex items-center justify-center mb-6 font-bold text-xl group-hover:bg-red-600 group-hover:text-white transition-all">📊</div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-3">Contabilidad y RESICO</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                <div class="p-8 bg-slate-950/90 rounded-3xl border border-slate-800 hover:border-red-500/50 transition-all hover:shadow-2xl hover:shadow-red-600/10 group text-white" data-aos="flip-left" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-red-500/10 text-red-400 rounded-2xl flex items-center justify-center mb-6 font-bold text-xl group-hover:bg-red-600 group-hover:text-white transition-all">📊</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Contabilidad y RESICO</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
                         Gestión contable mensual, cálculo de ISR e IVA, y presentación de declaraciones para Personas Físicas en RESICO y PFAE. Evitamos discrepancias fiscales.
                     </p>
-                    <a href="https://wa.me/524776461540?text=Hola,%20me%20interesa%20información%20sobre%20Contabilidad%20y%20RESICO" target="_blank" class="text-red-600 text-xs font-bold uppercase tracking-wider hover:text-navy-900 transition-colors">Cotizar por WhatsApp &rarr;</a>
+                    <a href="https://wa.me/524776461540?text=Hola,%20me%20interesa%20información%20sobre%20Contabilidad%20y%20RESICO" target="_blank" class="text-red-400 text-xs font-bold uppercase tracking-wider hover:text-white transition-colors">Cotizar por WhatsApp &rarr;</a>
                 </div>
 
-                <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:border-red-300 transition-all hover:shadow-xl group" data-aos="flip-left" data-aos-delay="200">
-                    <div class="w-12 h-12 bg-red-500/10 text-red-600 rounded-2xl flex items-center justify-center mb-6 font-bold text-xl group-hover:bg-red-600 group-hover:text-white transition-all">🏢</div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-3">Personas Morales e IMSS</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                <div class="p-8 bg-slate-950/90 rounded-3xl border border-slate-800 hover:border-red-500/50 transition-all hover:shadow-2xl hover:shadow-red-600/10 group text-white" data-aos="flip-left" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-red-500/10 text-red-400 rounded-2xl flex items-center justify-center mb-6 font-bold text-xl group-hover:bg-red-600 group-hover:text-white transition-all">🏢</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Personas Morales e IMSS</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
                         Asesoría corporativa, coeficiente de utilidad, nóminas, SIPARE/SUA y gestión de cuotas patronales según la clase de riesgo de tu industria.
                     </p>
-                    <a href="https://wa.me/524776461540?text=Hola,%20me%20interesa%20información%20sobre%20Personas%20Morales%20e%20IMSS" target="_blank" class="text-red-600 text-xs font-bold uppercase tracking-wider hover:text-navy-900 transition-colors">Cotizar por WhatsApp &rarr;</a>
+                    <a href="https://wa.me/524776461540?text=Hola,%20me%20interesa%20información%20sobre%20Personas%20Morales%20e%20IMSS" target="_blank" class="text-red-400 text-xs font-bold uppercase tracking-wider hover:text-white transition-colors">Cotizar por WhatsApp &rarr;</a>
                 </div>
 
-                <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:border-red-300 transition-all hover:shadow-xl group" data-aos="flip-left" data-aos-delay="300">
-                    <div class="w-12 h-12 bg-red-500/10 text-red-600 rounded-2xl flex items-center justify-center mb-6 font-bold text-xl group-hover:bg-red-600 group-hover:text-white transition-all">🛡️</div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-3">Blindaje y Defensa Fiscal</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                <div class="p-8 bg-slate-950/90 rounded-3xl border border-slate-800 hover:border-red-500/50 transition-all hover:shadow-2xl hover:shadow-red-600/10 group text-white" data-aos="flip-left" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-red-500/10 text-red-400 rounded-2xl flex items-center justify-center mb-6 font-bold text-xl group-hover:bg-red-600 group-hover:text-white transition-all">🛡️</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Blindaje y Defensa Fiscal</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
                         Armado de expedientes de materialidad de operaciones, atención a requerimientos del SAT, trámites SATEG e IMSS y licencias municipales en León, Gto.
                     </p>
-                    <a href="https://wa.me/524776461540?text=Hola,%20me%20interesa%20información%20sobre%20Blindaje%20y%20Defensa%20Fiscal" target="_blank" class="text-red-600 text-xs font-bold uppercase tracking-wider hover:text-navy-900 transition-colors">Cotizar por WhatsApp &rarr;</a>
+                    <a href="https://wa.me/524776461540?text=Hola,%20me%20interesa%20información%20sobre%20Blindaje%20y%20Defensa%20Fiscal" target="_blank" class="text-red-400 text-xs font-bold uppercase tracking-wider hover:text-white transition-colors">Cotizar por WhatsApp &rarr;</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CALCULADORA 1: RESICO vs PFAE (Animación Zoom-In) -->
-    <section id="calculadora-resico" class="py-20 bg-slate-100 border-y border-slate-200">
+    <!-- SECCIÓN 2: CALCULADORA RESICO vs PFAE (Gris Oxford Medio / Slate 800) -->
+    <section id="calculadora-resico" class="py-20 bg-slate-800/60 border-b border-slate-700/60">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="zoom-in">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold text-navy-900">Calculadora Estimada de ISR (RESICO vs PFAE)</h2>
-                <p class="text-slate-600 text-sm mt-2">Compara la tasa de ISR mensual aproximada para Personas Físicas.</p>
+                <h2 class="text-3xl font-extrabold text-white">Calculadora Estimada de ISR (RESICO vs PFAE)</h2>
+                <p class="text-slate-300 text-sm mt-2">Compara la tasa de ISR mensual aproximada para Personas Físicas.</p>
             </div>
 
-            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-200">
+            <div class="bg-slate-900/90 rounded-3xl p-6 sm:p-10 shadow-2xl border border-slate-700/80 text-white">
                 <div class="grid md:grid-cols-2 gap-8 items-center">
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Ingreso Mensual Facturado (sin IVA)</label>
+                        <label class="block text-xs font-bold text-slate-300 uppercase mb-2">Ingreso Mensual Facturado (sin IVA)</label>
                         <div class="relative">
                             <span class="absolute left-4 top-3.5 text-slate-400 font-bold">$</span>
-                            <input type="number" id="calc-ingreso" value="50000" min="0" step="5000" oninput="calcularImpuestosResico()" class="w-full pl-8 pr-4 py-3 bg-slate-50 rounded-xl border border-slate-200 font-bold text-slate-800 text-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <input type="number" id="calc-ingreso" value="50000" min="0" step="5000" oninput="calcularImpuestosResico()" class="w-full pl-8 pr-4 py-3 bg-slate-950 rounded-xl border border-slate-700 font-bold text-white text-lg focus:outline-none focus:ring-2 focus:ring-red-500">
                         </div>
 
-                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2 mt-6">Deducciones Autorizadas Mensuales (Gastos con CFDI)</label>
+                        <label class="block text-xs font-bold text-slate-300 uppercase mb-2 mt-6">Deducciones Autorizadas Mensuales (Gastos con CFDI)</label>
                         <div class="relative">
                             <span class="absolute left-4 top-3.5 text-slate-400 font-bold">$</span>
-                            <input type="number" id="calc-gastos" value="20000" min="0" step="2000" oninput="calcularImpuestosResico()" class="w-full pl-8 pr-4 py-3 bg-slate-50 rounded-xl border border-slate-200 font-bold text-slate-800 text-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <input type="number" id="calc-gastos" value="20000" min="0" step="2000" oninput="calcularImpuestosResico()" class="w-full pl-8 pr-4 py-3 bg-slate-950 rounded-xl border border-slate-700 font-bold text-white text-lg focus:outline-none focus:ring-2 focus:ring-red-500">
                         </div>
                     </div>
 
-                    <div class="space-y-4 bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <div class="flex justify-between items-center pb-3 border-b border-slate-200">
+                    <div class="space-y-4 bg-slate-950/80 p-6 rounded-2xl border border-slate-800">
+                        <div class="flex justify-between items-center pb-3 border-b border-slate-800">
                             <div>
-                                <h4 class="font-bold text-navy-900">RESICO (Estimado)</h4>
-                                <span class="text-[11px] text-slate-500">Tasa progresiva (1% - 2.5%)</span>
+                                <h4 class="font-bold text-white">RESICO (Estimado)</h4>
+                                <span class="text-[11px] text-slate-400">Tasa progresiva (1% - 2.5%)</span>
                             </div>
                             <div class="text-right">
-                                <span id="resico-isr" class="text-2xl font-extrabold text-emerald-600">$500</span>
-                                <span id="resico-tasa" class="block text-[10px] font-bold text-emerald-700">Tasa: 1.00%</span>
+                                <span id="resico-isr" class="text-2xl font-extrabold text-emerald-400">$500</span>
+                                <span id="resico-tasa" class="block text-[10px] font-bold text-emerald-500">Tasa: 1.00%</span>
                             </div>
                         </div>
 
                         <div class="flex justify-between items-center pt-2">
                             <div>
-                                <h4 class="font-bold text-navy-900">PFAE (Aproximado)</h4>
-                                <span class="text-[11px] text-slate-500">Sobre Utilidad (Ingreso - Gastos)</span>
+                                <h4 class="font-bold text-white">PFAE (Aproximado)</h4>
+                                <span class="text-[11px] text-slate-400">Sobre Utilidad (Ingreso - Gastos)</span>
                             </div>
                             <div class="text-right">
-                                <span id="pfae-isr" class="text-2xl font-extrabold text-slate-700">$3,200</span>
-                                <span id="pfae-tasa" class="block text-[10px] font-bold text-slate-500">Sobre Utilidad</span>
+                                <span id="pfae-isr" class="text-2xl font-extrabold text-slate-300">$3,200</span>
+                                <span id="pfae-tasa" class="block text-[10px] font-bold text-slate-400">Sobre Utilidad</span>
                             </div>
                         </div>
 
-                        <div class="mt-4 p-3 bg-red-50 rounded-xl border border-red-100 text-xs text-red-900">
+                        <div class="mt-4 p-3 bg-red-950/40 rounded-xl border border-red-800/50 text-xs text-red-200">
                             <strong>Nota ROMS:</strong> En RESICO no deduces gastos para ISR, pero los necesitas para acreditar IVA y evitar discrepancia fiscal.
                         </div>
                     </div>
@@ -242,20 +250,20 @@
         </div>
     </section>
 
-    <!-- CALCULADORA 2: APORTACIONES PATRONALES IMSS CON CLASE DE RIESGO -->
-    <section id="imss-simulador" class="py-20 bg-white">
+    <!-- SECCIÓN 3: APORTACIONES PATRONALES IMSS (Gris Oxford Grafito Profundo) -->
+    <section id="imss-simulador" class="py-20 bg-slate-900 border-b border-slate-800/80">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold text-navy-900">Simulador de Aportaciones Patronales IMSS e Infonavit</h2>
-                <p class="text-slate-600 text-sm mt-2">Calcula la carga social patronal según el giro y la Clase de Riesgo de Trabajo de tu empresa.</p>
+                <h2 class="text-3xl font-extrabold text-white">Simulador de Aportaciones Patronales IMSS e Infonavit</h2>
+                <p class="text-slate-300 text-sm mt-2">Calcula la carga social patronal según el giro y la Clase de Riesgo de Trabajo de tu empresa.</p>
             </div>
 
-            <div class="bg-slate-50 rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-lg">
+            <div class="bg-slate-950/90 rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl text-white">
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="space-y-4 text-xs">
                         <div>
-                            <label class="block font-bold text-slate-700 uppercase mb-1">Giro Empresarial / Clase de Riesgo IMSS</label>
-                            <select id="imss-clase" onchange="calcularCuotasIMSS()" class="w-full p-3.5 bg-white rounded-xl border border-slate-300 font-bold text-slate-800 focus:ring-2 focus:ring-red-500">
+                            <label class="block font-bold text-slate-300 uppercase mb-1">Giro Empresarial / Clase de Riesgo IMSS</label>
+                            <select id="imss-clase" onchange="calcularCuotasIMSS()" class="w-full p-3.5 bg-slate-900 rounded-xl border border-slate-700 font-bold text-white focus:ring-2 focus:ring-red-500">
                                 <option value="0.0054355">Clase I (Mínimo: Oficinas, Consultoría, Escuelas) - 0.54%</option>
                                 <option value="0.0113065">Clase II (Bajo: Comercio minorista, Almacenes limpios) - 1.13%</option>
                                 <option value="0.0259840">Clase III (Medio: Alimentos, Confección, Talleres) - 2.60%</option>
@@ -266,42 +274,42 @@
 
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <label class="block font-bold text-slate-700 uppercase mb-1">N° de Empleados</label>
-                                <input type="number" id="imss-empleados" value="5" min="1" oninput="calcularCuotasIMSS()" class="w-full p-3 bg-white rounded-xl border font-bold">
+                                <label class="block font-bold text-slate-300 uppercase mb-1">N° de Empleados</label>
+                                <input type="number" id="imss-empleados" value="5" min="1" oninput="calcularCuotasIMSS()" class="w-full p-3 bg-slate-900 rounded-xl border border-slate-700 font-bold text-white">
                             </div>
                             <div>
-                                <label class="block font-bold text-slate-700 uppercase mb-1">Sueldo Diario ($)</label>
-                                <input type="number" id="imss-sueldo-diario" value="400" min="249" oninput="calcularCuotasIMSS()" class="w-full p-3 bg-white rounded-xl border font-bold">
+                                <label class="block font-bold text-slate-300 uppercase mb-1">Sueldo Diario ($)</label>
+                                <input type="number" id="imss-sueldo-diario" value="400" min="249" oninput="calcularCuotasIMSS()" class="w-full p-3 bg-slate-900 rounded-xl border border-slate-700 font-bold text-white">
                             </div>
                         </div>
 
-                        <div class="p-3 bg-red-50 border border-red-200 rounded-xl text-[11px] text-red-900">
+                        <div class="p-3 bg-red-950/40 border border-red-800/50 rounded-xl text-[11px] text-red-200">
                             <strong>⚠️ Nota Específica de Construcción (Clase V):</strong> Las empresas constructoras están sujetas a la prima máxima del IMSS (7.58875%), lo que eleva el costo social adicional hasta un 38%-42% sobre la nómina.
                         </div>
                     </div>
 
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 flex flex-col justify-between">
+                    <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
                         <div class="space-y-3 text-xs">
-                            <h4 class="font-bold text-navy-900 border-b pb-2 text-sm">Desglose Estimado Patronal Mensual</h4>
-                            <div class="flex justify-between text-slate-600">
+                            <h4 class="font-bold text-white border-b border-slate-800 pb-2 text-sm">Desglose Estimado Patronal Mensual</h4>
+                            <div class="flex justify-between text-slate-300">
                                 <span>Nómina Bruta Mensual:</span>
-                                <span id="res-imss-nomina" class="font-bold text-slate-800">$0.00</span>
+                                <span id="res-imss-nomina" class="font-bold text-white">$0.00</span>
                             </div>
-                            <div class="flex justify-between text-slate-600">
+                            <div class="flex justify-between text-slate-300">
                                 <span>Cuota Seguro Riesgo de Trabajo:</span>
-                                <span id="res-imss-riesgo" class="font-bold text-red-600">$0.00</span>
+                                <span id="res-imss-riesgo" class="font-bold text-red-400">$0.00</span>
                             </div>
-                            <div class="flex justify-between text-slate-600">
+                            <div class="flex justify-between text-slate-300">
                                 <span>Cuotas IMSS + RCV + Infonavit 5%:</span>
-                                <span id="res-imss-general" class="font-bold text-slate-800">$0.00</span>
+                                <span id="res-imss-general" class="font-bold text-white">$0.00</span>
                             </div>
-                            <div class="flex justify-between text-navy-900 font-extrabold text-sm pt-3 border-t">
+                            <div class="flex justify-between text-white font-extrabold text-sm pt-3 border-t border-slate-800">
                                 <span>Carga Social Patronal Total:</span>
-                                <span id="res-imss-total" class="text-red-600">$0.00</span>
+                                <span id="res-imss-total" class="text-red-400">$0.00</span>
                             </div>
                         </div>
 
-                        <a href="https://wa.me/524776461540?text=Hola,%20me%20gustaría%20una%20cotización%20exacta%20de%20nómina%20e%20IMSS%20para%20mi%20empresa" target="_blank" class="w-full mt-4 py-3 bg-navy-900 hover:bg-navy-800 text-white rounded-xl font-bold text-xs uppercase tracking-wider block text-center transition-all">
+                        <a href="https://wa.me/524776461540?text=Hola,%20me%20gustaría%20una%20cotización%20exacta%20de%20nómina%20e%20IMSS%20para%20mi%20empresa" target="_blank" class="w-full mt-4 py-3 bg-red-600 hover:bg-red-500 text-white rounded-xl font-bold text-xs uppercase tracking-wider block text-center transition-all">
                             Solicitar Emisión SUA / SIPARE Exacta
                         </a>
                     </div>
@@ -310,29 +318,29 @@
         </div>
     </section>
 
-    <!-- CALCULADORA 3: FINIQUITO E INDEMNIZACIÓN -->
-    <section id="finiquito-simulador" class="py-20 bg-slate-100 border-t border-slate-200">
+    <!-- SECCIÓN 4: FINIQUITO E INDEMNIZACIÓN (Gris Oxford Carcoal) -->
+    <section id="finiquito-simulador" class="py-20 bg-slate-800/50 border-b border-slate-700/60">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="zoom-in-up">
             <div class="text-center mb-10">
-                <h2 class="text-3xl font-extrabold text-navy-900">Calculadora de Finiquito e Indemnización Laboral</h2>
-                <p class="text-slate-600 text-xs mt-2">Estima las prestaciones bajo la Ley Federal del Trabajo en México.</p>
+                <h2 class="text-3xl font-extrabold text-white">Calculadora de Finiquito e Indemnización Laboral</h2>
+                <p class="text-slate-300 text-xs mt-2">Estima las prestaciones bajo la Ley Federal del Trabajo en México.</p>
             </div>
 
-            <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-slate-200">
+            <div class="bg-slate-900 p-6 sm:p-8 rounded-3xl shadow-2xl border border-slate-700/80 text-white">
                 <div class="grid md:grid-cols-2 gap-6 text-xs">
                     <div class="space-y-4">
                         <div>
-                            <label class="block font-bold text-slate-700 uppercase mb-1">Salario Mensual Bruto ($)</label>
-                            <input type="number" id="fin-salario" value="18000" oninput="calcularFiniquito()" class="w-full p-3 bg-slate-50 rounded-xl border font-bold">
+                            <label class="block font-bold text-slate-300 uppercase mb-1">Salario Mensual Bruto ($)</label>
+                            <input type="number" id="fin-salario" value="18000" oninput="calcularFiniquito()" class="w-full p-3 bg-slate-950 rounded-xl border border-slate-700 font-bold text-white">
                         </div>
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <label class="block font-bold text-slate-700 uppercase mb-1">Años Trabajados</label>
-                                <input type="number" id="fin-anios" value="3" min="0" oninput="calcularFiniquito()" class="w-full p-3 bg-slate-50 rounded-xl border font-bold">
+                                <label class="block font-bold text-slate-300 uppercase mb-1">Años Trabajados</label>
+                                <input type="number" id="fin-anios" value="3" min="0" oninput="calcularFiniquito()" class="w-full p-3 bg-slate-950 rounded-xl border border-slate-700 font-bold text-white">
                             </div>
                             <div>
-                                <label class="block font-bold text-slate-700 uppercase mb-1">Motivo Baja</label>
-                                <select id="fin-motivo" onchange="calcularFiniquito()" class="w-full p-3 bg-slate-50 rounded-xl border font-bold">
+                                <label class="block font-bold text-slate-300 uppercase mb-1">Motivo Baja</label>
+                                <select id="fin-motivo" onchange="calcularFiniquito()" class="w-full p-3 bg-slate-950 rounded-xl border border-slate-700 font-bold text-white">
                                     <option value="renuncia">Renuncia Voluntaria</option>
                                     <option value="despido">Despido Injustificado</option>
                                 </select>
@@ -340,17 +348,17 @@
                         </div>
                     </div>
 
-                    <div class="p-4 bg-slate-50 rounded-2xl border space-y-3 flex flex-col justify-between">
+                    <div class="p-4 bg-slate-950/80 rounded-2xl border border-slate-800 space-y-3 flex flex-col justify-between">
                         <div>
-                            <div class="flex justify-between font-bold text-slate-700">
+                            <div class="flex justify-between font-bold text-slate-300">
                                 <span>Finiquito (Proporcionales LFT):</span>
-                                <span id="res-finiquito" class="text-red-600">$0.00</span>
+                                <span id="res-finiquito" class="text-red-400">$0.00</span>
                             </div>
-                            <div class="flex justify-between font-bold text-slate-700 mt-2">
+                            <div class="flex justify-between font-bold text-slate-300 mt-2">
                                 <span>Indemnización (3 Meses + Prima):</span>
-                                <span id="res-liquidacion" class="text-emerald-600">$0.00</span>
+                                <span id="res-liquidacion" class="text-emerald-400">$0.00</span>
                             </div>
-                            <div class="flex justify-between font-extrabold text-navy-900 pt-3 border-t text-sm mt-3">
+                            <div class="flex justify-between font-extrabold text-white pt-3 border-t border-slate-800 text-sm mt-3">
                                 <span>Total Estimado Bruto:</span>
                                 <span id="res-total-fin">$0.00</span>
                             </div>
@@ -362,18 +370,18 @@
         </div>
     </section>
 
-    <!-- BUSCADOR DE GASTOS DEDUCIBLES SAT -->
-    <section id="deducibles" class="py-20 bg-white">
+    <!-- SECCIÓN 5: BUSCADOR DE GASTOS DEDUCIBLES SAT -->
+    <section id="deducibles" class="py-20 bg-slate-900 border-b border-slate-800/80">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
             <div class="text-center mb-10">
-                <h2 class="text-3xl font-extrabold text-navy-900">Buscador de Gastos Deducibles (SAT)</h2>
-                <p class="text-slate-600 text-xs mt-2">Consulta los requisitos clave para la deducción de tus comprobantes fiscales.</p>
+                <h2 class="text-3xl font-extrabold text-white">Buscador de Gastos Deducibles (SAT)</h2>
+                <p class="text-slate-300 text-xs mt-2">Consulta los requisitos clave para la deducción de tus comprobantes fiscales.</p>
             </div>
 
-            <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200">
+            <div class="bg-slate-950/90 p-6 sm:p-8 rounded-3xl border border-slate-800 shadow-2xl">
                 <div class="flex flex-col sm:flex-row gap-4 mb-6">
-                    <input type="text" id="input-busqueda-deducible" onkeyup="buscarDeducible()" placeholder="Escribe un concepto (ej. gasolina, médico, colegiatura, laptop)..." class="flex-1 p-3.5 bg-white rounded-xl border border-slate-300 font-medium text-xs focus:ring-2 focus:ring-red-500 outline-none">
-                    <select id="select-regimen-deducible" onchange="buscarDeducible()" class="p-3.5 bg-white rounded-xl border border-slate-300 font-bold text-xs">
+                    <input type="text" id="input-busqueda-deducible" onkeyup="buscarDeducible()" placeholder="Escribe un concepto (ej. gasolina, médico, colegiatura, laptop)..." class="flex-1 p-3.5 bg-slate-900 rounded-xl border border-slate-700 font-medium text-xs text-white focus:ring-2 focus:ring-red-500 outline-none">
+                    <select id="select-regimen-deducible" onchange="buscarDeducible()" class="p-3.5 bg-slate-900 rounded-xl border border-slate-700 font-bold text-xs text-white">
                         <option value="todos">Todos los Regímenes</option>
                         <option value="resico">Persona Física RESICO</option>
                         <option value="pfae">Persona Física Act. Empresarial</option>
@@ -388,58 +396,58 @@
         </div>
     </section>
 
-    <!-- CHECKLIST DE BLINDAJE Y DEFENSA FISCAL -->
-    <section id="defensa" class="py-20 bg-slate-100 border-t border-slate-200">
+    <!-- SECCIÓN 6: CHECKLIST DE BLINDAJE Y DEFENSA FISCAL -->
+    <section id="defensa" class="py-20 bg-slate-950 border-b border-slate-800/80">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
             <div class="text-center mb-12">
-                <span class="text-xs font-bold tracking-widest text-red-600 uppercase">Diagnóstico Preventivo</span>
-                <h2 class="text-3xl font-extrabold text-navy-900 mt-1">Checklist de Materialidad y Blindaje Fiscal</h2>
-                <p class="text-slate-600 text-sm mt-2">Evalúa si tu expediente cuenta con los elementos que revisa el SAT ante una auditoría.</p>
+                <span class="text-xs font-bold tracking-widest text-red-500 uppercase">Diagnóstico Preventivo</span>
+                <h2 class="text-3xl font-extrabold text-white mt-1">Checklist de Materialidad y Blindaje Fiscal</h2>
+                <p class="text-slate-300 text-sm mt-2">Evalúa si tu expediente cuenta con los elementos que revisa el SAT ante una auditoría.</p>
             </div>
 
-            <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-xl">
+            <div class="bg-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-800 shadow-2xl text-white">
                 <div class="space-y-4" id="checklist-container">
-                    <label class="flex items-start space-x-3 p-3.5 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer hover:border-red-400 transition-all">
+                    <label class="flex items-start space-x-3 p-3.5 bg-slate-950/80 rounded-xl border border-slate-800 cursor-pointer hover:border-red-500/50 transition-all">
                         <input type="checkbox" onchange="updateChecklistProgress()" class="mt-1 rounded text-red-600 focus:ring-red-500 h-4 w-4">
-                        <span class="text-sm font-medium text-slate-700">Contratos firmados y fechados que respalden los servicios contratados/prestados.</span>
+                        <span class="text-sm font-medium text-slate-300">Contratos firmados y fechados que respalden los servicios contratados/prestados.</span>
                     </label>
-                    <label class="flex items-start space-x-3 p-3.5 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer hover:border-red-400 transition-all">
+                    <label class="flex items-start space-x-3 p-3.5 bg-slate-950/80 rounded-xl border border-slate-800 cursor-pointer hover:border-red-500/50 transition-all">
                         <input type="checkbox" onchange="updateChecklistProgress()" class="mt-1 rounded text-red-600 focus:ring-red-500 h-4 w-4">
-                        <span class="text-sm font-medium text-slate-700">Entregables documentados (reportes, bitácoras, correos, entregas físicas).</span>
+                        <span class="text-sm font-medium text-slate-300">Entregables documentados (reportes, bitácoras, correos, entregas físicas).</span>
                     </label>
-                    <label class="flex items-start space-x-3 p-3.5 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer hover:border-red-400 transition-all">
+                    <label class="flex items-start space-x-3 p-3.5 bg-slate-950/80 rounded-xl border border-slate-800 cursor-pointer hover:border-red-500/50 transition-all">
                         <input type="checkbox" onchange="updateChecklistProgress()" class="mt-1 rounded text-red-600 focus:ring-red-500 h-4 w-4">
-                        <span class="text-sm font-medium text-slate-700">CFDI 4.0 con método y forma de pago correctos (PPD/PUE + Complementos).</span>
+                        <span class="text-sm font-medium text-slate-300">CFDI 4.0 con método y forma de pago correctos (PPD/PUE + Complementos).</span>
                     </label>
-                    <label class="flex items-start space-x-3 p-3.5 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer hover:border-red-400 transition-all">
+                    <label class="flex items-start space-x-3 p-3.5 bg-slate-950/80 rounded-xl border border-slate-800 cursor-pointer hover:border-red-500/50 transition-all">
                         <input type="checkbox" onchange="updateChecklistProgress()" class="mt-1 rounded text-red-600 focus:ring-red-500 h-4 w-4">
-                        <span class="text-sm font-medium text-slate-700">Estados de cuenta bancarios bancarizados a nombre del contribuyente o Razón Social.</span>
+                        <span class="text-sm font-medium text-slate-300">Estados de cuenta bancarios bancarizados a nombre del contribuyente o Razón Social.</span>
                     </label>
-                    <label class="flex items-start space-x-3 p-3.5 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer hover:border-red-400 transition-all">
+                    <label class="flex items-start space-x-3 p-3.5 bg-slate-950/80 rounded-xl border border-slate-800 cursor-pointer hover:border-red-500/50 transition-all">
                         <input type="checkbox" onchange="updateChecklistProgress()" class="mt-1 rounded text-red-600 focus:ring-red-500 h-4 w-4">
-                        <span class="text-sm font-medium text-slate-700">Constancia de Situación Fiscal y Opinión de Cumplimiento en Positivo.</span>
+                        <span class="text-sm font-medium text-slate-300">Constancia de Situación Fiscal y Opinión de Cumplimiento en Positivo.</span>
                     </label>
                 </div>
 
-                <div class="mt-8 pt-6 border-t border-slate-200">
+                <div class="mt-8 pt-6 border-t border-slate-800">
                     <div class="flex justify-between items-center mb-2">
-                        <span class="text-xs font-bold text-slate-500 uppercase">Nivel de Blindaje Detectado</span>
-                        <span id="checklist-score" class="text-xs font-bold text-navy-900">0% Completado</span>
+                        <span class="text-xs font-bold text-slate-400 uppercase">Nivel de Blindaje Detectado</span>
+                        <span id="checklist-score" class="text-xs font-bold text-white">0% Completado</span>
                     </div>
-                    <div class="w-full bg-slate-200 rounded-full h-3 overflow-hidden">
+                    <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden">
                         <div id="checklist-progress-bar" class="bg-red-600 h-3 rounded-full transition-all duration-500" style="width: 0%"></div>
                     </div>
-                    <div id="checklist-result-box" class="mt-6 p-4 bg-slate-50 rounded-xl border border-slate-200 text-center">
-                        <h4 id="result-status-title" class="font-bold text-navy-900 text-sm">Selecciona las casillas que cumples actualmente</h4>
-                        <p id="result-status-desc" class="text-xs text-slate-500 mt-1">Te indicaremos si tu negocio requiere atención en su expediente fiscal.</p>
+                    <div id="checklist-result-box" class="mt-6 p-4 bg-slate-950 rounded-xl border border-slate-800 text-center">
+                        <h4 id="result-status-title" class="font-bold text-white text-sm">Selecciona las casillas que cumples actualmente</h4>
+                        <p id="result-status-desc" class="text-xs text-slate-400 mt-1">Te indicaremos si tu negocio requiere atención en su expediente fiscal.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- LLC EN EE. UU. Y COMERCIO EXTERIOR (Animaciones 3D Giratorias) -->
-    <section id="internacional" class="py-20 bg-navy-900 text-white">
+    <!-- SECCIÓN 7: LLC EN EE. UU. Y COMERCIO EXTERIOR -->
+    <section id="internacional" class="py-20 bg-navy-950 text-white border-b border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-down">
                 <span class="text-xs font-bold text-red-400 uppercase tracking-widest">Expansión Global</span>
@@ -448,7 +456,7 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-navy-800 p-8 rounded-3xl border border-slate-700/60" data-aos="flip-right" data-aos-delay="100">
+                <div class="bg-navy-900/90 p-8 rounded-3xl border border-slate-800" data-aos="flip-right" data-aos-delay="100">
                     <div class="w-12 h-12 bg-red-500/10 text-red-400 rounded-2xl flex items-center justify-center mb-4 text-2xl">🇺🇸</div>
                     <h3 class="text-xl font-bold text-white mb-3">LLCs en EE. UU. para Residentes en México</h3>
                     <p class="text-slate-300 text-xs leading-relaxed mb-4">
@@ -464,7 +472,7 @@
                     </a>
                 </div>
 
-                <div class="bg-navy-800 p-8 rounded-3xl border border-slate-700/60" data-aos="flip-left" data-aos-delay="200">
+                <div class="bg-navy-900/90 p-8 rounded-3xl border border-slate-800" data-aos="flip-left" data-aos-delay="200">
                     <div class="w-12 h-12 bg-red-500/10 text-red-400 rounded-2xl flex items-center justify-center mb-4 text-2xl">⚓</div>
                     <h3 class="text-xl font-bold text-white mb-3">Comercio Exterior y Padrón de Importadores</h3>
                     <p class="text-slate-300 text-xs leading-relaxed mb-4">
@@ -483,30 +491,30 @@
         </div>
     </section>
 
-    <!-- FORMULARIO DE CONTACTO -->
-    <section id="contacto" class="py-20 bg-white">
+    <!-- SECCIÓN 8: FORMULARIO DE CONTACTO (Gris Oxford Grafito) -->
+    <section id="contacto" class="py-20 bg-slate-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
             <div class="grid lg:grid-cols-12 gap-12">
-                <div class="lg:col-span-5 space-y-6">
-                    <span class="text-xs font-bold tracking-widest text-red-600 uppercase">Contacto Directo</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900">ROMS | Tax & Accounting MX</h2>
-                    <p class="text-slate-600 text-sm leading-relaxed">
+                <div class="lg:col-span-5 space-y-6 text-white">
+                    <span class="text-xs font-bold tracking-widest text-red-500 uppercase">Contacto Directo</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">ROMS | Tax & Accounting MX</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
                         Despacho Contable y Consultoría Fiscal con sede en León, Guanajuato. Atendemos a clientes locales y de todo el país.
                     </p>
 
                     <div class="space-y-4 pt-4">
                         <div class="flex items-center space-x-3">
-                            <div class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center text-red-600 font-bold">📍</div>
+                            <div class="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center text-red-400 font-bold">📍</div>
                             <div>
                                 <h4 class="text-xs font-bold uppercase text-slate-400">Ubicación</h4>
-                                <p class="text-sm font-semibold text-navy-900">León, Guanajuato, México</p>
+                                <p class="text-sm font-semibold text-white">León, Guanajuato, México</p>
                             </div>
                         </div>
                         <div class="flex items-center space-x-3">
-                            <div class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center text-red-600 font-bold">📲</div>
+                            <div class="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center text-red-400 font-bold">📲</div>
                             <div>
                                 <h4 class="text-xs font-bold uppercase text-slate-400">WhatsApp Directo</h4>
-                                <a href="https://wa.me/524776461540" target="_blank" class="text-sm font-semibold text-red-600 hover:text-navy-900">
+                                <a href="https://wa.me/524776461540" target="_blank" class="text-sm font-semibold text-red-400 hover:text-white">
                                     +52 (477) 646-1540 &rarr;
                                 </a>
                             </div>
@@ -514,12 +522,12 @@
 
                         <!-- Redes Sociales en Contacto -->
                         <div class="pt-2 flex items-center space-x-3">
-                            <a href="https://www.facebook.com/share/1CEn8w9cEr/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-slate-100 hover:bg-red-500/10 text-slate-700 hover:text-red-600 rounded-xl text-xs font-bold transition-all border border-slate-200 flex items-center gap-2">
-                                <svg class="w-4 h-4 fill-current text-red-600" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            <a href="https://www.facebook.com/share/1CEn8w9cEr/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-slate-800 hover:bg-red-500/20 text-slate-300 hover:text-red-400 rounded-xl text-xs font-bold transition-all border border-slate-700/50 flex items-center gap-2">
+                                <svg class="w-4 h-4 fill-current text-red-400" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                                 <span>Facebook</span>
                             </a>
-                            <a href="https://www.instagram.com/romerointegratedservices?stkn=MTVmcHBvOGlqaHd3Mg==" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-slate-100 hover:bg-red-500/10 text-slate-700 hover:text-red-600 rounded-xl text-xs font-bold transition-all border border-slate-200 flex items-center gap-2">
-                                <svg class="w-4 h-4 fill-current text-red-600" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            <a href="https://www.instagram.com/romerointegratedservices?stkn=MTVmcHBvOGlqaHd3Mg==" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-slate-800 hover:bg-red-500/20 text-slate-300 hover:text-red-400 rounded-xl text-xs font-bold transition-all border border-slate-700/50 flex items-center gap-2">
+                                <svg class="w-4 h-4 fill-current text-red-400" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                                 <span>Instagram</span>
                             </a>
                         </div>
@@ -527,29 +535,29 @@
                 </div>
 
                 <div class="lg:col-span-7">
-                    <div class="bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xl">
-                        <h3 class="text-xl font-bold text-navy-900 mb-6">Formulario de Solicitud de Cita / Diagnóstico</h3>
+                    <div class="bg-slate-950 p-6 sm:p-8 rounded-3xl border border-slate-800 shadow-2xl text-white">
+                        <h3 class="text-xl font-bold text-white mb-6">Formulario de Solicitud de Cita / Diagnóstico</h3>
 
                         <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nombre Completo *</label>
-                                    <input type="text" name="nombre" required placeholder="Ej. Ana Martínez" class="w-full px-4 py-3 bg-white rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-red-500">
+                                    <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Nombre Completo *</label>
+                                    <input type="text" name="nombre" required placeholder="Ej. Ana Martínez" class="w-full px-4 py-3 bg-slate-900 rounded-xl border border-slate-700 text-sm text-white focus:ring-2 focus:ring-red-500">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Teléfono / WhatsApp *</label>
-                                    <input type="tel" name="telefono" required placeholder="477 123 4567" class="w-full px-4 py-3 bg-white rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-red-500">
+                                    <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Teléfono / WhatsApp *</label>
+                                    <input type="tel" name="telefono" required placeholder="477 123 4567" class="w-full px-4 py-3 bg-slate-900 rounded-xl border border-slate-700 text-sm text-white focus:ring-2 focus:ring-red-500">
                                 </div>
                             </div>
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Correo Electrónico *</label>
-                                    <input type="email" name="email" required placeholder="correo@empresa.com" class="w-full px-4 py-3 bg-white rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-red-500">
+                                    <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Correo Electrónico *</label>
+                                    <input type="email" name="email" required placeholder="correo@empresa.com" class="w-full px-4 py-3 bg-slate-900 rounded-xl border border-slate-700 text-sm text-white focus:ring-2 focus:ring-red-500">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Régimen Fiscal Actual</label>
-                                    <select name="regimen" class="w-full px-4 py-3 bg-white rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-red-500">
+                                    <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Régimen Fiscal Actual</label>
+                                    <select name="regimen" class="w-full px-4 py-3 bg-slate-900 rounded-xl border border-slate-700 text-sm text-white focus:ring-2 focus:ring-red-500">
                                         <option value="RESICO">RESICO (Confianza)</option>
                                         <option value="PFAE">Persona Física (Act. Empresarial / Servicios)</option>
                                         <option value="Persona Moral">Persona Moral (Sociedad)</option>
@@ -569,7 +577,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-navy-900 border-t border-slate-800 text-slate-400 text-xs py-8">
+    <footer class="bg-navy-950 border-t border-slate-800/80 text-slate-400 text-xs py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
             <div>
                 <p>&copy; 2026 ROMS | Tax & Accounting MX. Todos los derechos reservados.</p>
@@ -688,15 +696,15 @@
             });
 
             if (filtrados.length === 0) {
-                contenedor.innerHTML = `<div class="p-4 bg-white rounded-xl border text-slate-500 text-xs">No se encontraron conceptos. Escríbenos por WhatsApp para validar tu gasto específico.</div>`;
+                contenedor.innerHTML = `<div class="p-4 bg-slate-900 rounded-xl border border-slate-800 text-slate-400 text-xs">No se encontraron conceptos. Escríbenos por WhatsApp para validar tu gasto específico.</div>`;
                 return;
             }
 
             filtrados.forEach(item => {
                 contenedor.innerHTML += `
-                    <div class="p-4 bg-white rounded-xl border border-slate-200 text-xs">
-                        <div class="font-bold text-navy-900 text-sm mb-1">📌 ${item.concepto}</div>
-                        <div class="text-slate-600 leading-relaxed">${item.requisito}</div>
+                    <div class="p-4 bg-slate-900 rounded-xl border border-slate-800 text-xs">
+                        <div class="font-bold text-white text-sm mb-1">📌 ${item.concepto}</div>
+                        <div class="text-slate-300 leading-relaxed">${item.requisito}</div>
                     </div>
                 `;
             });
@@ -723,19 +731,19 @@
             if (percentage === 0) {
                 statusTitle.textContent = 'Selecciona las casillas que cumples actualmente';
                 statusDesc.textContent = 'Te indicaremos si tu negocio requiere atención en su expediente fiscal.';
-                resultBox.className = "mt-6 p-4 bg-slate-50 rounded-xl border border-slate-200 text-center";
+                resultBox.className = "mt-6 p-4 bg-slate-950 rounded-xl border border-slate-800 text-center";
             } else if (percentage < 60) {
                 statusTitle.textContent = '⚠️ Alerta de Riesgo Fiscal Medio/Alto';
                 statusDesc.textContent = 'Falta documentación clave. Ante una revisión del SAT, tus deducciones podrían ser cuestionadas.';
-                resultBox.className = "mt-6 p-4 bg-red-50 text-red-900 rounded-xl border border-red-200 text-center";
+                resultBox.className = "mt-6 p-4 bg-red-950/60 text-red-200 rounded-xl border border-red-800/80 text-center";
             } else if (percentage < 100) {
                 statusTitle.textContent = '⚡ Avance Aceptable - Requiere Afinar Detalles';
                 statusDesc.textContent = 'Cuentas con la base principal. Te recomendamos blindar la prueba de entregables y contratos.';
-                resultBox.className = "mt-6 p-4 bg-red-50 text-red-900 rounded-xl border border-red-200 text-center";
+                resultBox.className = "mt-6 p-4 bg-red-950/60 text-red-200 rounded-xl border border-red-800/80 text-center";
             } else {
                 statusTitle.textContent = '🎉 ¡Felicidades! Blindaje Fiscal Óptimo';
                 statusDesc.textContent = 'Tu expediente cumple con los requerimientos de la autoridad tributaria para respaldar tu operación.';
-                resultBox.className = "mt-6 p-4 bg-emerald-50 text-emerald-900 rounded-xl border border-emerald-200 text-center";
+                resultBox.className = "mt-6 p-4 bg-emerald-950/60 text-emerald-200 rounded-xl border border-emerald-800/80 text-center";
             }
         }
 

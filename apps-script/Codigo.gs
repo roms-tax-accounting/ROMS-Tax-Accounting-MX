@@ -22,8 +22,8 @@ const CONFIG = {
   DIAS_ADELANTE: 30,
   // 1 = lunes … 6 = sábado, 7 = domingo. [inicio, fin]; la cita debe terminar antes del fin.
   HORARIO: {
-    1: [['19:00', '21:00']], 2: [['19:00', '21:00']], 3: [['19:00', '21:00']],
-    4: [['19:00', '21:00']], 5: [['19:00', '21:00']],
+    1: [['19:00', '21:30']], 2: [['19:00', '21:30']], 3: [['19:00', '21:30']],
+    4: [['19:00', '21:30']], 5: [['19:00', '21:30']],
     6: [['13:00', '17:00']]
   },
   SERVICIOS: { fiscal: 'Asesoría Fiscal', contable: 'Asesoría Contable y Financiera' },

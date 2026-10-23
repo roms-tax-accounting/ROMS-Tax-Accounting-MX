@@ -4,7 +4,7 @@ Instrucciones para preparar, diseñar y programar cada mes los posts y reels de 
 Las sigue la tarea programada mensual (y cualquier sesión de Claude que retome el trabajo).
 
 ## Cuentas y herramientas
-- Instagram: @romerointegratedservices (cuenta de empresa, vinculada a la página de Facebook).
+- Instagram: @romstaxaccountingmx (antes @romerointegratedservices; cuenta de empresa, vinculada a la página de Facebook).
 - Facebook: página "ROMS Tax & Accounting MX".
 - Publicación: Postiz, a través del conector de Postiz en Claude (herramientas `integrationList`, `integrationSchema`,
   `uploadFromUrlTool`, `integrationSchedulePostTool`, `postsListTool`, `deletePostTool`).

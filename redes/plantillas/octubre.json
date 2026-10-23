@@ -1,0 +1,16 @@
+[
+ {"id":"oct-26-agenda-en-linea","slides":[
+  {"photo":"oficina.jpg","kicker":"Nuevo","title":"Ya puedes agendar tu asesoría *en línea*","tsize":"m","body":"Eliges asesoría, día y hora. Nos vemos en una cafetería de tu zona o en tu domicilio.","note":"$600 por hora · pago al terminar · León, Gto.","cta":"Link en mi perfil"}
+ ]},
+ {"id":"oct-28-sat-cruza","slides":[
+  {"kicker":"Discrepancia fiscal","title":"5 cosas que el SAT *cruza* contigo","tsize":"m","swipe":true},
+  {"n":"01","h2":"Tus *depósitos* en efectivo","body":"Tu banco reporta al SAT cuando suman más de $15,000 en un mes.","swipe":true},
+  {"n":"02","h2":"Tus *facturas*","body":"Las que emites y las que recibes, mes con mes.","swipe":true},
+  {"n":"03","h2":"Tus *gastos* con tarjeta","body":"Compras y consumos registrados a tu nombre.","swipe":true},
+  {"n":"04","h2":"Lo que *adquieres*","body":"Autos, casas, terrenos y otros bienes de valor.","swipe":true},
+  {"n":"05","h2":"Lo que *declaras*","body":"Si gastas más de lo que declaras, eso es discrepancia fiscal.","note":"Que tus números cuenten la misma historia. ¿Lo revisamos?"}
+ ]},
+ {"id":"oct-30-depositos","slides":[
+  {"kicker":"Depósitos en efectivo","big":"$15,000","title":"al mes en efectivo: tu banco *avisa* al SAT","tsize":"s","rule":true,"body":"No es un impuesto ni una multa. Es un reporte que el SAT compara con lo que declaras.","note":"Art. 55, fr. IV LISR. Si recibes efectivo de tu negocio, que esté facturado y declarado."}
+ ]}
+]

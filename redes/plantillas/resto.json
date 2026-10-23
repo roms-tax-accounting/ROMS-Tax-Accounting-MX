@@ -1,0 +1,45 @@
+[
+ {"id":"05-buen-fin","slides":[
+  {"kicker":"Buen Fin · 13 al 17 de noviembre","title":"Compra para tu negocio *sin perder* la deducción","tsize":"m","swipe":true},
+  {"n":"01","h2":"Que sea *indispensable*","body":"Una laptop para tu despacho, sí. Una pantalla para tu sala, no.","swipe":true},
+  {"n":"02","h2":"Factura *al momento*","body":"Con tu RFC, código postal, régimen y uso de CFDI correctos.","swipe":true},
+  {"n":"03","h2":"Nada de *efectivo*","body":"Arriba de $2,000, paga con tarjeta, transferencia o cheque de tu cuenta.","swipe":true},
+  {"n":"04","h2":"Equipo de cómputo: *30% al año*","body":"Se deduce como inversión, no todo de golpe.","swipe":true},
+  {"kicker":"¿Estás en RESICO?","h2":"La factura también *te sirve*","body":"No deduces para ISR, pero la necesitas para el IVA y para evitar discrepancias.","note":"Guarda este carrusel para el 13 de noviembre."}
+ ]},
+ {"id":"06-declaracion-mensual","slides":[
+  {"kicker":"Martes 17 de noviembre","big":"17","bigClass":"","title":"vence tu declaración *mensual* de octubre","tsize":"s","rule":true,"body":"ISR e IVA para RESICO, actividad empresarial y personas morales.","note":"Presentar tarde genera actualizaciones y recargos."}
+ ]},
+ {"id":"08-calculadora","slides":[
+  {"photo":"escritorio.jpg","kicker":"Calculadora gratuita","title":"¿Cuánto ISR pagas en *RESICO* o en actividad empresarial?","tsize":"s","body":"Pon lo que cobras y tus gastos. Tarifas 2026.","cta":"Link en mi perfil"}
+ ]},
+ {"id":"09-descanso-obligatorio","slides":[
+  {"kicker":"Lunes 16 de noviembre","title":"Hoy es descanso *obligatorio*","tsize":"m","rule":true,"body":"Si alguien de tu equipo trabaja hoy: **salario del día + salario doble**.","note":"Arts. 74 y 75 de la Ley Federal del Trabajo. Va en el recibo de nómina timbrado."}
+ ]},
+ {"id":"10-aguinaldo-patrones","slides":[
+  {"kicker":"Aguinaldo 2026","title":"Lo que todo *patrón* debe saber","swipe":true},
+  {"n":"01","h2":"Mínimo *15 días* de salario","body":"Antes del 20 de diciembre. Este año el 20 cae en domingo: no lo dejes para el último día.","swipe":true},
+  {"n":"02","h2":"Proporcional","body":"Quien no trabajó el año completo recibe la parte que le corresponde por los días laborados.","swipe":true},
+  {"kicker":"Exento de ISR","big":"$3,519.30","bigClass":"sky","body":"30 UMA en 2026. Lo que exceda paga ISR.","swipe":true},
+  {"n":"04","h2":"Timbra y *prevé* el flujo","body":"Inclúyelo en tu nómina timbrada y aparta el dinero desde ahora.","note":"¿Necesitas calcularlo para tu equipo? Escríbeme."}
+ ]},
+ {"id":"11-reel-portada","size":"reel","slides":[
+  {"kicker":"Reel","title":"¿Cuánto *aguinaldo* te toca?","body":"Odet Romero · Contadora en León"}
+ ]},
+ {"id":"13-cierre-fiscal","slides":[
+  {"kicker":"Cierre fiscal 2026","title":"7 pendientes antes del *31 de diciembre*","tsize":"m","swipe":true},
+  {"n":"01","h2":"Compara tus *facturas*","body":"Las emitidas y recibidas contra las que tiene el SAT.","swipe":true},
+  {"n":"02","h2":"Cancela las que tienen *errores*","body":"Hazlo a tiempo, no al presentar tu anual.","swipe":true},
+  {"n":"03","h2":"Opinión de cumplimiento *en positivo*","body":"Revísala en el portal del SAT.","swipe":true},
+  {"n":"04","h2":"Junta tus *deducciones* personales","body":"Pagadas en el año, con factura a tu RFC y sin efectivo.","swipe":true},
+  {"n":"05","h2":"Aportaciones voluntarias al *retiro*","body":"Si te conviene, son deducibles con su propio límite.","swipe":true},
+  {"n":"06","h2":"e.firma *vigente*","body":"Dura 4 años. Sin ella no puedes hacer muchos trámites.","swipe":true},
+  {"n":"07","h2":"Aguinaldo *pagado y timbrado*","body":"Si tienes trabajadores.","note":"¿Alguno te preocupa? Lo vemos juntos."}
+ ]},
+ {"id":"14-buzon-tributario","slides":[
+  {"kicker":"Buzón tributario","title":"¿Cuándo fue la última vez que lo *abriste*?","tsize":"m","rule":true,"body":"El SAT te notifica ahí, y cuenta como notificado aunque no lo abras.","note":"Tenerlo habilitado es obligatorio. ¿Encontraste un requerimiento? Escríbeme antes de contestarlo."}
+ ]},
+ {"id":"16-aparta-diciembre","slides":[
+  {"photo":"oficina.jpg","kicker":"Diciembre","title":"Diciembre se llena. *Aparta tu asesoría*","tsize":"m","body":"El último mes para mover lo que cuenta en tu declaración anual 2026.","note":"Entre semana 7:00 y 8:30 p. m. · Sábados por la tarde.","cta":"Agenda en el link del perfil"}
+ ]}
+]

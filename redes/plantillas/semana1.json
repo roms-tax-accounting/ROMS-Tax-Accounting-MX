@@ -1,0 +1,19 @@
+[
+ {"id":"01-deducciones","slides":[
+  {"kicker":"Deducciones personales 2026","title":"Tu declaración anual se gana en *diciembre*","body":"Lo que tienes que juntar antes del 31.","swipe":true},
+  {"n":"01","h2":"Gastos de *salud*","body":"Honorarios médicos, dentales, de psicólogo y nutriólogo. Hospitalización y lentes ópticos.","swipe":true},
+  {"n":"02","h2":"Seguros y *vivienda*","body":"Primas de seguro de gastos médicos mayores e intereses reales de tu crédito hipotecario.","swipe":true},
+  {"n":"03","h2":"Con tope *propio*","body":"Colegiaturas y aportaciones voluntarias al retiro. Cada una tiene su propio límite.","swipe":true},
+  {"n":"04","h2":"Los *requisitos*","list":["Factura a tu RFC","Pago con tarjeta, transferencia o cheque","Nunca en efectivo","Pagado entre enero y diciembre"],"swipe":true},
+  {"kicker":"Tope general","big":"15%","bigClass":"sky","body":"de tus ingresos o **$213,973.20** (5 UMA anuales 2026), lo que sea menor.","note":"¿Dudas con tu caso? Escríbeme, te respondo personalmente."}
+ ]},
+ {"id":"02-tope-resico","slides":[
+  {"kicker":"RESICO · Personas físicas","big":"$3.5 M","title":"de ingresos al año es el *límite*","tsize":"s","rule":true,"body":"Si lo rebasas, desde el mes siguiente pasas al régimen general. Que tus depósitos y tus facturas cuadren."}
+ ]},
+ {"id":"03-reel-portada","size":"reel","slides":[
+  {"kicker":"Reel","title":"3 errores que te hacen perder *deducciones*","body":"Odet Romero · Contadora en León"}
+ ]},
+ {"id":"04-agenda","slides":[
+  {"photo":"escritorio.jpg","kicker":"Asesoría en persona","title":"Tus impuestos en orden, *en una hora*","tsize":"m","body":"Fiscal o contable y financiera. **$600 por hora**, pago al terminar.","note":"En una cafetería de tu zona o en tu domicilio, en León.","cta":"Agenda en el link del perfil"}
+ ]}
+]

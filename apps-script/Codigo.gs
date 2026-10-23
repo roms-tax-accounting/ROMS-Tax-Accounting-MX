@@ -130,7 +130,7 @@ function horariosDisponibles() {
 
 function avisarCitaNueva(d, servicio, inicio, descripcion, enCafe) {
   const yo = Session.getEffectiveUser().getEmail();
-  const cuando = Utilities.formatDate(inicio, CONFIG.ZONA, "EEEE d 'de' MMMM, h:mm a");
+  const cuando = fechaEs(inicio) + ' ' + horaEs(inicio, true);
   const wa = 'https://wa.me/52' + d.whatsapp + '?text=' + encodeURIComponent(
     'Hola ' + d.nombre.split(' ')[0] + ', soy Odet Romero de ROMS. Recibí tu cita de ' + servicio + ' para el ' + cuando + (enCafe ? '. Sobre la cafetería (' + d.domicilio.replace(/^Cafetería: /, '') + '), ¿te parece bien si nos vemos ahí?' : ' en ' + d.domicilio + '. ¡Te espero!'));
   MailApp.sendEmail({
@@ -153,11 +153,11 @@ function resumenDiario() {
   const citas = calendario().getEvents(ini, fin).filter(ev => (ev.getDescription() || '').indexOf(CONFIG.MARCA) === 0);
   if (!citas.length) return;
   const filas = citas.map(ev => {
-    const hora = Utilities.formatDate(ev.getStartTime(), zona, 'h:mm a');
+    const hora = horaEs(ev.getStartTime());
     const nombre = ev.getTag('nombre') || ev.getTitle();
     const tel = ev.getTag('whatsapp');
     const texto = 'Hola ' + String(nombre).split(' ')[0] + ', te escribe Odet Romero de ROMS. Te recuerdo tu ' +
-      (ev.getTag('servicio') || 'asesoría') + ' hoy a las ' + hora + ' en ' + ev.getLocation() + '. ¿Sigue en pie?';
+      (ev.getTag('servicio') || 'asesoría') + ' hoy ' + (hora.indexOf('1:') === 0 ? 'a la ' : 'a las ') + hora + ' en ' + ev.getLocation() + '. ¿Sigue en pie?';
     const boton = tel ? '<a href="https://wa.me/52' + tel + '?text=' + encodeURIComponent(texto) + '" style="background:#10b981;color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none;font-weight:bold">Enviar recordatorio</a>' : '';
     return '<tr><td style="padding:10px 12px 10px 0;vertical-align:top"><b>' + hora + '</b></td>' +
       '<td style="padding:10px 12px 10px 0">' + escapar(ev.getTitle()) + '<br><span style="color:#64748b">' + escapar(ev.getLocation()) + '</span></td>' +
@@ -194,6 +194,22 @@ function validar(d) {
   ['nombre', 'domicilio', 'referencias', 'email'].forEach(k => { if (d[k]) d[k] = String(d[k]).slice(0, 300); });
   d.respuestas = (d.respuestas || []).slice(0, 6).map(r => ({ pregunta: String(r.pregunta).slice(0, 200), respuesta: String(r.respuesta).slice(0, 1000) }));
   return '';
+}
+/** Fecha en español: "sábado 24 de octubre" */
+function fechaEs(d) {
+  const dias = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+  const meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+  const u = Number(Utilities.formatDate(d, CONFIG.ZONA, 'u')) % 7;
+  const dia = Number(Utilities.formatDate(d, CONFIG.ZONA, 'd'));
+  const mes = Number(Utilities.formatDate(d, CONFIG.ZONA, 'M')) - 1;
+  return dias[u] + ' ' + dia + ' de ' + meses[mes];
+}
+/** Hora en español: "7:00 p. m.", con "a la"/"a las" si se pide */
+function horaEs(d, conArticulo) {
+  const h = Number(Utilities.formatDate(d, CONFIG.ZONA, 'H')), m = Utilities.formatDate(d, CONFIG.ZONA, 'mm');
+  const h12 = ((h + 11) % 12) + 1;
+  const txt = h12 + ':' + m + ' ' + (h < 12 ? 'a. m.' : 'p. m.');
+  return conArticulo ? (h12 === 1 ? 'a la ' : 'a las ') + txt : txt;
 }
 function calendario() { return CONFIG.CALENDARIO === 'primary' ? CalendarApp.getDefaultCalendar() : CalendarApp.getCalendarById(CONFIG.CALENDARIO); }
 function responder(obj) { return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(ContentService.MimeType.JSON); }

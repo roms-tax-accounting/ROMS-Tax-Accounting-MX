@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Agendar asesoría | ROMS Tax & Accounting MX</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Agenda tu asesoría fiscal o contable y financiera a domicilio con L.C.F. Odet Romero. $600 MXN por hora, pago al finalizar.">
+<meta name="description" content="Agenda tu asesoría fiscal o contable y financiera presencial con L.C.F. Odet Romero, en una cafetería o en tu domicilio. $600 MXN por hora, pago al finalizar.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#060d16">
 <link rel="canonical" href="https://roms-tax-accounting.github.io/ROMS-Tax-Accounting-MX/agendar/">
 <meta property="og:title" content="Agenda tu asesoría | ROMS Tax & Accounting MX">
-<meta property="og:description" content="Asesoría fiscal o contable y financiera a domicilio. $600 MXN por hora, pago al finalizar.">
+<meta property="og:description" content="Asesoría fiscal o contable y financiera presencial, en una cafetería o en tu domicilio. $600 MXN por hora, pago al finalizar.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_MX">
 <meta property="og:url" content="https://roms-tax-accounting.github.io/ROMS-Tax-Accounting-MX/agendar/">
@@ -35,6 +35,7 @@
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 html { overflow-x: clip; touch-action: pan-y pinch-zoom; scroll-behavior: smooth; }
 body { margin: 0; color: var(--body); font: 400 16px/1.6 var(--f-body); -webkit-font-smoothing: antialiased; overflow-x: clip;
   background: radial-gradient(1100px 650px at 10% -10%, rgba(16, 42, 67, .85), transparent 60%), radial-gradient(800px 600px at 100% 60%, rgba(220, 38, 38, .06), transparent 60%), var(--ink); }
@@ -128,6 +129,15 @@ a { color: inherit; }
 .field.invalid input, .field.invalid select, .field.invalid textarea { border-bottom-color: var(--red); }
 .field .msg { font-size: 12px; color: var(--red-soft); }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.places { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 560px) { .places { grid-template-columns: minmax(0, 1fr); } }
+.place { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 12px; align-items: start; padding: 16px; border: 1px solid var(--line-strong); cursor: pointer; transition: border-color .15s; }
+.place:has(input:checked) { border-color: var(--red); box-shadow: 0 0 0 1px var(--red) inset; }
+.place input { appearance: none; width: 20px; height: 20px; margin: 2px 0 0; border: 1px solid var(--line-strong); border-radius: 50%; display: grid; place-content: center; cursor: pointer; }
+.place input:checked { border-color: var(--red-cta); }
+.place input:checked::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--red-cta); }
+.place b { display: block; color: var(--paper); font-size: 15px; }
+.place small { color: var(--muted); font-size: 12.5px; }
 .group-title { font: 400 22px/1.2 var(--f-display); color: var(--paper); padding-top: 6px; }
 
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font: 700 14px/1 var(--f-body); text-decoration: none; padding: 18px 24px; border-radius: 2px; border: 1px solid transparent; cursor: pointer; transition: background-color .15s, border-color .15s, opacity .15s; }
@@ -178,8 +188,8 @@ a { color: inherit; }
   <section class="intro">
     <div class="wrap">
       <p class="kicker">Agenda en línea</p>
-      <h1>Agenda tu <em>asesoría</em> a domicilio</h1>
-      <p>Elige el tipo de asesoría, el día y la hora que te acomoden. Yo misma acudo a tu domicilio y te atiendo personalmente.</p>
+      <h1>Agenda tu <em>asesoría</em> en persona</h1>
+      <p>Elige el tipo de asesoría, el día y la hora que te acomoden. Nos vemos en una cafetería de tu zona o, si lo prefieres, en tu domicilio. Yo misma te atiendo personalmente.</p>
       <div class="facts"><span><b>60 min</b> por sesión</span><span><b>$600 MXN</b> por hora</span><span><b>Pago</b> al finalizar</span><span><b>Lun–Vie</b> 19:00–21:30 · <b>Sáb</b> 13:00–17:00</span></div>
     </div>
   </section>
@@ -226,12 +236,19 @@ a { color: inherit; }
             </div>
             <div class="field"><label for="f-email">Correo electrónico <span class="opt">(opcional, para recibir la invitación en tu calendario)</span></label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="correo@ejemplo.com"><span class="msg" hidden></span></div>
 
-            <p class="group-title">Domicilio de la asesoría</p>
+            <p class="group-title">¿Dónde nos vemos?</p>
+            <div class="places" role="radiogroup" aria-label="Lugar de la asesoría">
+              <label class="place"><input type="radio" name="lugar" value="cafe" checked><span><b>En una cafetería</b><small>Un lugar neutral y cómodo, cerca de ti.</small></span></label>
+              <label class="place"><input type="radio" name="lugar" value="domicilio"><span><b>En tu domicilio</b><small>Voy a tu casa u oficina.</small></span></label>
+            </div>
+            <div class="field" id="cafe-fields"><label for="f-cafe">¿Qué cafetería o zona te queda mejor?</label><input id="f-cafe" name="cafe" placeholder="Ej. una cafetería en Plaza Mayor, o recomiéndame una por la zona Campestre"><span class="help">Si no tienes una en mente, escribe tu colonia y te propongo una cerca.</span><span class="msg" hidden></span></div>
+            <div id="dom-fields" class="fields" hidden>
             <div class="row-2">
               <div class="field"><label for="f-calle">Calle y número</label><input id="f-calle" name="calle" autocomplete="address-line1" required placeholder="Blvd. Campestre 123, int. 4"><span class="msg" hidden></span></div>
               <div class="field"><label for="f-colonia">Colonia y ciudad</label><input id="f-colonia" name="colonia" autocomplete="address-level2" required placeholder="Jardines del Moral, León"><span class="msg" hidden></span></div>
             </div>
             <div class="field"><label for="f-referencias">Referencias <span class="opt">(opcional)</span></label><input id="f-referencias" name="referencias" placeholder="Casa blanca con portón negro, frente al parque"></div>
+            </div>
 
             <p class="group-title">Sobre tu caso</p>
             <div id="questions" class="fields"></div>
@@ -254,7 +271,7 @@ a { color: inherit; }
         <div><dt>Asesoría</dt><dd id="r-svc" class="empty">Sin elegir</dd></div>
         <div><dt>Fecha</dt><dd id="r-date" class="empty">Sin elegir</dd></div>
         <div><dt>Hora</dt><dd id="r-time" class="empty">Sin elegir</dd></div>
-        <div><dt>Lugar</dt><dd id="r-place" class="empty">Tu domicilio</dd></div>
+        <div><dt>Lugar</dt><dd id="r-place" class="empty">Cafetería por definir</dd></div>
       </dl>
       <div class="total"><span>Total estimado</span><b>$600</b></div>
       <p class="sign">Te atiende personalmente <strong>L.C.F. Odet Romero</strong>.</p>
@@ -429,10 +446,19 @@ function actualizarRecibo() {
   set('r-svc', state.svc && SERVICIOS[state.svc].nombre, 'Sin elegir');
   set('r-date', state.fecha && fechaLarga(state.fecha), 'Sin elegir');
   set('r-time', state.hora && `${hora12(state.hora)} – ${hora12(toHHMM(toMin(state.hora) + CONFIG.duracionMin))}`, 'Sin elegir');
-  const dom = [$('f-calle').value.trim(), $('f-colonia').value.trim()].filter(Boolean).join(', ');
-  set('r-place', dom, 'Tu domicilio');
+  set('r-place', lugarTexto(), lugarTipo() === 'cafe' ? 'Cafetería por definir' : 'Tu domicilio');
 }
-['f-calle', 'f-colonia'].forEach(id => $(id).addEventListener('input', actualizarRecibo));
+const lugarTipo = () => document.querySelector('input[name="lugar"]:checked').value;
+function lugarTexto() {
+  if (lugarTipo() === 'cafe') { const c = $('f-cafe').value.trim(); return c ? `Cafetería: ${c}` : ''; }
+  return [$('f-calle').value.trim(), $('f-colonia').value.trim()].filter(Boolean).join(', ');
+}
+document.querySelectorAll('input[name="lugar"]').forEach(r => r.addEventListener('change', () => {
+  const cafe = lugarTipo() === 'cafe';
+  $('cafe-fields').hidden = !cafe; $('dom-fields').hidden = cafe;
+  actualizarRecibo();
+}));
+['f-calle', 'f-colonia', 'f-cafe'].forEach(id => $(id).addEventListener('input', actualizarRecibo));
 
 function validar() {
   let ok = true, primero = null;
@@ -446,8 +472,14 @@ function validar() {
   marcar($('f-whatsapp'), tel.length !== 10 ? 'Escribe tu WhatsApp a 10 dígitos.' : '');
   const em = $('f-email').value.trim();
   marcar($('f-email'), em && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em) ? 'Revisa tu correo.' : '');
-  marcar($('f-calle'), $('f-calle').value.trim().length < 4 ? 'Escribe calle y número.' : '');
-  marcar($('f-colonia'), $('f-colonia').value.trim().length < 3 ? 'Escribe la colonia y ciudad.' : '');
+  if (lugarTipo() === 'cafe') {
+    marcar($('f-cafe'), $('f-cafe').value.trim().length < 3 ? 'Escribe una cafetería o tu colonia.' : '');
+    marcar($('f-calle'), ''); marcar($('f-colonia'), '');
+  } else {
+    marcar($('f-cafe'), '');
+    marcar($('f-calle'), $('f-calle').value.trim().length < 4 ? 'Escribe calle y número.' : '');
+    marcar($('f-colonia'), $('f-colonia').value.trim().length < 3 ? 'Escribe la colonia y ciudad.' : '');
+  }
   document.querySelectorAll('#questions [data-pregunta]').forEach(el => marcar(el, el.value.trim() ? '' : 'Responde esta pregunta.'));
   if (primero) primero.focus();
   return ok;
@@ -460,8 +492,9 @@ function datosReserva() {
     nombre: $('f-nombre').value.trim(),
     whatsapp: $('f-whatsapp').value.replace(/\D/g, '').replace(/^52/, ''),
     email: $('f-email').value.trim(),
-    domicilio: [$('f-calle').value.trim(), $('f-colonia').value.trim()].join(', '),
-    referencias: $('f-referencias').value.trim(),
+    lugarTipo: lugarTipo(),
+    domicilio: lugarTexto(),
+    referencias: lugarTipo() === 'domicilio' ? $('f-referencias').value.trim() : '',
     respuestas: [...document.querySelectorAll('#questions [data-pregunta]')].map(el => ({ pregunta: el.dataset.pregunta, respuesta: el.value.trim() })),
     website: $('f-website').value
   };
@@ -480,7 +513,7 @@ function textoWhatsApp(d) {
 function linkCalendario(d) {
   const ini = new Date(`${d.fecha}T${d.hora}:00${OFFSET}`), fin = new Date(ini.getTime() + CONFIG.duracionMin * 60e3);
   const f = x => x.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
-  const p = new URLSearchParams({ action: 'TEMPLATE', text: `${d.servicioNombre} con L.C.F. Odet Romero (ROMS)`, dates: `${f(ini)}/${f(fin)}`, details: 'Asesoría a domicilio. Costo: $600 MXN por hora, pago al finalizar. WhatsApp: +52 477 646 1540', location: d.domicilio });
+  const p = new URLSearchParams({ action: 'TEMPLATE', text: `${d.servicioNombre} con L.C.F. Odet Romero (ROMS)`, dates: `${f(ini)}/${f(fin)}`, details: 'Asesoría presencial. Costo: $600 MXN por hora, pago al finalizar. WhatsApp: +52 477 646 1540', location: d.domicilio });
   return `https://calendar.google.com/calendar/render?${p}`;
 }
 
@@ -496,7 +529,7 @@ function mostrarConfirmacion(d, viaWhatsApp) {
   box.querySelector('h2').textContent = `${d.nombre.split(' ')[0]}, te espero el ${fechaLarga(d.fecha)} ${alas(d.hora)} ${hora12(d.hora)}`;
   box.querySelector('.lead').textContent = viaWhatsApp
     ? 'Se abrió WhatsApp con los datos de tu cita. Envía el mensaje para que te la confirme personalmente.'
-    : `Tu ${d.servicioNombre} quedó registrada en mi agenda. Te veo en ${d.domicilio}.${d.email ? ' Te envié la invitación a tu correo.' : ''}`;
+    : `Tu ${d.servicioNombre} quedó registrada en mi agenda. ${d.lugarTipo === 'cafe' ? 'Te escribo por WhatsApp para confirmar la cafetería.' : `Te veo en ${d.domicilio}.`}${d.email ? ' Te envié la invitación a tu correo.' : ''}`;
   const acts = box.querySelector('.actions');
   const a1 = document.createElement('a'); a1.className = 'btn btn-ghost'; a1.target = '_blank'; a1.rel = 'noopener noreferrer'; a1.href = linkCalendario(d); a1.textContent = 'Agregar a mi Google Calendar';
   const a2 = document.createElement('a'); a2.className = viaWhatsApp ? 'btn btn-wa' : 'btn btn-ghost'; a2.target = '_blank'; a2.rel = 'noopener noreferrer';

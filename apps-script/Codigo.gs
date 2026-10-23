@@ -59,14 +59,15 @@ function doPost(e) {
     const inicio = new Date(d.fecha + 'T' + d.hora + ':00' + CONFIG.OFFSET);
     const fin = new Date(inicio.getTime() + CONFIG.DURACION_MIN * 60000);
     const servicio = CONFIG.SERVICIOS[d.servicio];
-    const titulo = servicio + ' · ' + d.nombre;
+    const enCafe = d.lugarTipo === 'cafe';
+    const titulo = servicio + ' · ' + d.nombre + (enCafe ? ' · Cafetería' : ' · Domicilio');
     const descripcion = [
       CONFIG.MARCA,
       'Servicio: ' + servicio + ' (' + CONFIG.DURACION_MIN + ' min · $' + CONFIG.PRECIO + ' MXN, pago al finalizar)',
       'Cliente: ' + d.nombre,
       'WhatsApp: +52 ' + d.whatsapp + '  →  https://wa.me/52' + d.whatsapp,
       d.email ? 'Correo: ' + d.email : '',
-      'Domicilio: ' + d.domicilio,
+      (enCafe ? 'Lugar (cafetería, confirmar con el cliente): ' : 'Domicilio: ') + d.domicilio,
       d.referencias ? 'Referencias: ' + d.referencias : '',
       '',
       (d.respuestas || []).map(r => '• ' + r.pregunta + '\n  ' + r.respuesta).join('\n')
@@ -81,7 +82,7 @@ function doPost(e) {
     ev.setTag('nombre', d.nombre);
     ev.setTag('servicio', servicio);
 
-    avisarCitaNueva(d, servicio, inicio, descripcion);
+    avisarCitaNueva(d, servicio, inicio, descripcion, enCafe);
     return responder({ ok: true, id: ev.getId() });
   } catch (err) {
     console.error(err);
@@ -127,11 +128,11 @@ function horariosDisponibles() {
 
 /* ---------------- Avisos ---------------- */
 
-function avisarCitaNueva(d, servicio, inicio, descripcion) {
+function avisarCitaNueva(d, servicio, inicio, descripcion, enCafe) {
   const yo = Session.getEffectiveUser().getEmail();
   const cuando = Utilities.formatDate(inicio, CONFIG.ZONA, "EEEE d 'de' MMMM, h:mm a");
   const wa = 'https://wa.me/52' + d.whatsapp + '?text=' + encodeURIComponent(
-    'Hola ' + d.nombre.split(' ')[0] + ', soy Odet Romero de ROMS. Recibí tu cita de ' + servicio + ' para el ' + cuando + ' en ' + d.domicilio + '. ¡Te espero!');
+    'Hola ' + d.nombre.split(' ')[0] + ', soy Odet Romero de ROMS. Recibí tu cita de ' + servicio + ' para el ' + cuando + (enCafe ? '. Sobre la cafetería (' + d.domicilio.replace(/^Cafetería: /, '') + '), ¿te parece bien si nos vemos ahí?' : ' en ' + d.domicilio + '. ¡Te espero!'));
   MailApp.sendEmail({
     to: yo,
     subject: 'Nueva cita: ' + servicio + ' · ' + d.nombre + ' · ' + cuando,
@@ -188,7 +189,8 @@ function validar(d) {
   if (!d.nombre || String(d.nombre).trim().length < 3) return 'Escribe tu nombre.';
   if (!/^\d{10}$/.test(d.whatsapp || '')) return 'Escribe tu WhatsApp a 10 dígitos.';
   if (d.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) return 'Revisa tu correo.';
-  if (!d.domicilio || String(d.domicilio).trim().length < 8) return 'Escribe el domicilio de la asesoría.';
+  if (!d.domicilio || String(d.domicilio).trim().length < 4) return 'Indica dónde nos vemos.';
+  d.lugarTipo = d.lugarTipo === 'cafe' ? 'cafe' : 'domicilio';
   ['nombre', 'domicilio', 'referencias', 'email'].forEach(k => { if (d[k]) d[k] = String(d[k]).slice(0, 300); });
   d.respuestas = (d.respuestas || []).slice(0, 6).map(r => ({ pregunta: String(r.pregunta).slice(0, 200), respuesta: String(r.respuesta).slice(0, 1000) }));
   return '';

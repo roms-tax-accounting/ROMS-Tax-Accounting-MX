@@ -106,8 +106,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .btn .arrow { transition: transform .2s; }
 .btn:hover .arrow { transform: translateX(3px); }
 .menu-btn { display: none; }
-.mobile-nav { border-top: 1px solid var(--line); background: var(--ink); }
-.mobile-nav .wrap { display: grid; padding-block: 8px 20px; }
+.mobile-nav { border-top: 1px solid var(--line); background: var(--ink); box-shadow: 0 0 0 100vmax rgba(2, 6, 12, 0.72); clip-path: inset(0 -100vmax -100vmax -100vmax); }
+.site-header .mobile-nav .wrap { display: grid; height: auto; gap: 0; justify-content: stretch; align-items: stretch; padding-block: 8px 20px; max-height: calc(100vh - 76px - env(safe-area-inset-top, 0px)); overflow-y: auto; }
 .mobile-nav a { padding: 12px 0; border-bottom: 1px solid var(--line); text-decoration: none; font-weight: 600; color: var(--body); }
 .mobile-nav .btn { margin-top: 16px; }
 @media (max-width: 1080px) { .nav { display: none; } .menu-btn { display: inline-flex; } }

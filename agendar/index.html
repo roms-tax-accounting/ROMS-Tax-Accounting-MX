@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Agendar asesoría | ROMS Tax & Accounting MX</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Agenda tu asesoría fiscal o contable y financiera a domicilio con L.C.F. Odet Romero. $600 MXN por hora, pago al finalizar.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#060d16">
+<link rel="canonical" href="https://roms-tax-accounting.github.io/ROMS-Tax-Accounting-MX/agendar/">
+<meta property="og:title" content="Agenda tu asesoría | ROMS Tax & Accounting MX">
+<meta property="og:description" content="Asesoría fiscal o contable y financiera a domicilio. $600 MXN por hora, pago al finalizar.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:url" content="https://roms-tax-accounting.github.io/ROMS-Tax-Accounting-MX/agendar/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23060d16'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' text-anchor='middle' fill='%23ef4444'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: booking ledger. Three numbered steps (a real sequence) stacked on the left, a sticky receipt on the right
+   that fills in as the client chooses: service, date and time, details. Same navy/red editorial system as the site. */
+:root {
+  --ink: #060d16; --panel: #0b1b2b; --panel-2: #0f172a;
+  --line: rgba(203, 213, 225, 0.14); --line-strong: rgba(203, 213, 225, 0.28);
+  --paper: #e8edf3; --body: #cbd5e1; --muted: #94a3b8;
+  --red: #ef4444; --red-cta: #dc2626; --red-soft: #f87171; --sky: #41c9e2; --wa: #10b981;
+  --f-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --f-body: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+  --img-desk: url("../assets/img/escritorio.jpg");
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { overflow-x: clip; touch-action: pan-y pinch-zoom; scroll-behavior: smooth; }
+body { margin: 0; color: var(--body); font: 400 16px/1.6 var(--f-body); -webkit-font-smoothing: antialiased; overflow-x: clip;
+  background: radial-gradient(1100px 650px at 10% -10%, rgba(16, 42, 67, .85), transparent 60%), radial-gradient(800px 600px at 100% 60%, rgba(220, 38, 38, .06), transparent 60%), var(--ink); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--ink); }
+h1, h2, h3 { margin: 0; color: var(--paper); text-wrap: balance; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; border-radius: 3px; }
+.wrap { max-width: 1160px; margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
+
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: rgba(6, 13, 22, .92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 72px; }
+.mark { text-decoration: none; display: grid; gap: 3px; }
+.mark b { font: 400 30px/.9 var(--f-display); color: var(--paper); letter-spacing: .02em; }
+.mark span { font: 500 9.5px/1 var(--f-mono); letter-spacing: .22em; text-transform: uppercase; color: var(--red); }
+.back { font-size: 13px; font-weight: 600; color: var(--muted); text-decoration: none; }
+.back:hover { color: var(--paper); }
+
+.intro { position: relative; overflow: hidden; isolation: isolate; border-bottom: 1px solid var(--line); }
+.intro::before { content: ""; position: absolute; inset: 0 0 0 45%; z-index: -1; background: var(--img-desk) center 30% / cover no-repeat; opacity: .5;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 55%); mask-image: linear-gradient(90deg, transparent, #000 55%); }
+.intro::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, transparent 50%, var(--ink)); }
+.intro .wrap { padding-block: 64px 56px; display: grid; gap: 18px; }
+.kicker { font: 500 11.5px/1.4 var(--f-mono); letter-spacing: .16em; text-transform: uppercase; color: var(--red); display: flex; align-items: center; gap: 12px; }
+.kicker::before { content: ""; width: 28px; height: 1px; background: var(--red); }
+.intro h1 { font: 400 clamp(42px, 6vw, 76px)/1 var(--f-display); max-width: 14ch; }
+.intro h1 em { color: var(--red-soft); }
+.intro p { max-width: 56ch; font-size: 16.5px; }
+.facts { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 8px; }
+.facts span { font: 500 12px/1.4 var(--f-mono); color: var(--paper); letter-spacing: .04em; }
+.facts span b { color: var(--red-soft); font-weight: 500; }
+@media (max-width: 760px) { .intro::before { inset: 0; opacity: .28; } }
+
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 48px; padding-block: 56px 96px; align-items: start; }
+@media (max-width: 960px) { .layout { grid-template-columns: minmax(0, 1fr); gap: 32px; } }
+
+.step { border-top: 1px solid var(--line-strong); padding: 26px 0 40px; display: grid; gap: 22px; }
+.step-head { display: grid; grid-template-columns: 52px minmax(0, 1fr); align-items: baseline; }
+.step-head .n { font: 400 40px/1 var(--f-display); color: var(--red); }
+.step-head h2 { font: 400 32px/1.1 var(--f-display); }
+.step-head p { grid-column: 2; font-size: 14px; color: var(--muted); margin-top: 6px; }
+.step[aria-disabled="true"] { opacity: .38; pointer-events: none; }
+.step[aria-disabled="true"] .step-body { display: none; }
+@media (max-width: 560px) { .step-head { grid-template-columns: 40px minmax(0, 1fr); } .step-head .n { font-size: 32px; } .step-head h2 { font-size: 27px; } }
+
+.services { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 640px) { .services { grid-template-columns: minmax(0, 1fr); } }
+.svc { position: relative; text-align: left; font: inherit; color: inherit; cursor: pointer; background: linear-gradient(180deg, rgba(11, 27, 43, .9), rgba(6, 13, 22, .9));
+  border: 1px solid var(--line-strong); padding: 24px; display: grid; gap: 10px; transition: border-color .15s, transform .15s, box-shadow .15s; box-shadow: 0 30px 60px -30px rgba(0,0,0,.8); }
+.svc:hover { border-color: var(--muted); transform: translateY(-2px); }
+.svc[aria-pressed="true"] { border-color: var(--red); box-shadow: 0 0 0 1px var(--red) inset, 0 30px 60px -30px rgba(0,0,0,.8); }
+.svc .code { font: 500 11.5px/1 var(--f-mono); letter-spacing: .1em; color: var(--red); }
+.svc h3 { font: 400 26px/1.1 var(--f-display); }
+.svc p { font-size: 13.5px; }
+.svc .meta { display: flex; gap: 16px; font: 500 12px/1.4 var(--f-mono); color: var(--paper); margin-top: 4px; }
+.svc .tick { position: absolute; top: 18px; right: 18px; width: 22px; height: 22px; border: 1px solid var(--line-strong); border-radius: 50%; display: grid; place-items: center; }
+.svc[aria-pressed="true"] .tick { background: var(--red-cta); border-color: var(--red-cta); }
+.svc[aria-pressed="true"] .tick::after { content: ""; width: 9px; height: 5px; border-left: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(-45deg) translate(1px, -1px); }
+
+.days { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+.day { flex: 0 0 auto; scroll-snap-align: start; width: 86px; padding: 12px 8px; font: inherit; color: var(--body); background: transparent; border: 1px solid var(--line-strong); cursor: pointer; display: grid; gap: 2px; justify-items: center; transition: border-color .15s, background-color .15s; }
+.day small { font: 500 10.5px/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.day b { font: 400 30px/1 var(--f-display); color: var(--paper); font-variant-numeric: tabular-nums; }
+.day span { font-size: 11.5px; color: var(--muted); }
+.day:hover { border-color: var(--muted); }
+.day[aria-pressed="true"] { background: var(--red-cta); border-color: var(--red-cta); }
+.day[aria-pressed="true"] small, .day[aria-pressed="true"] span { color: #fff; }
+.slots-title { font: 600 11px/1.3 var(--f-body); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.slots { display: flex; flex-wrap: wrap; gap: 10px; }
+.slot { font: 400 26px/1 var(--f-display); font-variant-numeric: tabular-nums; color: var(--paper); background: transparent; border: 1px solid var(--line-strong); padding: 14px 18px; cursor: pointer; min-width: 112px; transition: border-color .15s, background-color .15s; }
+.slot small { display: block; font: 500 10.5px/1.4 var(--f-mono); color: var(--muted); margin-top: 4px; }
+.slot:hover { border-color: var(--muted); }
+.slot[aria-pressed="true"] { background: var(--red-cta); border-color: var(--red-cta); }
+.slot[aria-pressed="true"] small { color: #fff; }
+.status { font-size: 14px; color: var(--muted); }
+.status.err { color: var(--red-soft); }
+
+.fields { display: grid; gap: 24px; }
+.row-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+@media (max-width: 560px) { .row-2 { grid-template-columns: minmax(0, 1fr); } }
+.field { display: grid; gap: 8px; min-width: 0; }
+.field label { font: 600 11px/1.4 var(--f-body); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.field label .opt { text-transform: none; letter-spacing: 0; font-weight: 500; }
+.field input, .field select, .field textarea { width: 100%; background: transparent; color: var(--paper); border: 0; border-bottom: 1px solid var(--line-strong); border-radius: 0; padding: 10px 0; font: 500 16px/1.45 var(--f-body); transition: border-color .15s; }
+.field select { appearance: none; cursor: pointer; padding-right: 26px; background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%); background-position: calc(100% - 12px) 55%, calc(100% - 7px) 55%; background-size: 5px 5px; background-repeat: no-repeat; }
+.field select option { background: var(--panel-2); color: var(--paper); }
+.field textarea { resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-bottom-color: var(--red); }
+.field input::placeholder, .field textarea::placeholder { color: rgba(148, 163, 184, .55); }
+.field .help { font-size: 12px; color: var(--muted); }
+.field.invalid input, .field.invalid select, .field.invalid textarea { border-bottom-color: var(--red); }
+.field .msg { font-size: 12px; color: var(--red-soft); }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.group-title { font: 400 22px/1.2 var(--f-display); color: var(--paper); padding-top: 6px; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font: 700 14px/1 var(--f-body); text-decoration: none; padding: 18px 24px; border-radius: 2px; border: 1px solid transparent; cursor: pointer; transition: background-color .15s, border-color .15s, opacity .15s; }
+.btn-primary { background: var(--red-cta); color: #fff; }
+.btn-primary:hover { background: var(--red); }
+.btn-primary[disabled] { opacity: .5; cursor: progress; }
+.btn-ghost { border-color: var(--line-strong); color: var(--paper); background: transparent; }
+.btn-ghost:hover { border-color: var(--paper); }
+.btn-wa { background: var(--wa); color: #04261b; }
+.submit-row { display: grid; gap: 12px; }
+.fine { font: 400 11.5px/1.6 var(--f-mono); color: var(--muted); }
+
+.receipt { position: sticky; top: 100px; border: 1px solid var(--line-strong); background: linear-gradient(180deg, rgba(11, 27, 43, .92), rgba(6, 13, 22, .95)); backdrop-filter: blur(12px); padding: 26px; display: grid; gap: 16px; box-shadow: 0 50px 100px -40px rgba(0,0,0,.85), 0 1px 0 rgba(255,255,255,.06) inset; }
+@media (max-width: 960px) { .receipt { position: static; order: -1; } }
+.receipt h2 { font: 400 26px/1.1 var(--f-display); }
+.receipt dl { margin: 0; display: grid; }
+.receipt dl div { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 12px; padding: 11px 0; border-top: 1px solid var(--line); font-size: 14px; }
+.receipt dt { font: 600 10.5px/1.6 var(--f-body); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.receipt dd { margin: 0; color: var(--paper); }
+.receipt dd.empty { color: var(--muted); }
+.receipt .total { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--line-strong); padding-top: 14px; }
+.receipt .total span:first-child { font: 600 11px/1.3 var(--f-body); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.receipt .total b { font: 400 36px/1 var(--f-display); color: var(--paper); font-weight: 400; }
+.receipt .sign { font-size: 13px; color: var(--body); border-left: 1px solid var(--red); padding-left: 14px; }
+.receipt .sign strong { color: var(--paper); }
+
+.done { border: 1px solid rgba(65, 201, 226, .5); padding: 32px; display: grid; gap: 18px; background: linear-gradient(180deg, rgba(11, 27, 43, .92), rgba(6, 13, 22, .95)); box-shadow: 0 50px 100px -40px rgba(0,0,0,.85); }
+.done .kicker { color: var(--sky); } .done .kicker::before { background: var(--sky); }
+.done h2 { font: 400 clamp(32px, 4vw, 44px)/1.05 var(--f-display); }
+.done .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.foot { border-top: 1px solid var(--line); }
+.foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; padding-block: 32px calc(32px + env(safe-area-inset-bottom, 0px)); font-size: 12.5px; color: var(--muted); }
+.foot a { text-decoration: none; } .foot a:hover { color: var(--paper); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="mark" href="../" aria-label="ROMS, volver al inicio"><b>ROMS</b><span>Tax &amp; Accounting MX</span></a>
+    <a class="back" href="../">← Volver al sitio</a>
+  </div>
+</header>
+
+<main>
+  <section class="intro">
+    <div class="wrap">
+      <p class="kicker">Agenda en línea</p>
+      <h1>Agenda tu <em>asesoría</em> a domicilio</h1>
+      <p>Elige el tipo de asesoría, el día y la hora que te acomoden. Yo misma acudo a tu domicilio y te atiendo personalmente.</p>
+      <div class="facts"><span><b>60 min</b> por sesión</span><span><b>$600 MXN</b> por hora</span><span><b>Pago</b> al finalizar</span><span><b>Lun–Vie</b> 19:00–21:00 · <b>Sáb</b> 13:00–17:00</span></div>
+    </div>
+  </section>
+
+  <div class="wrap layout">
+    <div id="flow">
+      <form id="booking" novalidate>
+        <section class="step" id="step-1">
+          <div class="step-head"><span class="n">1</span><h2>¿Qué asesoría necesitas?</h2><p>Ambas duran 60 minutos y se pagan al terminar.</p></div>
+          <div class="step-body services" role="group" aria-label="Tipo de asesoría">
+            <button type="button" class="svc" data-svc="fiscal" aria-pressed="false">
+              <span class="tick" aria-hidden="true"></span>
+              <span class="code">FISCAL</span>
+              <h3>Asesoría Fiscal</h3>
+              <p>Régimen fiscal, RESICO o PFAE, declaraciones, requerimientos del SAT y cumplimiento.</p>
+              <span class="meta"><span>60 min</span><span>$600 MXN</span></span>
+            </button>
+            <button type="button" class="svc" data-svc="contable" aria-pressed="false">
+              <span class="tick" aria-hidden="true"></span>
+              <span class="code">CONTABLE · FINANCIERA</span>
+              <h3>Asesoría Contable y Financiera</h3>
+              <p>Arranque o crecimiento de tu negocio, control contable, flujo de efectivo y finanzas.</p>
+              <span class="meta"><span>60 min</span><span>$600 MXN</span></span>
+            </button>
+          </div>
+        </section>
+
+        <section class="step" id="step-2" aria-disabled="true">
+          <div class="step-head"><span class="n">2</span><h2>Elige día y hora</h2><p>Horario del centro de México. Solo ves los espacios disponibles.</p></div>
+          <div class="step-body" style="display:grid;gap:22px">
+            <div class="days" id="days" role="group" aria-label="Días disponibles"></div>
+            <p class="slots-title" id="slots-title"></p>
+            <div class="slots" id="slots" role="group" aria-label="Horarios disponibles"></div>
+            <p class="status" id="slot-status" aria-live="polite"></p>
+          </div>
+        </section>
+
+        <section class="step" id="step-3" aria-disabled="true">
+          <div class="step-head"><span class="n">3</span><h2>Tus datos</h2><p>Con esto preparo tu asesoría antes de llegar.</p></div>
+          <div class="step-body fields">
+            <div class="row-2">
+              <div class="field"><label for="f-nombre">¿Cuál es tu nombre?</label><input id="f-nombre" name="nombre" autocomplete="name" required placeholder="Nombre y apellido"><span class="msg" hidden></span></div>
+              <div class="field"><label for="f-whatsapp">¿Cuál es tu WhatsApp?</label><input id="f-whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" required placeholder="477 123 4567"><span class="msg" hidden></span></div>
+            </div>
+            <div class="field"><label for="f-email">Correo electrónico <span class="opt">(opcional, para recibir la invitación en tu calendario)</span></label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="correo@ejemplo.com"><span class="msg" hidden></span></div>
+
+            <p class="group-title">Domicilio de la asesoría</p>
+            <div class="row-2">
+              <div class="field"><label for="f-calle">Calle y número</label><input id="f-calle" name="calle" autocomplete="address-line1" required placeholder="Blvd. Campestre 123, int. 4"><span class="msg" hidden></span></div>
+              <div class="field"><label for="f-colonia">Colonia y ciudad</label><input id="f-colonia" name="colonia" autocomplete="address-level2" required placeholder="Jardines del Moral, León"><span class="msg" hidden></span></div>
+            </div>
+            <div class="field"><label for="f-referencias">Referencias <span class="opt">(opcional)</span></label><input id="f-referencias" name="referencias" placeholder="Casa blanca con portón negro, frente al parque"></div>
+
+            <p class="group-title">Sobre tu caso</p>
+            <div id="questions" class="fields"></div>
+
+            <div class="hp" aria-hidden="true"><label for="f-website">No llenar</label><input id="f-website" name="website" tabindex="-1" autocomplete="off"></div>
+
+            <div class="submit-row">
+              <button class="btn btn-primary" id="submit" type="submit">Confirmar mi cita <span aria-hidden="true">→</span></button>
+              <p class="status" id="submit-status" aria-live="polite"></p>
+              <p class="fine">El pago de $600 MXN por hora se realiza al finalizar la asesoría. Si necesitas cambiar o cancelar tu cita, escríbeme por WhatsApp al +52 (477) 646-1540.</p>
+            </div>
+          </div>
+        </section>
+      </form>
+    </div>
+
+    <aside class="receipt" aria-labelledby="r-title">
+      <h2 id="r-title">Tu cita</h2>
+      <dl>
+        <div><dt>Asesoría</dt><dd id="r-svc" class="empty">Sin elegir</dd></div>
+        <div><dt>Fecha</dt><dd id="r-date" class="empty">Sin elegir</dd></div>
+        <div><dt>Hora</dt><dd id="r-time" class="empty">Sin elegir</dd></div>
+        <div><dt>Lugar</dt><dd id="r-place" class="empty">Tu domicilio</dd></div>
+      </dl>
+      <div class="total"><span>Total estimado</span><b>$600</b></div>
+      <p class="sign">Te atiende personalmente <strong>L.C.F. Odet Romero</strong>.</p>
+    </aside>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>&copy; <span id="anio">2026</span> ROMS | Tax &amp; Accounting MX · León, Guanajuato</p>
+    <a href="https://wa.me/524776461540" target="_blank" rel="noopener noreferrer">WhatsApp +52 (477) 646-1540</a>
+  </div>
+</footer>
+
+<a id="wa-link" href="https://wa.me/524776461540" target="_blank" rel="noopener noreferrer" hidden>WhatsApp</a>
+
+<script>
+/* ===================== CONFIGURACIÓN =====================
+   AGENDA_API: pega aquí la URL de tu Apps Script (termina en /exec).
+   Mientras esté vacía, la agenda calcula los horarios en el navegador y la reserva se envía por WhatsApp. */
+const AGENDA_API = '';
+const CONFIG = {
+  whatsapp: '524776461540',
+  duracionMin: 60,
+  descansoMin: 30,
+  anticipacionHoras: 12,
+  diasAdelante: 30,
+  // 1 = lunes … 6 = sábado, 7 = domingo. Cada rango es [inicio, fin]; la cita debe terminar antes del fin.
+  horario: { 1: [['19:00', '21:00']], 2: [['19:00', '21:00']], 3: [['19:00', '21:00']], 4: [['19:00', '21:00']], 5: [['19:00', '21:00']], 6: [['13:00', '17:00']] }
+};
+const SERVICIOS = {
+  fiscal: {
+    nombre: 'Asesoría Fiscal',
+    preguntas: [
+      { id: 'actividad', label: 'Actualmente, ¿cuál es la actividad por la que recibes ingresos?', tipo: 'text', ph: 'Ej. diseño gráfico freelance, venta de ropa en línea' },
+      { id: 'regimen', label: 'Actualmente, ¿en qué régimen fiscal estás dado de alta?', tipo: 'select', opciones: ['RESICO', 'Actividad Empresarial y Profesional (PFAE)', 'Sueldos y salarios', 'Arrendamiento', 'Plataformas digitales', 'Persona Moral', 'No estoy dado de alta', 'No lo sé'] },
+      { id: 'objetivo', label: '¿Cuál es tu objetivo o razón por la que buscas asesoría fiscal?', tipo: 'textarea', ph: 'Ej. me llegó un requerimiento del SAT, quiero cambiarme a RESICO' }
+    ]
+  },
+  contable: {
+    nombre: 'Asesoría Contable y Financiera',
+    preguntas: [
+      { id: 'actividad', label: '¿Cuál es la actividad económica por la que obtienes u obtendrás ingresos?', tipo: 'text', ph: 'Ej. cafetería, consultorio dental, importación de calzado' },
+      { id: 'fase', label: '¿En qué fase de tu proyecto te encuentras?', tipo: 'select', opciones: ['Es una idea / por iniciar', 'Recién iniciado (menos de 1 año)', 'En operación', 'En crecimiento o expansión'] },
+      { id: 'objetivo', label: '¿Cuál es el objetivo principal por el que buscas una asesoría contable o financiera?', tipo: 'textarea', ph: 'Ej. ordenar mis números, saber cuánto ganar, conseguir financiamiento' }
+    ]
+  }
+};
+/* ========================================================= */
+
+const $ = id => document.getElementById(id);
+const OFFSET = '-06:00'; // Centro de México, sin horario de verano desde 2022
+const DIAS = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+const MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+const state = { svc: null, dias: [], fecha: null, hora: null, enviando: false };
+
+const toMin = t => { const [h, m] = t.split(':').map(Number); return h * 60 + m; };
+const toHHMM = m => `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
+const fechaDe = (iso) => new Date(`${iso}T12:00:00${OFFSET}`);
+const isoHoyMx = (d = new Date()) => new Date(d.getTime() - 6 * 3600e3).toISOString().slice(0, 10);
+const sumarDias = (iso, n) => { const d = new Date(`${iso}T12:00:00Z`); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
+const diaSemana = iso => { const w = new Date(`${iso}T12:00:00Z`).getUTCDay(); return w === 0 ? 7 : w; };
+const fechaLarga = iso => { const d = new Date(`${iso}T12:00:00Z`); return `${DIAS[d.getUTCDay()]} ${d.getUTCDate()} de ${MESES[d.getUTCMonth()]}`; };
+const alas = t => (Number(t.split(':')[0]) % 12 === 1 ? 'a la' : 'a las');
+const hora12 = t => { const [h, m] = t.split(':').map(Number); return `${((h + 11) % 12) + 1}:${String(m).padStart(2, '0')} ${h < 12 ? 'a. m.' : 'p. m.'}`; };
+
+// Horarios calculados en el navegador (modo sin Apps Script)
+function generarDiasLocal() {
+  const limite = Date.now() + CONFIG.anticipacionHoras * 3600e3;
+  const hoy = isoHoyMx(), out = [];
+  for (let i = 0; i <= CONFIG.diasAdelante; i++) {
+    const f = sumarDias(hoy, i), rangos = CONFIG.horario[diaSemana(f)] || [], horas = [];
+    for (const [a, b] of rangos) {
+      for (let t = toMin(a); t + CONFIG.duracionMin <= toMin(b); t += CONFIG.duracionMin + CONFIG.descansoMin) {
+        if (new Date(`${f}T${toHHMM(t)}:00${OFFSET}`).getTime() >= limite) horas.push(toHHMM(t));
+      }
+    }
+    if (horas.length) out.push({ fecha: f, horas });
+  }
+  return out;
+}
+
+async function cargarDias() {
+  $('slot-status').className = 'status';
+  $('slot-status').textContent = 'Buscando espacios disponibles…';
+  try {
+    if (AGENDA_API) {
+      const r = await fetch(`${AGENDA_API}?action=slots`, { cache: 'no-store' });
+      const j = await r.json();
+      if (!j.ok) throw new Error(j.error || 'Sin respuesta');
+      state.dias = j.dias;
+    } else {
+      state.dias = generarDiasLocal();
+    }
+    $('slot-status').textContent = state.dias.length ? '' : 'Por ahora no hay espacios disponibles. Escríbeme por WhatsApp y buscamos un horario.';
+  } catch (e) {
+    state.dias = generarDiasLocal();
+    $('slot-status').className = 'status err';
+    $('slot-status').textContent = 'No pude revisar la agenda en este momento. Puedes elegir un horario y te lo confirmo por WhatsApp.';
+  }
+  pintarDias();
+}
+
+function pintarDias() {
+  const cont = $('days'); cont.replaceChildren();
+  state.dias.forEach(d => {
+    const dt = new Date(`${d.fecha}T12:00:00Z`);
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'day'; b.dataset.fecha = d.fecha;
+    b.setAttribute('aria-pressed', d.fecha === state.fecha);
+    b.setAttribute('aria-label', `${fechaLarga(d.fecha)}, ${d.horas.length} ${d.horas.length === 1 ? 'horario' : 'horarios'}`);
+    b.innerHTML = `<small>${DIAS[dt.getUTCDay()].slice(0, 3)}</small><b>${dt.getUTCDate()}</b><span>${MESES[dt.getUTCMonth()].slice(0, 3)}</span>`;
+    b.onclick = () => elegirFecha(d.fecha);
+    cont.append(b);
+  });
+  if (state.dias.length && !state.fecha) elegirFecha(state.dias[0].fecha);
+}
+
+function elegirFecha(f) {
+  state.fecha = f; state.hora = null;
+  document.querySelectorAll('.day').forEach(b => b.setAttribute('aria-pressed', b.dataset.fecha === f));
+  const dia = state.dias.find(d => d.fecha === f);
+  $('slots-title').textContent = `Horarios del ${fechaLarga(f)}`;
+  const cont = $('slots'); cont.replaceChildren();
+  (dia ? dia.horas : []).forEach(h => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'slot'; b.dataset.hora = h; b.setAttribute('aria-pressed', 'false');
+    b.innerHTML = `${hora12(h)}<small>hasta ${hora12(toHHMM(toMin(h) + CONFIG.duracionMin))}</small>`;
+    b.onclick = () => elegirHora(h);
+    cont.append(b);
+  });
+  bloquear('step-3', true);
+  actualizarRecibo();
+}
+
+function elegirHora(h) {
+  state.hora = h;
+  document.querySelectorAll('.slot').forEach(b => b.setAttribute('aria-pressed', b.dataset.hora === h));
+  bloquear('step-3', false);
+  actualizarRecibo();
+  if (window.innerWidth < 960) $('step-3').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function elegirServicio(k) {
+  state.svc = k;
+  document.querySelectorAll('.svc').forEach(b => b.setAttribute('aria-pressed', b.dataset.svc === k));
+  const cont = $('questions'); cont.replaceChildren();
+  SERVICIOS[k].preguntas.forEach(q => {
+    const w = document.createElement('div'); w.className = 'field';
+    const l = document.createElement('label'); l.htmlFor = `q-${q.id}`; l.textContent = q.label;
+    let el;
+    if (q.tipo === 'select') {
+      el = document.createElement('select');
+      el.append(new Option('Selecciona una opción', ''));
+      q.opciones.forEach(o => el.append(new Option(o, o)));
+    } else if (q.tipo === 'textarea') { el = document.createElement('textarea'); el.rows = 3; el.placeholder = q.ph || ''; }
+    else { el = document.createElement('input'); el.placeholder = q.ph || ''; }
+    el.id = `q-${q.id}`; el.required = true; el.dataset.pregunta = q.label;
+    const m = document.createElement('span'); m.className = 'msg'; m.hidden = true;
+    w.append(l, el, m); cont.append(w);
+  });
+  bloquear('step-2', false);
+  if (!state.dias.length) cargarDias();
+  actualizarRecibo();
+  if (window.innerWidth < 960) setTimeout(() => $('step-2').scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+}
+
+function bloquear(id, v) { $(id).setAttribute('aria-disabled', v); }
+
+function actualizarRecibo() {
+  const set = (id, txt, vacio) => { const e = $(id); e.textContent = txt || vacio; e.classList.toggle('empty', !txt); };
+  set('r-svc', state.svc && SERVICIOS[state.svc].nombre, 'Sin elegir');
+  set('r-date', state.fecha && fechaLarga(state.fecha), 'Sin elegir');
+  set('r-time', state.hora && `${hora12(state.hora)} – ${hora12(toHHMM(toMin(state.hora) + CONFIG.duracionMin))}`, 'Sin elegir');
+  const dom = [$('f-calle').value.trim(), $('f-colonia').value.trim()].filter(Boolean).join(', ');
+  set('r-place', dom, 'Tu domicilio');
+}
+['f-calle', 'f-colonia'].forEach(id => $(id).addEventListener('input', actualizarRecibo));
+
+function validar() {
+  let ok = true, primero = null;
+  const marcar = (el, msg) => {
+    const f = el.closest('.field'), m = f.querySelector('.msg');
+    f.classList.toggle('invalid', !!msg); if (m) { m.hidden = !msg; m.textContent = msg || ''; }
+    if (msg) { ok = false; primero = primero || el; }
+  };
+  marcar($('f-nombre'), $('f-nombre').value.trim().length < 3 ? 'Escribe tu nombre.' : '');
+  const tel = $('f-whatsapp').value.replace(/\D/g, '').replace(/^52/, '');
+  marcar($('f-whatsapp'), tel.length !== 10 ? 'Escribe tu WhatsApp a 10 dígitos.' : '');
+  const em = $('f-email').value.trim();
+  marcar($('f-email'), em && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em) ? 'Revisa tu correo.' : '');
+  marcar($('f-calle'), $('f-calle').value.trim().length < 4 ? 'Escribe calle y número.' : '');
+  marcar($('f-colonia'), $('f-colonia').value.trim().length < 3 ? 'Escribe la colonia y ciudad.' : '');
+  document.querySelectorAll('#questions [data-pregunta]').forEach(el => marcar(el, el.value.trim() ? '' : 'Responde esta pregunta.'));
+  if (primero) primero.focus();
+  return ok;
+}
+
+function datosReserva() {
+  return {
+    servicio: state.svc, servicioNombre: SERVICIOS[state.svc].nombre,
+    fecha: state.fecha, hora: state.hora,
+    nombre: $('f-nombre').value.trim(),
+    whatsapp: $('f-whatsapp').value.replace(/\D/g, '').replace(/^52/, ''),
+    email: $('f-email').value.trim(),
+    domicilio: [$('f-calle').value.trim(), $('f-colonia').value.trim()].join(', '),
+    referencias: $('f-referencias').value.trim(),
+    respuestas: [...document.querySelectorAll('#questions [data-pregunta]')].map(el => ({ pregunta: el.dataset.pregunta, respuesta: el.value.trim() })),
+    website: $('f-website').value
+  };
+}
+
+function textoWhatsApp(d) {
+  return [
+    `Hola Odet, acabo de agendar una ${d.servicioNombre}.`,
+    `📅 ${fechaLarga(d.fecha)} ${alas(d.hora)} ${hora12(d.hora)}`,
+    `📍 ${d.domicilio}${d.referencias ? ` (${d.referencias})` : ''}`,
+    `Nombre: ${d.nombre}`, `WhatsApp: ${d.whatsapp}`,
+    ...d.respuestas.map(r => `${r.pregunta} ${r.respuesta}`)
+  ].join('\n');
+}
+
+function linkCalendario(d) {
+  const ini = new Date(`${d.fecha}T${d.hora}:00${OFFSET}`), fin = new Date(ini.getTime() + CONFIG.duracionMin * 60e3);
+  const f = x => x.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+  const p = new URLSearchParams({ action: 'TEMPLATE', text: `${d.servicioNombre} con L.C.F. Odet Romero (ROMS)`, dates: `${f(ini)}/${f(fin)}`, details: 'Asesoría a domicilio. Costo: $600 MXN por hora, pago al finalizar. WhatsApp: +52 477 646 1540', location: d.domicilio });
+  return `https://calendar.google.com/calendar/render?${p}`;
+}
+
+function mostrarConfirmacion(d, viaWhatsApp) {
+  const flow = $('flow'); flow.replaceChildren();
+  const box = document.createElement('section'); box.className = 'done'; box.setAttribute('aria-live', 'polite');
+  box.innerHTML = `
+    <p class="kicker">${viaWhatsApp ? 'Casi listo' : 'Cita confirmada'}</p>
+    <h2></h2>
+    <p class="lead"></p>
+    <p class="fine">Pago de $600 MXN por hora al finalizar la asesoría. Para cambios escríbeme al +52 (477) 646-1540.</p>
+    <div class="actions"></div>`;
+  box.querySelector('h2').textContent = `${d.nombre.split(' ')[0]}, te espero el ${fechaLarga(d.fecha)} ${alas(d.hora)} ${hora12(d.hora)}`;
+  box.querySelector('.lead').textContent = viaWhatsApp
+    ? 'Se abrió WhatsApp con los datos de tu cita. Envía el mensaje para que te la confirme personalmente.'
+    : `Tu ${d.servicioNombre} quedó registrada en mi agenda. Te veo en ${d.domicilio}.${d.email ? ' Te envié la invitación a tu correo.' : ''}`;
+  const acts = box.querySelector('.actions');
+  const a1 = document.createElement('a'); a1.className = 'btn btn-ghost'; a1.target = '_blank'; a1.rel = 'noopener noreferrer'; a1.href = linkCalendario(d); a1.textContent = 'Agregar a mi Google Calendar';
+  const a2 = document.createElement('a'); a2.className = viaWhatsApp ? 'btn btn-wa' : 'btn btn-ghost'; a2.target = '_blank'; a2.rel = 'noopener noreferrer';
+  a2.href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(textoWhatsApp(d))}`; a2.textContent = viaWhatsApp ? 'Abrir WhatsApp de nuevo' : 'Escribirle a Odet por WhatsApp';
+  acts.append(a2, a1);
+  flow.append(box);
+  box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+$('booking').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  if (state.enviando || !state.svc || !state.fecha || !state.hora) return;
+  if (!validar()) return;
+  const d = datosReserva();
+  if (d.website) return; // bot
+  const st = $('submit-status'), btn = $('submit');
+  if (!AGENDA_API) {
+    const a = $('wa-link'); a.href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(textoWhatsApp(d))}`; a.click();
+    mostrarConfirmacion(d, true); return;
+  }
+  state.enviando = true; btn.disabled = true; st.className = 'status'; st.textContent = 'Reservando tu espacio…';
+  try {
+    const r = await fetch(AGENDA_API, { method: 'POST', body: JSON.stringify(d) });
+    const j = await r.json();
+    if (j.ok) { mostrarConfirmacion(d, false); return; }
+    st.className = 'status err';
+    st.textContent = j.error || 'No se pudo reservar. Intenta con otro horario.';
+    if (j.codigo === 'ocupado') { state.dias = []; state.fecha = null; await cargarDias(); }
+  } catch (err) {
+    st.className = 'status err';
+    st.textContent = 'No hubo conexión con la agenda. Te mando a WhatsApp para confirmar tu cita.';
+    const a = $('wa-link'); a.href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(textoWhatsApp(d))}`; a.click();
+    mostrarConfirmacion(d, true);
+  } finally { state.enviando = false; btn.disabled = false; }
+});
+
+document.querySelectorAll('.svc').forEach(b => b.addEventListener('click', () => elegirServicio(b.dataset.svc)));
+$('anio').textContent = new Date().getFullYear();
+// Permite enlazar directo a un servicio: agendar/#fiscal o agendar/#contable
+const pre = location.hash.replace('#', '');
+if (SERVICIOS[pre]) elegirServicio(pre);
+</script>
+</body>
+</html>

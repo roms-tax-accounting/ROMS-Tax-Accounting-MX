@@ -138,6 +138,18 @@ a { color: inherit; }
 .place input:checked::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--red-cta); }
 .place b { display: block; color: var(--paper); font-size: 15px; }
 .place small { color: var(--muted); font-size: 12.5px; }
+.lbl-like { font: 600 11px/1.4 var(--f-body); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.cafes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 560px) { .cafes { grid-template-columns: minmax(0, 1fr); } }
+.cafe { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 10px; align-items: start; padding: 12px 14px; border: 1px solid var(--line-strong); cursor: pointer; transition: border-color .15s; }
+.cafe:has(input:checked) { border-color: var(--red); box-shadow: 0 0 0 1px var(--red) inset; }
+.cafe input { appearance: none; width: 18px; height: 18px; margin: 2px 0 0; border: 1px solid var(--line-strong); border-radius: 50%; display: grid; place-content: center; cursor: pointer; }
+.cafe input:checked { border-color: var(--red-cta); }
+.cafe input:checked::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--red-cta); }
+.field label.cafe { text-transform: none; letter-spacing: 0; font: 400 14px/1.45 var(--f-body); color: var(--body); }
+.cafe b { display: block; color: var(--paper); font-size: 14px; font-weight: 600; }
+.cafe small { color: var(--muted); font-size: 12px; }
+.cafe.alt b { color: var(--red-soft); }
 .group-title { font: 400 22px/1.2 var(--f-display); color: var(--paper); padding-top: 6px; }
 
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font: 700 14px/1 var(--f-body); text-decoration: none; padding: 18px 24px; border-radius: 2px; border: 1px solid transparent; cursor: pointer; transition: background-color .15s, border-color .15s, opacity .15s; }
@@ -241,7 +253,13 @@ a { color: inherit; }
               <label class="place"><input type="radio" name="lugar" value="cafe" checked><span><b>En una cafetería</b><small>Un lugar neutral y cómodo, cerca de ti.</small></span></label>
               <label class="place"><input type="radio" name="lugar" value="domicilio"><span><b>En tu domicilio</b><small>Voy a tu casa u oficina.</small></span></label>
             </div>
-            <div class="field" id="cafe-fields"><label for="f-cafe">¿Qué cafetería o zona te queda mejor?</label><input id="f-cafe" name="cafe" placeholder="Ej. una cafetería en Plaza Mayor, o recomiéndame una por la zona Campestre"><span class="help">Si no tienes una en mente, escribe tu colonia y te propongo una cerca.</span><span class="msg" hidden></span></div>
+            <div id="cafe-fields" class="fields">
+              <div class="field"><label for="f-zona">¿En qué zona de León te queda mejor?</label>
+                <select id="f-zona" name="zona"><option value="">Selecciona una zona</option></select><span class="msg" hidden></span></div>
+              <div class="field" id="cafes-wrap" hidden><span class="lbl-like">Elige una cafetería</span>
+                <div class="cafes" id="cafes" role="radiogroup" aria-label="Cafeterías sugeridas"></div><span class="msg" hidden></span></div>
+              <div class="field" id="otra-wrap" hidden><label for="f-cafe">¿Qué cafetería prefieres?</label><input id="f-cafe" name="cafe" placeholder="Nombre y ubicación de la cafetería"><span class="msg" hidden></span></div>
+            </div>
             <div id="dom-fields" class="fields" hidden>
             <div class="row-2">
               <div class="field"><label for="f-calle">Calle y número</label><input id="f-calle" name="calle" autocomplete="address-line1" required placeholder="Blvd. Campestre 123, int. 4"><span class="msg" hidden></span></div>
@@ -319,6 +337,26 @@ const SERVICIOS = {
       { id: 'objetivo', label: '¿Cuál es el objetivo principal por el que buscas una asesoría contable o financiera?', tipo: 'textarea', ph: 'Ej. ordenar mis números, saber cuánto ganar, conseguir financiamiento' }
     ]
   }
+};
+// Cafeterías sugeridas por zona. Edita esta lista con tus lugares favoritos.
+const CAFES = {
+  'Campestre / Jardines del Campestre': [
+    ['Starbucks', 'Blvd. Manuel J. Clouthier'], ['Punta del Cielo', 'Av. Universidad, Lomas del Campestre'],
+    ['Cafezzito', 'Punta Campestre'], ['Café Ducasse', 'Blvd. Campestre, Valle del Campestre']
+  ],
+  'Plaza Mayor / Las Torres': [
+    ['Café La Flor de Córdoba', 'Plaza Mayor'], ['Café Rothenburg', 'Blvd. Las Torres, La Cantera']
+  ],
+  'Centro': [
+    ['Corazón de Pan', 'Calle Madero'], ['Bendito Theatro Café', 'Calle Benito Juárez'], ['Caffenio', 'Calzada de los Niños Héroes']
+  ],
+  'Jardines del Moral / López Mateos': [
+    ['Star Light', 'Av. Guanajuato, Jardines del Moral'], ['The Italian Coffee Company', 'Centro Max, Blvd. López Mateos']
+  ],
+  'Gran Jardín / El Refugio': [
+    ['Café Bougle', 'Lomas de Gran Jardín']
+  ],
+  'Otra zona de León': []
 };
 /* ========================================================= */
 
@@ -450,7 +488,14 @@ function actualizarRecibo() {
 }
 const lugarTipo = () => document.querySelector('input[name="lugar"]:checked').value;
 function lugarTexto() {
-  if (lugarTipo() === 'cafe') { const c = $('f-cafe').value.trim(); return c ? `Cafetería: ${c}` : ''; }
+  if (lugarTipo() === 'cafe') {
+    const zona = $('f-zona').value, sel = document.querySelector('input[name="cafe-op"]:checked');
+    if (!zona) return '';
+    if (!sel) return `Cafetería por definir · zona ${zona}`;
+    if (sel.value === 'proponer') return `Cafetería que propone Odet · zona ${zona}`;
+    if (sel.value === 'otra') { const c = $('f-cafe').value.trim(); return c ? `Cafetería: ${c} · zona ${zona}` : `Cafetería por definir · zona ${zona}`; }
+    return `Cafetería: ${sel.value} · zona ${zona}`;
+  }
   return [$('f-calle').value.trim(), $('f-colonia').value.trim()].filter(Boolean).join(', ');
 }
 document.querySelectorAll('input[name="lugar"]').forEach(r => r.addEventListener('change', () => {
@@ -459,6 +504,25 @@ document.querySelectorAll('input[name="lugar"]').forEach(r => r.addEventListener
   actualizarRecibo();
 }));
 ['f-calle', 'f-colonia', 'f-cafe'].forEach(id => $(id).addEventListener('input', actualizarRecibo));
+Object.keys(CAFES).forEach(z => $('f-zona').append(new Option(z, z)));
+function opcionCafe(valor, titulo, sub, alt) {
+  const l = document.createElement('label'); l.className = 'cafe' + (alt ? ' alt' : '');
+  const i = document.createElement('input'); i.type = 'radio'; i.name = 'cafe-op'; i.value = valor;
+  const sp = document.createElement('span'); const b = document.createElement('b'); b.textContent = titulo; const sm = document.createElement('small'); sm.textContent = sub;
+  sp.append(b, sm); l.append(i, sp);
+  i.addEventListener('change', () => { const m = $('cafes-wrap').querySelector(':scope > .msg'); m.hidden = true; $('otra-wrap').hidden = valor !== 'otra'; if (valor === 'otra') $('f-cafe').focus(); actualizarRecibo(); });
+  return l;
+}
+$('f-zona').addEventListener('change', () => {
+  const z = $('f-zona').value, cont = $('cafes'); cont.replaceChildren();
+  $('cafes-wrap').hidden = !z; $('otra-wrap').hidden = true;
+  if (z) {
+    CAFES[z].forEach(([n, d]) => cont.append(opcionCafe(`${n} (${d})`, n, d)));
+    cont.append(opcionCafe('proponer', 'Que Odet me proponga una', 'Te sugiero un lugar tranquilo en tu zona', true));
+    cont.append(opcionCafe('otra', 'Otra cafetería', 'Escribe la que prefieras', true));
+  }
+  actualizarRecibo();
+});
 
 function validar() {
   let ok = true, primero = null;
@@ -473,10 +537,16 @@ function validar() {
   const em = $('f-email').value.trim();
   marcar($('f-email'), em && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em) ? 'Revisa tu correo.' : '');
   if (lugarTipo() === 'cafe') {
-    marcar($('f-cafe'), $('f-cafe').value.trim().length < 3 ? 'Escribe una cafetería o tu colonia.' : '');
+    const sel = document.querySelector('input[name="cafe-op"]:checked');
+    marcar($('f-zona'), $('f-zona').value ? '' : 'Elige una zona.');
+    if ($('f-zona').value) {
+      const m = $('cafes-wrap').querySelector(':scope > .msg'); m.hidden = !!sel; m.textContent = sel ? '' : 'Elige una opción.';
+      if (!sel) { ok = false; primero = primero || $('cafes').querySelector('input'); }
+    }
+    marcar($('f-cafe'), sel && sel.value === 'otra' && $('f-cafe').value.trim().length < 3 ? 'Escribe el nombre de la cafetería.' : '');
     marcar($('f-calle'), ''); marcar($('f-colonia'), '');
   } else {
-    marcar($('f-cafe'), '');
+    marcar($('f-cafe'), ''); marcar($('f-zona'), '');
     marcar($('f-calle'), $('f-calle').value.trim().length < 4 ? 'Escribe calle y número.' : '');
     marcar($('f-colonia'), $('f-colonia').value.trim().length < 3 ? 'Escribe la colonia y ciudad.' : '');
   }

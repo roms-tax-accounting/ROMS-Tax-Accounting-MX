@@ -1,0 +1,10 @@
+{
+  "name": "roms-redes",
+  "private": true,
+  "description": "Diseños de redes sociales de ROMS | Tax & Accounting MX",
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "5.1.0",
+    "@fontsource/instrument-serif": "5.1.0",
+    "@fontsource/plus-jakarta-sans": "5.1.0"
+  }
+}

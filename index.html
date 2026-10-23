@@ -68,8 +68,10 @@
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; background: radial-gradient(1200px 700px at 8% -10%, rgba(16, 42, 67, 0.85), transparent 60%), radial-gradient(900px 600px at 105% 40%, rgba(220, 38, 38, 0.07), transparent 60%), radial-gradient(1000px 800px at 50% 115%, rgba(16, 42, 67, 0.7), transparent 60%), var(--ink); background-attachment: fixed; color: var(--body); font: 400 16px/1.6 var(--f-body); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+html { scroll-behavior: smooth; overflow-x: clip; touch-action: pan-y pinch-zoom; }
+html, body { max-width: 100%; }
+body { margin: 0; background: radial-gradient(1200px 700px at 8% -10%, rgba(16, 42, 67, 0.85), transparent 60%), radial-gradient(900px 600px at 105% 40%, rgba(220, 38, 38, 0.07), transparent 60%), radial-gradient(1000px 800px at 50% 115%, rgba(16, 42, 67, 0.7), transparent 60%), var(--ink); background-attachment: fixed; color: var(--body); font: 400 16px/1.6 var(--f-body); -webkit-font-smoothing: antialiased; overflow-x: clip; }
+@media (max-width: 900px) { body { background-attachment: scroll; } }
 .grain { position: fixed; inset: 0; z-index: 70; pointer-events: none; opacity: .07; mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
 ::selection { background: var(--red-cta); color: #fff; }
@@ -118,7 +120,13 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.35) 22%, #000 60%), linear-gradient(0deg, transparent 0%, #000 30%);
   mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.35) 22%, #000 60%); }
 .hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,13,22,.15), rgba(6,13,22,.55) 85%, var(--ink)); }
-@media (max-width: 900px) { .hero-media { width: 100%; opacity: .45; } }
+.hero-photo { display: none; }
+@media (max-width: 900px) {
+  .hero-media { display: none; }
+  .hero-photo { display: block; position: relative; margin: 0; aspect-ratio: 4 / 3; max-width: 100%; border: 1px solid var(--line-strong); overflow: hidden; box-shadow: 0 40px 80px -30px rgba(0,0,0,.8);
+    background: radial-gradient(60% 60% at 60% 40%, rgba(30, 62, 98, 0.6), transparent 70%), var(--img-desk, none) center 35% / cover no-repeat, var(--panel); }
+  .hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(6,13,22,.55)); }
+}
 .hero::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .18;
   background-image: radial-gradient(var(--red) 1px, transparent 1.2px); background-size: 22px 22px;
   -webkit-mask-image: linear-gradient(115deg, transparent 45%, #000 100%); mask-image: linear-gradient(115deg, transparent 45%, #000 100%); }
@@ -301,7 +309,10 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .fab:hover { transform: scale(1.06); }
 .fab svg { width: 26px; height: 26px; fill: currentColor; }
 
+.js-reveal .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0ms); }
+.js-reveal .reveal.is-in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
+  .js-reveal .reveal { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
@@ -360,6 +371,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
         <a class="btn btn-ghost" href="#calculadora-resico">Calcular impuestos RESICO</a>
       </div>
     </div>
+    <figure class="hero-photo" role="img" aria-label="Escritorio contable con libros, pluma y calculadora"></figure>
     <aside class="diag" aria-labelledby="diag-t">
       <h2 id="diag-t">Diagnóstico fiscal rápido</h2>
       <p>Evita discrepancias con el SAT y mantén tu opinión de cumplimiento en positivo.</p>
@@ -829,6 +841,28 @@ function handleFormSubmit(event) {
   };
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(move); } }, { passive: true });
   move();
+})();
+
+// Aparición de bloques al deslizar
+(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  const sel = ['.rail-inner', '.sec-head', '.service', '.sheet', '.ded-list', '.check', '.score', '.result', '.band', '.pair article', '.facts', '.socials', '.form', '.hero-photo', '.diag'];
+  const els = [];
+  sel.forEach(q => document.querySelectorAll(q).forEach(el => els.push(el)));
+  // Escalonar elementos hermanos
+  els.forEach(el => {
+    const sibs = [...el.parentElement.children].filter(c => els.includes(c));
+    const i = sibs.indexOf(el);
+    if (i > 0) el.style.setProperty('--d', `${Math.min(i, 5) * 90}ms`);
+    el.classList.add('reveal');
+  });
+  document.documentElement.classList.add('js-reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  els.forEach(el => io.observe(el));
+  // Respaldo: si algo no se observó, mostrarlo
+  setTimeout(() => els.forEach(el => { const r = el.getBoundingClientRect(); if (r.top < innerHeight) el.classList.add('is-in'); }), 1500);
 })();
 
 $('anio-actual').textContent = new Date().getFullYear();

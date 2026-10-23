@@ -68,7 +68,7 @@ function slide(s, i, total, size) {
   if (s.list) mid += `<div class="list">${s.list.map(x=>`<div>${md(x)}</div>`).join('')}</div>`;
   if (s.note) mid += `<p class="note">${md(s.note)}</p>`;
   if (s.cta) mid += `<span class="cta">${md(s.cta)}</span>`;
-  const right = s.swipe ? '<span class="swipe">DESLIZA →</span>' : '<span>@romerointegratedservices</span>';
+  const right = s.swipe ? '<span class="swipe">DESLIZA →</span>' : '<span>@romstaxaccountingmx</span>';
   return `<div class="${cls.join(' ')}" style="${style}">${s.photo?'':'<div class="dots"></div>'}<div class="grain"></div>
    <div class="z top"><div class="brand"><b>ROMS</b><span>TAX &amp; ACCOUNTING MX</span></div>${counter}</div>
    <div class="z mid" style="${size.h>1500?'justify-content:flex-end;padding-bottom:180px':''}">${mid}</div>

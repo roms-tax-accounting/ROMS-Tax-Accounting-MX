@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Firma de correo · ROMS</title>
+<style>
+  :root { --ink:#0b1b2b; --red:#dc2626; --muted:#64748b; --bg:#f1f5f9; }
+  body { margin:0; background:var(--bg); font-family: Arial, Helvetica, sans-serif; color:var(--ink); }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 48px; }
+  h1 { font-size: 22px; margin: 0 0 6px; }
+  p.lead { color: var(--muted); margin: 0 0 22px; font-size: 14px; }
+  .card { background:#fff; border-radius: 10px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,.08); overflow-x:auto; }
+  button { margin-top: 18px; background: var(--red); color:#fff; border:0; border-radius: 8px; padding: 12px 20px; font-size: 15px; font-weight: 700; cursor: pointer; }
+  button:active { transform: translateY(1px); }
+  #ok { display:none; margin-left: 12px; color: #15803d; font-weight: 700; font-size: 14px; }
+  ol { font-size: 14px; line-height: 1.6; padding-left: 20px; }
+  .steps { margin-top: 26px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Firma de correo · ROMS | Tax &amp; Accounting MX</h1>
+  <p class="lead">Da clic en «Copiar firma» y pégala en la configuración de tu Gmail.</p>
+
+  <div class="card">
+    <div id="firma">
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;">
+  <tr>
+    <td style="padding:0 18px 0 0;vertical-align:middle;">
+      <a href="https://roms-tax-accounting.github.io/ROMS-Tax-Accounting-MX/" style="text-decoration:none;"><img src="https://roms-tax-accounting.github.io/ROMS-Tax-Accounting-MX/firma/logo-firma.png" width="170" height="108" alt="ROMS | Tax &amp; Accounting MX" style="display:block;border:0;width:170px;height:108px;"></a>
+    </td>
+    <td style="border-left:2px solid #dc2626;padding:4px 0 4px 18px;vertical-align:middle;">
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#0b1b2b;">
+        <tr><td colspan="2" style="padding:0 0 8px 0;font-size:15px;font-weight:bold;color:#0b1b2b;">LCF Jocelyn Odet Romero Dguez</td></tr>
+        <tr>
+          <td style="padding:0 7px 5px 0;vertical-align:middle;"><img src="https://roms-tax-accounting.github.io/ROMS-Tax-Accounting-MX/firma/icono-correo.png" width="16" height="16" alt="Correo" style="display:block;border:0;"></td>
+          <td style="padding:0 0 5px 0;vertical-align:middle;"><a href="mailto:roms@integratedservices.com.mx" style="color:#dc2626;font-weight:bold;text-decoration:none;">roms@integratedservices.com.mx</a></td>
+        </tr>
+        <tr>
+          <td style="padding:0 7px 5px 0;vertical-align:middle;"><img src="https://roms-tax-accounting.github.io/ROMS-Tax-Accounting-MX/firma/icono-telefono.png" width="16" height="16" alt="Teléfono" style="display:block;border:0;"></td>
+          <td style="padding:0 0 5px 0;vertical-align:middle;"><a href="https://wa.me/524776461540" style="color:#0b1b2b;font-weight:bold;text-decoration:none;">TEL. (477) 646 1540</a></td>
+        </tr>
+        <tr>
+          <td style="padding:0 7px 5px 0;vertical-align:middle;"><img src="https://roms-tax-accounting.github.io/ROMS-Tax-Accounting-MX/firma/icono-redes.png" width="16" height="16" alt="Instagram" style="display:block;border:0;"></td>
+          <td style="padding:0 0 5px 0;vertical-align:middle;"><a href="https://www.instagram.com/romstaxaccountingmx/" style="color:#0b1b2b;font-weight:bold;text-decoration:none;">ROMS | Tax &amp; Accounting MX</a></td>
+        </tr>
+        <tr>
+          <td style="padding:0 7px 0 0;vertical-align:middle;"><img src="https://roms-tax-accounting.github.io/ROMS-Tax-Accounting-MX/firma/icono-web.png" width="16" height="16" alt="Página web" style="display:block;border:0;"></td>
+          <td style="padding:0;vertical-align:middle;"><a href="https://roms-tax-accounting.github.io/ROMS-Tax-Accounting-MX/" style="color:#0b1b2b;font-weight:bold;text-decoration:none;">Página web</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+    </div>
+  </div>
+
+  <button type="button" id="copiar">Copiar firma</button><span id="ok">Copiada. Ahora pégala en Gmail.</span>
+
+  <div class="steps">
+    <strong>Cómo ponerla en Gmail (en computadora):</strong>
+    <ol>
+      <li>Da clic en <b>Copiar firma</b>.</li>
+      <li>En Gmail: engrane ⚙ › <b>Ver toda la configuración</b> › pestaña <b>General</b> › <b>Firma</b>.</li>
+      <li>Abre tu firma, borra el bloque anterior (logo y datos) y pega con <b>Ctrl + V</b> (en Mac, <b>Cmd + V</b>). Deja abajo tu aviso de confidencialidad.</li>
+      <li>Baja hasta el final y da clic en <b>Guardar cambios</b>.</li>
+    </ol>
+  </div>
+</main>
+<script>
+  document.getElementById('copiar').addEventListener('click', async () => {
+    const el = document.getElementById('firma');
+    const html = el.innerHTML;
+    try {
+      await navigator.clipboard.write([new ClipboardItem({
+        'text/html': new Blob([html], { type: 'text/html' }),
+        'text/plain': new Blob([el.innerText], { type: 'text/plain' })
+      })]);
+    } catch (e) {
+      const r = document.createRange(); r.selectNode(el);
+      const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      document.execCommand('copy'); s.removeAllRanges();
+    }
+    document.getElementById('ok').style.display = 'inline';
+  });
+</script>
+</body>
+</html>

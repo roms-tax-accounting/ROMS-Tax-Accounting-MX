@@ -161,6 +161,9 @@ a { color: inherit; }
 .btn-wa { background: var(--wa); color: #04261b; }
 .submit-row { display: grid; gap: 12px; }
 .fine { font: 400 11.5px/1.6 var(--f-mono); color: var(--muted); }
+.consent .consent-label { display: flex; gap: 12px; align-items: flex-start; text-transform: none; letter-spacing: 0; font: 400 14px/1.55 var(--f-body); color: var(--body); cursor: pointer; }
+.consent input[type=checkbox] { width: 18px; height: 18px; margin: 2px 0 0; flex: none; accent-color: var(--red-cta); cursor: pointer; }
+.consent a { color: var(--red-soft); }
 
 .receipt { position: sticky; top: 100px; border: 1px solid var(--line-strong); background: linear-gradient(180deg, rgba(11, 27, 43, .92), rgba(6, 13, 22, .95)); backdrop-filter: blur(12px); padding: 26px; display: grid; gap: 16px; box-shadow: 0 50px 100px -40px rgba(0,0,0,.85), 0 1px 0 rgba(255,255,255,.06) inset; }
 @media (max-width: 960px) { .receipt { position: static; order: -1; } }
@@ -273,6 +276,11 @@ a { color: inherit; }
 
             <div class="hp" aria-hidden="true"><label for="f-website">No llenar</label><input id="f-website" name="website" tabindex="-1" autocomplete="off"></div>
 
+            <div class="field consent" id="consent-wrap">
+              <label class="consent-label" for="f-aviso"><input type="checkbox" id="f-aviso" name="aviso"><span>He leído y acepto el <a href="../aviso-de-privacidad/" target="_blank" rel="noopener">aviso de privacidad</a>. Tus datos se usan solo para agendar y preparar tu asesoría.</span></label>
+              <span class="msg" hidden></span>
+            </div>
+
             <div class="submit-row">
               <button class="btn btn-primary" id="submit" type="submit">Confirmar mi cita <span aria-hidden="true">→</span></button>
               <p class="status" id="submit-status" aria-live="polite"></p>
@@ -300,7 +308,7 @@ a { color: inherit; }
 <footer class="foot">
   <div class="wrap">
     <p>&copy; <span id="anio">2026</span> ROMS | Tax &amp; Accounting MX · León, Guanajuato</p>
-    <a href="https://wa.me/524776461540" target="_blank" rel="noopener noreferrer">WhatsApp +52 (477) 646-1540</a>
+    <span><a href="../aviso-de-privacidad/">Aviso de privacidad</a> · <a href="https://wa.me/524776461540" target="_blank" rel="noopener noreferrer">WhatsApp +52 (477) 646-1540</a></span>
   </div>
 </footer>
 
@@ -551,6 +559,7 @@ function validar() {
     marcar($('f-colonia'), $('f-colonia').value.trim().length < 3 ? 'Escribe la colonia y ciudad.' : '');
   }
   document.querySelectorAll('#questions [data-pregunta]').forEach(el => marcar(el, el.value.trim() ? '' : 'Responde esta pregunta.'));
+  marcar($('f-aviso'), $('f-aviso').checked ? '' : 'Para agendar, acepta el aviso de privacidad.');
   if (primero) primero.focus();
   return ok;
 }

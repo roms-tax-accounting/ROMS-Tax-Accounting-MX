@@ -284,7 +284,7 @@ a { color: inherit; }
             <div class="submit-row">
               <button class="btn btn-primary" id="submit" type="submit">Confirmar mi cita <span aria-hidden="true">→</span></button>
               <p class="status" id="submit-status" aria-live="polite"></p>
-              <p class="fine">El pago de $600 MXN por hora se realiza al finalizar la asesoría. Si necesitas cambiar o cancelar tu cita, escríbeme por WhatsApp al +52 (477) 646-1540.</p>
+              <p class="fine">El pago de $600 MXN por hora se realiza al finalizar la asesoría. Si necesitas cambiar o cancelar tu cita, escríbeme por WhatsApp al +52 (479) 390-0639.</p>
             </div>
           </div>
         </section>
@@ -308,11 +308,11 @@ a { color: inherit; }
 <footer class="foot">
   <div class="wrap">
     <p>&copy; <span id="anio">2026</span> ROMS | Tax &amp; Accounting MX · León, Guanajuato</p>
-    <span><a href="../aviso-de-privacidad/">Aviso de privacidad</a> · <a href="https://wa.me/524776461540" target="_blank" rel="noopener noreferrer">WhatsApp +52 (477) 646-1540</a></span>
+    <span><a href="../aviso-de-privacidad/">Aviso de privacidad</a> · <a href="https://wa.me/524793900639" target="_blank" rel="noopener noreferrer">WhatsApp +52 (479) 390-0639</a></span>
   </div>
 </footer>
 
-<a id="wa-link" href="https://wa.me/524776461540" target="_blank" rel="noopener noreferrer" hidden>WhatsApp</a>
+<a id="wa-link" href="https://wa.me/524793900639" target="_blank" rel="noopener noreferrer" hidden>WhatsApp</a>
 
 <script>
 /* ===================== CONFIGURACIÓN =====================
@@ -320,7 +320,7 @@ a { color: inherit; }
    Mientras esté vacía, la agenda calcula los horarios en el navegador y la reserva se envía por WhatsApp. */
 const AGENDA_API = 'https://script.google.com/macros/s/AKfycbyVSxpf1VPiXQDV1RO8laKsvoIidLCop2PyGy7qf3VTi_dnjPRKahccukeT8nij8gno/exec';
 const CONFIG = {
-  whatsapp: '524776461540',
+  whatsapp: '524793900639',
   duracionMin: 60,
   descansoMin: 30,
   anticipacionHoras: 12,
@@ -592,7 +592,7 @@ function textoWhatsApp(d) {
 function linkCalendario(d) {
   const ini = new Date(`${d.fecha}T${d.hora}:00${OFFSET}`), fin = new Date(ini.getTime() + CONFIG.duracionMin * 60e3);
   const f = x => x.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
-  const p = new URLSearchParams({ action: 'TEMPLATE', text: `${d.servicioNombre} con L.C.F. Odet Romero (ROMS)`, dates: `${f(ini)}/${f(fin)}`, details: 'Asesoría presencial. Costo: $600 MXN por hora, pago al finalizar. WhatsApp: +52 477 646 1540', location: d.domicilio });
+  const p = new URLSearchParams({ action: 'TEMPLATE', text: `${d.servicioNombre} con L.C.F. Odet Romero (ROMS)`, dates: `${f(ini)}/${f(fin)}`, details: 'Asesoría presencial. Costo: $600 MXN por hora, pago al finalizar. WhatsApp: +52 479 390 0639', location: d.domicilio });
   return `https://calendar.google.com/calendar/render?${p}`;
 }
 
@@ -603,7 +603,7 @@ function mostrarConfirmacion(d, viaWhatsApp) {
     <p class="kicker">${viaWhatsApp ? 'Casi listo' : 'Cita confirmada'}</p>
     <h2></h2>
     <p class="lead"></p>
-    <p class="fine">Pago de $600 MXN por hora al finalizar la asesoría. Para cambios escríbeme al +52 (477) 646-1540.</p>
+    <p class="fine">Pago de $600 MXN por hora al finalizar la asesoría. Para cambios escríbeme al +52 (479) 390-0639.</p>
     <div class="actions"></div>`;
   box.querySelector('h2').textContent = `${d.nombre.split(' ')[0]}, te espero el ${fechaLarga(d.fecha)} ${alas(d.hora)} ${hora12(d.hora)}`;
   box.querySelector('.lead').textContent = viaWhatsApp

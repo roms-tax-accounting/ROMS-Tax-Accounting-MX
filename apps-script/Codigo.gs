@@ -28,7 +28,7 @@ const CONFIG = {
   },
   SERVICIOS: { fiscal: 'Asesoría Fiscal', contable: 'Asesoría Contable y Financiera' },
   PRECIO: 600,
-  WHATSAPP_ODET: '524776461540',
+  WHATSAPP_ODET: '524793900639',
   MARCA: '[Agenda ROMS]',           // etiqueta para reconocer las citas creadas desde el sitio
   HORA_RESUMEN: 9                   // hora del correo diario con las citas del día
 };

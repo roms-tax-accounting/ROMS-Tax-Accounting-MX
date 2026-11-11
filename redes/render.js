@@ -8,6 +8,7 @@ const IMG = n => {
   if (!f) throw new Error('No encuentro la imagen ' + n);
   return 'data:image/' + (n.endsWith('.png') ? 'png' : 'jpeg') + ';base64,' + fs.readFileSync(f).toString('base64');
 };
+const LOGO = 'data:image/png;base64,' + fs.readFileSync(path.join(__dirname, 'marca', 'logo_monograma_claro.png')).toString('base64'); // monograma oficial (LOGOS ACTUALIZADOS) en claro
 const css = `
 @font-face{font-family:IS;src:url(${F('instrument-serif/files/instrument-serif-latin-400-normal.woff2')})}
 @font-face{font-family:IS;font-style:italic;src:url(${F('instrument-serif/files/instrument-serif-latin-400-italic.woff2')})}
@@ -29,7 +30,7 @@ html,body{width:var(--w);height:var(--h);background:#060d16;overflow:hidden}
 .grain{position:absolute;inset:0;opacity:.08;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .z{position:relative;z-index:2}
 .top{display:flex;justify-content:space-between;align-items:center}
-.brand{display:grid;gap:6px}.brand b{font:400 46px/0.9 IS;color:#e8edf3;letter-spacing:.02em}.brand span{font:500 14px/1 PX;letter-spacing:.24em;color:#ef4444}
+.brand{display:block}.brand img{height:132px;width:auto;display:block}.s.reel .brand img{height:150px}.brand b{font:400 46px/0.9 IS;color:#e8edf3;letter-spacing:.02em}.brand span{font:500 14px/1 PX;letter-spacing:.24em;color:#ef4444}
 .count{font:500 20px/1 PX;color:#94a3b8;letter-spacing:.1em}
 .mid{flex:1;display:flex;flex-direction:column;justify-content:center;gap:34px}
 .kicker{font:500 22px/1.3 PX;letter-spacing:.16em;text-transform:uppercase;color:#ef4444;display:flex;align-items:center;gap:18px}
@@ -70,7 +71,7 @@ function slide(s, i, total, size) {
   if (s.cta) mid += `<span class="cta">${md(s.cta)}</span>`;
   const right = s.swipe ? '<span class="swipe">DESLIZA →</span>' : '<span>@romstaxaccountingmx</span>';
   return `<div class="${cls.join(' ')}" style="${style}">${s.photo?'':'<div class="dots"></div>'}<div class="grain"></div>
-   <div class="z top"><div class="brand"><b>ROMS</b><span>TAX &amp; ACCOUNTING MX</span></div>${counter}</div>
+   <div class="z top"><div class="brand"><img src="${LOGO}" alt="ROMS Tax &amp; Accounting MX"></div>${counter}</div>
    <div class="z mid" style="${size.h>1500?'justify-content:flex-end;padding-bottom:180px':''}">${mid}</div>
    <div class="z foot"><span><b>L.C.F. Odet Romero</b><br>León, Guanajuato</span>${right}</div></div>`;
 }

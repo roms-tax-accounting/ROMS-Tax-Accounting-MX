@@ -33,6 +33,10 @@ Las sigue la tarea programada mensual (y cualquier sesión de Claude que retome 
   (#ContadorLeón #LeónGuanajuato y los del tema).
 
 ## Diseño
+- Logo: siempre el monograma oficial de ROMS (carpeta "LOGOS ACTUALIZADOS" de Drive), en su versión clara para fondo oscuro:
+  `redes/marca/logo_monograma_claro.png` (lo inserta `render.js` arriba a la izquierda de cada lámina) y
+  `redes/marca/logo_completo_claro.png` (con el lema "Estrategia. Control. Crecimiento.") para portadas. Nunca escribas "ROMS" como texto en lugar del logo.
+- Teléfono / WhatsApp de ROMS: 479 390 0639.
 - Estilo del sitio: fondo azul marino, títulos en serif (Instrument Serif) con la palabra clave en rojo (`*palabra*`),
   texto en Plus Jakarta Sans, etiquetas en IBM Plex Mono, malla de puntos rojos, firma de Odet abajo.
 - Especificaciones de ejemplo en `redes/plantillas/*.json`. Cada lámina acepta: `kicker`, `title` (+ `tsize` m o s),

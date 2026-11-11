@@ -6,7 +6,7 @@ Las sigue la tarea programada mensual (y cualquier sesión de Claude que retome 
 ## Cuentas y herramientas
 - Instagram: @romstaxaccountingmx (antes @romerointegratedservices; cuenta de empresa, vinculada a la página de Facebook).
 - Facebook: página "ROMS Tax & Accounting MX".
-- LinkedIn: perfil personal de Odet ("Jocelyn Odet Romero Domínguez", identifier `linkedin`) y, si está conectada en Postiz, la página de empresa de ROMS (identifier `linkedin-page`). Publica en todos los canales de LinkedIn que `integrationList` muestre.
+- LinkedIn: perfil personal de Odet ("Jocelyn Odet Romero Domínguez", identifier `linkedin`) y, si está conectada en Postiz, la página de empresa "Despacho Fiscal ROMS | Tax & Accounting MX" (identifier `linkedin-page`), con sus publicaciones 2 horas después (3:00 p. m., 21:00 UTC) y textos en voz del despacho cuando la pieza hable de Odet en primera persona. Publica en todos los canales de LinkedIn que `integrationList` muestre.
 - Publicación: Postiz, a través del conector de Postiz en Claude (herramientas `integrationList`, `integrationSchema`,
   `uploadFromUrlTool`, `integrationSchedulePostTool`, `postsListTool`, `deletePostTool`).
   En Postiz el Instagram es `ROMS | Tax & Accounting MX` (identifier `instagram`) y Facebook `ROMS Tax & Accounting MX`

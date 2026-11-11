@@ -6,6 +6,7 @@ Las sigue la tarea programada mensual (y cualquier sesión de Claude que retome 
 ## Cuentas y herramientas
 - Instagram: @romstaxaccountingmx (antes @romerointegratedservices; cuenta de empresa, vinculada a la página de Facebook).
 - Facebook: página "ROMS Tax & Accounting MX".
+- LinkedIn: perfil personal de Odet ("Jocelyn Odet Romero Domínguez", identifier `linkedin`) y, si está conectada en Postiz, la página de empresa de ROMS (identifier `linkedin-page`). Publica en todos los canales de LinkedIn que `integrationList` muestre.
 - Publicación: Postiz, a través del conector de Postiz en Claude (herramientas `integrationList`, `integrationSchema`,
   `uploadFromUrlTool`, `integrationSchedulePostTool`, `postsListTool`, `deletePostTool`).
   En Postiz el Instagram es `ROMS | Tax & Accounting MX` (identifier `instagram`) y Facebook `ROMS Tax & Accounting MX`
@@ -17,7 +18,9 @@ Las sigue la tarea programada mensual (y cualquier sesión de Claude que retome 
 - 3 posts por semana: lunes, miércoles y viernes a la 1:00 p. m. (19:00 UTC).
 - 1 reel por semana, jueves a las 8:00 p. m. (02:00 UTC del viernes).
 - Por mes: 2 reels con Odet a cámara (ella los graba; tú das el guion y la portada) y el resto animados.
-- Cada pieza se publica en Instagram y en Facebook con el mismo texto.
+- Cada pieza se publica en Instagram y en Facebook con el mismo texto, y en LinkedIn el mismo día a la 1:00 p. m. (19:00 UTC), también los reels.
+- Texto para LinkedIn: versión propia, más profesional, en primera persona; enlace directo (sitio o agenda) en lugar de "link en mi perfil"; 3 hashtags; máximo 3,000 caracteres.
+  Carruseles en LinkedIn: ajuste `post_as_images_carousel: true` con `carousel_name`. Videos: un solo archivo. Usa `--no-shortLink` si programas con la CLI.
 
 ## Voz y reglas de contenido
 - Español de México, tú al cliente. Odet habla en primera persona: "te respondo personalmente", "yo misma te atiendo".

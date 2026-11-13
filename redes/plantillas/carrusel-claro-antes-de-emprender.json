@@ -1,0 +1,55 @@
+[
+ {
+  "id": "17-antes-de-emprender",
+  "theme": "light",
+  "slides": [
+   {
+    "kicker": "Antes de emprender",
+    "title": "5 cosas que nadie te dice al *darte de alta* en el SAT",
+    "tsize": "m",
+    "rule": true,
+    "swipe": true
+   },
+   {
+    "n": "01",
+    "h2": "Tener RFC ya es tener *obligaciones*",
+    "body": "Aunque todavía no vendas, si te diste de alta con una actividad debes presentar tus declaraciones cada mes, **aunque no haya impuesto a pagar**.",
+    "note": "No presentarlas genera requerimientos y multas.",
+    "swipe": true
+   },
+   {
+    "n": "02",
+    "h2": "Tus depósitos *hablan* por ti",
+    "body": "El SAT recibe información de tus cuentas bancarias y la compara con tus facturas y declaraciones. Si gastas o recibes más de lo que declaras, puede presumir ingresos no declarados.",
+    "note": "Los bancos informan al SAT los depósitos en efectivo de más de $15,000 al mes.",
+    "swipe": true
+   },
+   {
+    "n": "03",
+    "h2": "Sin *sellos* no hay facturas",
+    "body": "Para facturar necesitas tu e.firma y tu certificado de sello digital. La e.firma **vence cada 4 años**, y si el SAT detecta irregularidades puede restringir tu sello.",
+    "note": "Un sello restringido te deja sin facturar hasta que aclares.",
+    "swipe": true
+   },
+   {
+    "n": "04",
+    "h2": "Tu *opinión de cumplimiento* abre o cierra puertas",
+    "body": "Clientes grandes, bancos y dependencias te la van a pedir antes de contratarte o darte un crédito. Una sola declaración olvidada basta para que salga negativa.",
+    "swipe": true
+   },
+   {
+    "n": "05",
+    "h2": "Separa tu dinero del *negocio*",
+    "body": "Usa una cuenta solo para tu actividad. Así tus ingresos no se mezclan con préstamos, regalos o transferencias familiares, y comprobar todo ante el SAT es mucho más fácil.",
+    "swipe": true
+   },
+   {
+    "kicker": "ROMS | Tax & Accounting MX",
+    "title": "Empieza en *orden* desde el día uno",
+    "tsize": "m",
+    "body": "Te acompaño a elegir tu régimen, darte de alta y cumplir sin sorpresas. Te atiendo personalmente.",
+    "cta": "Escríbeme · 479 390 0639"
+   }
+  ]
+ }
+]

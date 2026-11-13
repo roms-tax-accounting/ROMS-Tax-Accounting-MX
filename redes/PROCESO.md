@@ -46,6 +46,10 @@ Las sigue la tarea programada mensual (y cualquier sesión de Claude que retome 
   Ordena las piezas por fecha de publicación en Instagram y alterna oscuro / claro para que el perfil no se vea plano. Las piezas con foto
   (`photo` o `portrait`) siempre salen oscuras y cuentan como oscuras; planea el orden alrededor de ellas. Los reels animados también pueden ir en claro.
   `render.js` usa automáticamente el monograma azul marino (`redes/marca/logo_monograma_oscuro.png`) en el tema claro. Ejemplo: `redes/plantillas/carrusel-claro-antes-de-emprender.json`.
+- Imágenes dentro de las láminas: un solo elemento visual por lámina y del mismo estilo en todo el carrusel, para no generar ruido.
+  En carruseles usa un ícono de línea por lámina (`"icon":"nombre"`, íconos de https://lucide.dev, p. ej. landmark, stamp, calendar-check,
+  badge-check, wallet, receipt, file-check, shield-check, message-circle) que represente la idea de esa lámina; render.js lo pinta en la paleta.
+  En la portada puede ir un ícono grande, tu foto o un número grande, nunca varios a la vez.
 - Especificaciones de ejemplo en `redes/plantillas/*.json`. Cada lámina acepta: `kicker`, `title` (+ `tsize` m o s),
   `h2`, `n` (número grande), `big` (+ `bigClass: "sky"`), `body`, `list`, `note`, `cta`, `rule`, `swipe`,
   `photo` (archivo de `assets/img/` o `redes/fotos/`), `portrait` (foto de persona con texto abajo). `"size":"reel"` = 1080×1920.

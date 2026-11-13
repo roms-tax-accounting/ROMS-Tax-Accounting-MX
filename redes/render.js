@@ -10,6 +10,9 @@ const IMG = n => {
 };
 const B64 = f => 'data:image/png;base64,' + fs.readFileSync(path.join(__dirname, 'marca', f)).toString('base64');
 const LOGO = B64('logo_monograma_claro.png'), LOGO_OSCURO = B64('logo_monograma_oscuro.png'); // monograma oficial (LOGOS ACTUALIZADOS): claro para fondo oscuro, azul marino para tema claro
+// Íconos de línea (Lucide, licencia ISC): "icon":"nombre" en la lámina, ver https://lucide.dev/icons
+const ICON = n => fs.readFileSync(path.join(__dirname, 'node_modules/lucide-static/icons', n + '.svg'), 'utf8')
+  .replace(/<!--[\s\S]*?-->/g, '').replace(/width="24"/, 'width="84"').replace(/height="24"/, 'height="84"').replace(/stroke-width="2"/, 'stroke-width="1.4"');
 const css = `
 @font-face{font-family:IS;src:url(${F('instrument-serif/files/instrument-serif-latin-400-normal.woff2')})}
 @font-face{font-family:IS;font-style:italic;src:url(${F('instrument-serif/files/instrument-serif-latin-400-italic.woff2')})}
@@ -61,6 +64,11 @@ p.b strong{color:#e8edf3;font-weight:700}
 .s.light .kicker{color:#c81e1e}.s.light .kicker::before{background:#c81e1e}.s.light .n{color:#dc2626}.s.light .big.sky{color:#0e7490}
 .s.light .count,.s.light .swipe,.s.light .foot{color:#64748b}.s.light .foot b{color:#0b1f33}
 .s.light .rule{background:linear-gradient(90deg,#c81e1e,rgba(200,30,30,0))}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px}
+.ico{flex:none;width:156px;height:156px;border-radius:50%;display:grid;place-items:center;color:#e8edf3;
+ border:2px solid rgba(239,68,68,.75);background:radial-gradient(circle at 30% 25%,rgba(65,201,226,.16),rgba(239,68,68,.08) 70%)}
+.ico svg{display:block}.ico.lg{width:190px;height:190px}.ico.lg svg{width:104px;height:104px}
+.s.light .ico{color:#0b1f33;border-color:rgba(200,30,30,.7);background:radial-gradient(circle at 30% 25%,rgba(65,201,226,.18),rgba(220,38,38,.07) 70%)}
 `;
 const md = t => String(t||'').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\*(.+?)\*/g,'<em>$1</em>');
 function slide(s, i, total, size, theme) {
@@ -69,8 +77,10 @@ function slide(s, i, total, size, theme) {
   const style = s.photo ? `--img:url(${IMG(s.photo)})` : '';
   const counter = total > 1 ? `<span class="count">${String(i+1).padStart(2,'0')} / ${String(total).padStart(2,'0')}</span>` : '';
   let mid = '';
+  const ico = s.icon ? `<span class="ico${s.n ? '' : ' lg'}">${ICON(s.icon)}</span>` : '';
+  if (s.icon && !s.n) mid += `<div class="head" style="justify-content:flex-start">${ico}</div>`;
   if (s.kicker) mid += `<p class="kicker">${md(s.kicker)}</p>`;
-  if (s.n) mid += `<p class="n">${s.n}</p>`;
+  if (s.n) mid += s.icon ? `<div class="head"><p class="n">${s.n}</p>${ico}</div>` : `<p class="n">${s.n}</p>`;
   if (s.big) mid += `<p class="big ${s.bigClass||''}">${s.big}</p>`;
   if (s.title) mid += `<h1 class="${s.tsize ? 't-'+s.tsize : ''}">${md(s.title)}</h1>`;
   if (s.h2) mid += `<h2>${md(s.h2)}</h2>`;

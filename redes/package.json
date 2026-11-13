@@ -5,6 +5,7 @@
   "dependencies": {
     "@fontsource/ibm-plex-mono": "5.1.0",
     "@fontsource/instrument-serif": "5.1.0",
-    "@fontsource/plus-jakarta-sans": "5.1.0"
+    "@fontsource/plus-jakarta-sans": "5.1.0",
+    "lucide-static": "0.460.0"
   }
 }

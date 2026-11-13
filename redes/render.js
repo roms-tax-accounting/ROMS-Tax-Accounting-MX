@@ -8,7 +8,8 @@ const IMG = n => {
   if (!f) throw new Error('No encuentro la imagen ' + n);
   return 'data:image/' + (n.endsWith('.png') ? 'png' : 'jpeg') + ';base64,' + fs.readFileSync(f).toString('base64');
 };
-const LOGO = 'data:image/png;base64,' + fs.readFileSync(path.join(__dirname, 'marca', 'logo_monograma_claro.png')).toString('base64'); // monograma oficial (LOGOS ACTUALIZADOS) en claro
+const B64 = f => 'data:image/png;base64,' + fs.readFileSync(path.join(__dirname, 'marca', f)).toString('base64');
+const LOGO = B64('logo_monograma_claro.png'), LOGO_OSCURO = B64('logo_monograma_oscuro.png'); // monograma oficial (LOGOS ACTUALIZADOS): claro para fondo oscuro, azul marino para tema claro
 const css = `
 @font-face{font-family:IS;src:url(${F('instrument-serif/files/instrument-serif-latin-400-normal.woff2')})}
 @font-face{font-family:IS;font-style:italic;src:url(${F('instrument-serif/files/instrument-serif-latin-400-italic.woff2')})}
@@ -52,10 +53,19 @@ p.b strong{color:#e8edf3;font-weight:700}
 .cta{display:inline-flex;align-self:flex-start;background:#dc2626;color:#fff;font:700 30px/1 PJ;padding:26px 34px;border-radius:3px}
 .swipe{font:500 22px/1 PX;color:#94a3b8;letter-spacing:.12em}
 .list{display:grid;gap:26px}.list div{display:grid;grid-template-columns:56px 1fr;font:400 36px/1.4 PJ;color:#cbd5e1}.list div::before{content:"—";color:#ef4444}
+/* Tema claro (marfil) para alternar con el oscuro en el feed: "theme":"light" en la pieza o en la lámina */
+.s.light{color:#334155;background:radial-gradient(900px 700px at 0% 0%,rgba(65,201,226,.12),transparent 62%),radial-gradient(760px 640px at 100% 100%,rgba(220,38,38,.09),transparent 60%),#f4f0e8}
+.s.light .grain{opacity:.06;mix-blend-mode:multiply}.s.light .dots{opacity:.3}
+.s.light h1,.s.light h2,.s.light .big{color:#0b1f33}.s.light h1 em,.s.light h2 em{color:#c81e1e}
+.s.light p.b,.s.light .list div,.s.light .note{color:#334155}.s.light p.b strong{color:#0b1f33}
+.s.light .kicker{color:#c81e1e}.s.light .kicker::before{background:#c81e1e}.s.light .n{color:#dc2626}.s.light .big.sky{color:#0e7490}
+.s.light .count,.s.light .swipe,.s.light .foot{color:#64748b}.s.light .foot b{color:#0b1f33}
+.s.light .rule{background:linear-gradient(90deg,#c81e1e,rgba(200,30,30,0))}
 `;
 const md = t => String(t||'').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\*(.+?)\*/g,'<em>$1</em>');
-function slide(s, i, total, size) {
-  const cls = ["s"]; if (size.h > 1500) cls.push("reel"); if (s.photo) cls.push('photo'); if (s.portrait) cls.push('portrait');
+function slide(s, i, total, size, theme) {
+  const light = !s.photo && (s.theme || theme) === 'light';
+  const cls = ["s"]; if (light) cls.push('light'); if (size.h > 1500) cls.push("reel"); if (s.photo) cls.push('photo'); if (s.portrait) cls.push('portrait');
   const style = s.photo ? `--img:url(${IMG(s.photo)})` : '';
   const counter = total > 1 ? `<span class="count">${String(i+1).padStart(2,'0')} / ${String(total).padStart(2,'0')}</span>` : '';
   let mid = '';
@@ -71,7 +81,7 @@ function slide(s, i, total, size) {
   if (s.cta) mid += `<span class="cta">${md(s.cta)}</span>`;
   const right = s.swipe ? '<span class="swipe">DESLIZA →</span>' : '<span>@romstaxaccountingmx</span>';
   return `<div class="${cls.join(' ')}" style="${style}">${s.photo?'':'<div class="dots"></div>'}<div class="grain"></div>
-   <div class="z top"><div class="brand"><img src="${LOGO}" alt="ROMS Tax &amp; Accounting MX"></div>${counter}</div>
+   <div class="z top"><div class="brand"><img src="${light ? LOGO_OSCURO : LOGO}" alt="ROMS Tax &amp; Accounting MX"></div>${counter}</div>
    <div class="z mid" style="${size.h>1500?'justify-content:flex-end;padding-bottom:180px':''}">${mid}</div>
    <div class="z foot"><span><b>L.C.F. Odet Romero</b><br>León, Guanajuato</span>${right}</div></div>`;
 }
@@ -84,7 +94,7 @@ function slide(s, i, total, size) {
     const size = pc.size === 'reel' ? { w: 1080, h: 1920 } : { w: 1080, h: 1350 };
     const p = await b.newPage({ viewport: { width: size.w, height: size.h } });
     for (const [i, s] of pc.slides.entries()) {
-      await p.setContent(`<!doctype html><html><head><meta charset="utf-8"><style>:root{--w:${size.w}px;--h:${size.h}px}${css}</style></head><body>${slide(s, i, pc.slides.length, size)}</body></html>`);
+      await p.setContent(`<!doctype html><html><head><meta charset="utf-8"><style>:root{--w:${size.w}px;--h:${size.h}px}${css}</style></head><body>${slide(s, i, pc.slides.length, size, pc.theme)}</body></html>`);
       await p.evaluate(() => document.fonts.ready);
       const name = pc.slides.length > 1 ? `${pc.id}-${i+1}.png` : `${pc.id}.png`;
       await p.screenshot({ path: path.join(outDir, name) });

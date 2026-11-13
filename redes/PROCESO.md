@@ -42,6 +42,10 @@ Las sigue la tarea programada mensual (y cualquier sesión de Claude que retome 
 - Teléfono / WhatsApp de ROMS: 479 390 0639.
 - Estilo del sitio: fondo azul marino, títulos en serif (Instrument Serif) con la palabra clave en rojo (`*palabra*`),
   texto en Plus Jakarta Sans, etiquetas en IBM Plex Mono, malla de puntos rojos, firma de Odet abajo.
+- Alternar colores en el feed: hay dos temas, oscuro (azul marino, el normal) y claro (marfil con azul marino y rojo, `"theme":"light"` en la pieza).
+  Ordena las piezas por fecha de publicación en Instagram y alterna oscuro / claro para que el perfil no se vea plano. Las piezas con foto
+  (`photo` o `portrait`) siempre salen oscuras y cuentan como oscuras; planea el orden alrededor de ellas. Los reels animados también pueden ir en claro.
+  `render.js` usa automáticamente el monograma azul marino (`redes/marca/logo_monograma_oscuro.png`) en el tema claro. Ejemplo: `redes/plantillas/carrusel-claro-antes-de-emprender.json`.
 - Especificaciones de ejemplo en `redes/plantillas/*.json`. Cada lámina acepta: `kicker`, `title` (+ `tsize` m o s),
   `h2`, `n` (número grande), `big` (+ `bigClass: "sky"`), `body`, `list`, `note`, `cta`, `rule`, `swipe`,
   `photo` (archivo de `assets/img/` o `redes/fotos/`), `portrait` (foto de persona con texto abajo). `"size":"reel"` = 1080×1920.

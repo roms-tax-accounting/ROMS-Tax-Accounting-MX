@@ -17,7 +17,7 @@ Las sigue la tarea programada mensual (y cualquier sesión de Claude que retome 
 ## Ritmo y horarios (hora del centro de México)
 - 3 posts por semana: lunes, miércoles y viernes a la 1:00 p. m. (19:00 UTC).
 - 1 reel por semana, jueves a las 8:00 p. m. (02:00 UTC del viernes).
-- Por mes: 2 reels con Odet a cámara (ella los graba; tú das el guion y la portada) y el resto animados.
+- Por mes: 2 reels con Odet a cámara (ella los graba y los publica; tú das el guion y la portada en el calendario, sin borrador en Postiz) y el resto animados.
 - Cada pieza se publica en Instagram y en Facebook con el mismo texto, y en LinkedIn el mismo día a la 1:00 p. m. (19:00 UTC), también los reels.
 - Texto para LinkedIn: versión propia, más profesional, en primera persona; enlace directo (sitio o agenda) en lugar de "link en mi perfil"; 3 hashtags; máximo 3,000 caracteres.
   Carruseles en LinkedIn: ajuste `post_as_images_carousel: true` con `carousel_name`. Videos: un solo archivo. Usa `--no-shortLink` si programas con la CLI.
@@ -29,7 +29,9 @@ Las sigue la tarea programada mensual (y cualquier sesión de Claude que retome 
 - Temas: calendario fiscal real del mes (declaración mensual del 17, anual de personas físicas en abril, aguinaldo, PTU en mayo,
   cierre fiscal en diciembre), RESICO, deducciones, nómina e IMSS, defensa fiscal y materialidad, LLC y comercio exterior.
 - Al menos 1 post al mes lleva a la agenda: https://roms-tax-accounting.github.io/ROMS-Tax-Accounting-MX/agendar/
-  (asesoría fiscal o contable y financiera, $600 por hora, pago al terminar, en una cafetería de la zona o en el domicilio).
+  (asesoría fiscal o contable y financiera, pago al terminar, en una cafetería de la zona o en el domicilio).
+- El precio de la asesoría solo aparece en la página web: nunca en imágenes, textos de posts ni versiones de LinkedIn.
+- No marques ninguna publicación como hecha con IA (`made_with_ai`).
 - Toda cifra (UMA, salario mínimo, tarifas, fechas) se verifica en fuentes vigentes y se cita en el calendario.
   Nunca inventes testimonios ni reseñas de clientes.
 - Texto del post: 3 a 5 párrafos cortos, cierre con invitación a escribir o a agendar, 4 a 6 hashtags
@@ -52,7 +54,6 @@ Las sigue la tarea programada mensual (y cualquier sesión de Claude que retome 
   En la portada puede ir un ícono grande, tu foto o un número grande, nunca varios a la vez.
 - Fondos: las piezas oscuras pueden llevar foto (`photo`); en las claras se usa una ilustración de línea tenue de Lucide en la portada
   (`"bgIcon":"nombre"`, distinta del `icon` de las láminas). No repitas una foto ni una ilustración dentro del mes ni respecto al mes anterior.
-- No pongas el precio de la asesoría en las imágenes.
 - Especificaciones de ejemplo en `redes/plantillas/*.json`. Cada lámina acepta: `kicker`, `title` (+ `tsize` m o s),
   `h2`, `n` (número grande), `big` (+ `bigClass: "sky"`), `body`, `list`, `note`, `cta`, `rule`, `swipe`,
   `photo` (archivo de `assets/img/` o `redes/fotos/`), `portrait` (foto de persona con texto abajo). `"size":"reel"` = 1080×1920.
@@ -81,4 +82,4 @@ Las sigue la tarea programada mensual (y cualquier sesión de Claude que retome 
 ## Aprobación
 - Odet aprueba en el documento del calendario (columna Estado: Por revisar / Aprobado / Cambiar) o respondiendo en la sesión.
 - Nada se programa como publicación definitiva sin su aprobación.
-- Los reels a cámara se programan cuando ella mande los videos; ponles la portada diseñada como `thumbnail`.
+- Los reels a cámara los publica Odet; tú solo dejas el guion y la portada diseñada en el calendario.

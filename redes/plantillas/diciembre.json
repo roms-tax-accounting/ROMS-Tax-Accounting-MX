@@ -1,67 +1,354 @@
 [
- {"id":"dic-02-resico-5m","theme":"light","slides":[
-  {"kicker":"Reforma fiscal 2027 · RESICO","big":"$5 M","title":"de ingresos al año será el nuevo *límite*","tsize":"s","rule":true,"body":"Desde el 1 de enero de 2027 para personas físicas. Las tasas siguen de **1% a 2.5%**.","note":"Reforma a la LISR, DOF 13 de noviembre de 2026. En 2026 el tope sigue en $3.5 M."}
- ]},
- {"id":"dic-03-reel-portada","size":"reel","slides":[
-  {"kicker":"Reel","title":"RESICO 2027: lo que *cambia* y lo que no","body":"Odet Romero · Contadora en León"}
- ]},
- {"id":"dic-04-iva-7","theme":"light","slides":[
-  {"kicker":"RESICO · Ley de Ingresos 2027","title":"IVA de *7%*: lo que debes saber antes de elegirlo","tsize":"m","rule":true,"swipe":true,"icon":"percent"},
-  {"n":"01","h2":"Es *opcional*","body":"No es una tasa nueva para todos. En 2027, si estás en RESICO, podrás elegir pagar IVA aplicando **7% a lo que cobras**.","swipe":true,"icon":"badge-check"},
-  {"n":"02","h2":"Tus facturas siguen *igual*","body":"En tus CFDI sigues trasladando el IVA a la tasa que corresponda. Lo que cambia es cuánto le pagas al SAT.","note":"La diferencia no es ingreso para ISR.","swipe":true,"icon":"receipt"},
-  {"n":"03","h2":"Sin *acreditar*","body":"Con esta opción no restas el IVA que pagaste en tus compras y gastos. Si gastas mucho en tu actividad, puede no convenirte.","swipe":true,"icon":"calculator"},
-  {"n":"04","h2":"Aviso en *30 días*","body":"Se elige con un aviso al SAT dentro de los 30 días siguientes a tu primer cobro del año, y **no se cambia** durante el ejercicio.","swipe":true,"icon":"calendar-check"},
-  {"kicker":"Antes de decidir","title":"Hagamos los *números* juntos","tsize":"m","body":"Compara tu IVA normal contra el 7% con tus cobros y gastos reales. Te atiendo personalmente.","cta":"Escríbeme · 479 390 0639","icon":"message-circle"}
- ]},
- {"id":"dic-07-agenda","slides":[
-  {"photo":"calendario-enero.jpg","kicker":"Asesoría en persona","title":"Empieza 2027 con tus números *claros*","tsize":"m","body":"Fiscal o contable y financiera, **en persona** y con pago al terminar.","note":"En una cafetería de tu zona o en tu domicilio, en León.","cta":"Agenda en el link del perfil"}
- ]},
- {"id":"dic-09-aguinaldo","theme":"light","slides":[
-  {"kicker":"Patrones · Aguinaldo 2026","big":"20 dic","title":"cae en domingo: *págalo antes*","tsize":"s","rule":true,"body":"Mínimo **15 días de salario**, con recibo de nómina timbrado. Exento de ISR hasta **$3,519.30** (30 UMA).","note":"Art. 87 de la Ley Federal del Trabajo y art. 93, fr. XIV de la LISR."}
- ]},
- {"id":"dic-11-resico-revisiones","theme":"light","slides":[
-  {"kicker":"RESICO · Cierre 2026","title":"5 revisiones para cerrar el año *sin discrepancias*","tsize":"m","rule":true,"swipe":true,"icon":"shield-check"},
-  {"n":"01","h2":"Lo *cobrado* contra lo facturado","body":"En RESICO pagas sobre lo que cobras. Revisa que cada depósito de tu actividad tenga su factura y esté en tu declaración.","swipe":true,"icon":"file-check"},
-  {"n":"02","h2":"Depósitos que *no son* ventas","body":"Préstamos, regalos o traspasos entre tus cuentas: ten a la mano el contrato o el comprobante que lo explique.","swipe":true,"icon":"landmark"},
-  {"n":"03","h2":"Facturas *canceladas*","body":"Si cancelaste una factura ya cobrada, revisa que la que la sustituye esté emitida y declarada.","swipe":true,"icon":"receipt"},
-  {"n":"04","h2":"Tus ingresos del *año*","body":"Para 2026 el tope sigue en **$3.5 millones**. Si lo rebasaste, desde el mes siguiente cambias de régimen.","swipe":true,"icon":"trending-up"},
-  {"n":"05","h2":"Opinión de cumplimiento *positiva*","body":"Una sola declaración mensual pendiente basta para que salga negativa. Revísala en el portal del SAT.","note":"¿Algo no cuadra? Lo revisamos antes de que lo haga el SAT.","icon":"badge-check"}
- ]},
- {"id":"dic-14-declaracion","slides":[
-  {"kicker":"Jueves 17 de diciembre","big":"17","title":"vence tu declaración *mensual* de noviembre","tsize":"s","rule":true,"body":"ISR e IVA para RESICO, actividad empresarial y personas morales. Ese día también vencen las **cuotas del IMSS** de noviembre.","note":"Presentar tarde genera actualizaciones y recargos."}
- ]},
- {"id":"dic-16-nomina-2027","theme":"light","slides":[
-  {"kicker":"Nómina · Cierre 2026","title":"5 pendientes de nómina para empezar *2027*","tsize":"m","rule":true,"swipe":true,"icon":"users"},
-  {"n":"01","h2":"Aguinaldo *pagado y timbrado*","body":"Antes del 20 de diciembre, con su CFDI de nómina. Este año el 20 es domingo.","swipe":true,"icon":"gift"},
-  {"n":"02","h2":"Nuevo *salario mínimo*","body":"La CONASAMI fija en diciembre el salario mínimo 2027, que rige desde el 1 de enero. Ajusta a quien gane menos.","swipe":true,"icon":"banknote"},
-  {"n":"03","h2":"Jornada de *46 horas*","body":"Es la jornada máxima semanal desde el 1 de enero de 2027. Revisa turnos, contratos y horas extra.","swipe":true,"icon":"clock"},
-  {"n":"04","h2":"Cálculo *anual* de ISR","body":"Por cada trabajador al cierre del año. La diferencia a cargo se entera a más tardar en febrero (art. 97 LISR).","swipe":true,"icon":"calculator"},
-  {"n":"05","h2":"Prevé el *flujo* de enero","body":"Cuotas del IMSS, el ISR retenido en diciembre y el nuevo salario llegan juntos.","note":"¿Te ayudo con tu nómina? Escríbeme.","icon":"wallet"}
- ]},
- {"id":"dic-17-reel-portada","size":"reel","slides":[
-  {"kicker":"Reel","title":"3 cosas que reviso con mis clientes antes del *31*","body":"Odet Romero · Contadora en León"}
- ]},
- {"id":"dic-18-regularizacion","theme":"light","slides":[
-  {"kicker":"Ley de Ingresos 2027","big":"100%","title":"de estímulo en multas y *recargos* si te regularizas","tsize":"s","rule":true,"body":"Adeudos de 2025 o anteriores, pagando en una sola exhibición a más tardar el **31 de diciembre de 2027**.","note":"Transitorio vigésimo primero de la LIF 2027. Hay excepciones: revisemos tu caso."}
- ]},
- {"id":"dic-21-anual-enero","slides":[
-  {"photo":"cafeteria-leon.jpg","kicker":"Declaración anual 2026","title":"Tu anual de abril se prepara en *enero*","tsize":"m","body":"Aparta tu asesoría para revisar tus ingresos, retenciones y deducciones con calma.","note":"En una cafetería de tu zona o en tu domicilio, en León.","cta":"Agenda en el link del perfil"}
- ]},
- {"id":"dic-23-deducciones","theme":"light","slides":[
-  {"kicker":"Deducciones personales","big":"31 dic","title":"último día para *pagarlas* y que cuenten en tu anual","tsize":"s","rule":true,"body":"Con factura a tu RFC y pago con tarjeta, transferencia o cheque. **En efectivo no cuentan.**","note":"Tope general: 15% de tus ingresos o $213,973.20 (5 UMA anuales), lo que sea menor."}
- ]},
- {"id":"dic-25-navidad","theme":"light","slides":[
-  {"icon":"sparkles","kicker":"25 de diciembre","title":"Feliz *Navidad*","rule":true,"body":"Gracias por confiarme tus números este año. Te deseo unos días de descanso con los tuyos.","note":"Hoy es descanso obligatorio. Si tu equipo trabaja, le toca su salario más un salario doble (arts. 74 y 75 LFT)."}
- ]},
- {"id":"dic-28-enero-2027","slides":[
-  {"kicker":"Calendario fiscal","title":"Lo que trae *enero 2027*","rule":true,"swipe":true,"icon":"calendar-days"},
-  {"n":"1 ene","h2":"Entra la *reforma fiscal*","body":"RESICO hasta $5 millones, opción de IVA de 7% y retención anual por intereses de 0.68%.","swipe":true,"icon":"landmark"},
-  {"n":"1 ene","h2":"Salario mínimo nuevo y *46 horas*","body":"Ambos rigen desde el primer día del año. El monto del salario lo publica la CONASAMI en diciembre.","swipe":true,"icon":"clock"},
-  {"n":"18 ene","h2":"Declaración mensual de *diciembre*","body":"El 17 cae en domingo, así que el plazo se recorre al lunes 18.","swipe":true,"icon":"calendar-check"},
-  {"n":"30 días","h2":"Aviso del *IVA de 7%*","body":"Si eliges esa opción en RESICO, avisa al SAT dentro de los 30 días siguientes a tu primer cobro del año.","swipe":true,"icon":"percent"},
-  {"n":"1 feb","h2":"Nueva *UMA*","body":"El INEGI publica su valor en enero y rige desde el 1 de febrero.","note":"Guárdalo y empieza el año en orden.","icon":"trending-up"}
- ]},
- {"id":"dic-30-proposito","theme":"light","slides":[
-  {"kicker":"Propósito 2027","title":"Que tus números cuenten la *misma historia*","tsize":"m","rule":true,"body":"Lo que cobras, lo que facturas y lo que declaras. Si cuadran, el SAT no tiene nada que preguntarte.","note":"Separa tus cuentas, factura cada cobro y declara a tiempo."}
- ]}
+ {
+  "id": "dic-02-resico-5m",
+  "theme": "light",
+  "slides": [
+   {
+    "kicker": "Reforma fiscal 2027 · RESICO",
+    "big": "$5 M",
+    "title": "de ingresos al año será el nuevo *límite*",
+    "tsize": "s",
+    "rule": true,
+    "body": "Desde el 1 de enero de 2027 para personas físicas. Las tasas siguen de **1% a 2.5%**.",
+    "note": "Reforma a la LISR, DOF 13 de noviembre de 2026. En 2026 el tope sigue en $3.5 M."
+   }
+  ]
+ },
+ {
+  "id": "dic-03-reel-portada",
+  "size": "reel",
+  "slides": [
+   {
+    "kicker": "Reel",
+    "title": "RESICO 2027: lo que *cambia* y lo que no",
+    "body": "Odet Romero · Contadora en León",
+    "photo": "escritorio.jpg"
+   }
+  ]
+ },
+ {
+  "id": "dic-04-iva-7",
+  "theme": "light",
+  "slides": [
+   {
+    "kicker": "RESICO · Ley de Ingresos 2027",
+    "title": "IVA de *7%*: lo que debes saber antes de elegirlo",
+    "tsize": "m",
+    "rule": true,
+    "swipe": true,
+    "icon": "percent"
+   },
+   {
+    "n": "01",
+    "h2": "Es *opcional*",
+    "body": "No es una tasa nueva para todos. En 2027, si estás en RESICO, podrás elegir pagar IVA aplicando **7% a lo que cobras**.",
+    "swipe": true,
+    "icon": "badge-check"
+   },
+   {
+    "n": "02",
+    "h2": "Tus facturas siguen *igual*",
+    "body": "En tus CFDI sigues trasladando el IVA a la tasa que corresponda. Lo que cambia es cuánto le pagas al SAT.",
+    "note": "La diferencia no es ingreso para ISR.",
+    "swipe": true,
+    "icon": "receipt"
+   },
+   {
+    "n": "03",
+    "h2": "Sin *acreditar*",
+    "body": "Con esta opción no restas el IVA que pagaste en tus compras y gastos. Si gastas mucho en tu actividad, puede no convenirte.",
+    "swipe": true,
+    "icon": "calculator"
+   },
+   {
+    "n": "04",
+    "h2": "Aviso en *30 días*",
+    "body": "Se elige con un aviso al SAT dentro de los 30 días siguientes a tu primer cobro del año, y **no se cambia** durante el ejercicio.",
+    "swipe": true,
+    "icon": "calendar-check"
+   },
+   {
+    "kicker": "Antes de decidir",
+    "title": "Hagamos los *números* juntos",
+    "tsize": "m",
+    "body": "Compara tu IVA normal contra el 7% con tus cobros y gastos reales. Te atiendo personalmente.",
+    "cta": "Escríbeme · 479 390 0639",
+    "icon": "message-circle"
+   }
+  ]
+ },
+ {
+  "id": "dic-07-agenda",
+  "slides": [
+   {
+    "photo": "calendario-enero.jpg",
+    "kicker": "Asesoría en persona",
+    "title": "Empieza 2027 con tus números *claros*",
+    "tsize": "m",
+    "body": "Fiscal o contable y financiera, **en persona** y con pago al terminar.",
+    "note": "En una cafetería de tu zona o en tu domicilio, en León.",
+    "cta": "Agenda en el link del perfil"
+   }
+  ]
+ },
+ {
+  "id": "dic-09-aguinaldo",
+  "theme": "light",
+  "slides": [
+   {
+    "kicker": "Patrones · Aguinaldo 2026",
+    "big": "20 dic",
+    "title": "cae en domingo: *págalo antes*",
+    "tsize": "s",
+    "rule": true,
+    "body": "Mínimo **15 días de salario**, con recibo de nómina timbrado. Exento de ISR hasta **$3,519.30** (30 UMA).",
+    "note": "Art. 87 de la Ley Federal del Trabajo y art. 93, fr. XIV de la LISR."
+   }
+  ]
+ },
+ {
+  "id": "dic-11-resico-revisiones",
+  "theme": "light",
+  "slides": [
+   {
+    "kicker": "RESICO · Cierre 2026",
+    "title": "5 revisiones para cerrar el año *sin discrepancias*",
+    "tsize": "m",
+    "rule": true,
+    "swipe": true,
+    "icon": "shield-check"
+   },
+   {
+    "n": "01",
+    "h2": "Lo *cobrado* contra lo facturado",
+    "body": "En RESICO pagas sobre lo que cobras. Revisa que cada depósito de tu actividad tenga su factura y esté en tu declaración.",
+    "swipe": true,
+    "icon": "file-check"
+   },
+   {
+    "n": "02",
+    "h2": "Depósitos que *no son* ventas",
+    "body": "Préstamos, regalos o traspasos entre tus cuentas: ten a la mano el contrato o el comprobante que lo explique.",
+    "swipe": true,
+    "icon": "landmark"
+   },
+   {
+    "n": "03",
+    "h2": "Facturas *canceladas*",
+    "body": "Si cancelaste una factura ya cobrada, revisa que la que la sustituye esté emitida y declarada.",
+    "swipe": true,
+    "icon": "receipt"
+   },
+   {
+    "n": "04",
+    "h2": "Tus ingresos del *año*",
+    "body": "Para 2026 el tope sigue en **$3.5 millones**. Si lo rebasaste, desde el mes siguiente cambias de régimen.",
+    "swipe": true,
+    "icon": "trending-up"
+   },
+   {
+    "n": "05",
+    "h2": "Opinión de cumplimiento *positiva*",
+    "body": "Una sola declaración mensual pendiente basta para que salga negativa. Revísala en el portal del SAT.",
+    "note": "¿Algo no cuadra? Lo revisamos antes de que lo haga el SAT.",
+    "icon": "badge-check"
+   }
+  ]
+ },
+ {
+  "id": "dic-14-declaracion",
+  "slides": [
+   {
+    "kicker": "Jueves 17 de diciembre",
+    "big": "17",
+    "title": "vence tu declaración *mensual* de noviembre",
+    "tsize": "s",
+    "rule": true,
+    "body": "ISR e IVA para RESICO, actividad empresarial y personas morales. Ese día también vencen las **cuotas del IMSS** de noviembre.",
+    "note": "Presentar tarde genera actualizaciones y recargos.",
+    "photo": "factura-calculadora.jpg"
+   }
+  ]
+ },
+ {
+  "id": "dic-16-nomina-2027",
+  "theme": "light",
+  "slides": [
+   {
+    "kicker": "Nómina · Cierre 2026",
+    "title": "5 pendientes de nómina para empezar *2027*",
+    "tsize": "m",
+    "rule": true,
+    "swipe": true,
+    "icon": "users"
+   },
+   {
+    "n": "01",
+    "h2": "Aguinaldo *pagado y timbrado*",
+    "body": "Antes del 20 de diciembre, con su CFDI de nómina. Este año el 20 es domingo.",
+    "swipe": true,
+    "icon": "gift"
+   },
+   {
+    "n": "02",
+    "h2": "Nuevo *salario mínimo*",
+    "body": "La CONASAMI fija en diciembre el salario mínimo 2027, que rige desde el 1 de enero. Ajusta a quien gane menos.",
+    "swipe": true,
+    "icon": "banknote"
+   },
+   {
+    "n": "03",
+    "h2": "Jornada de *46 horas*",
+    "body": "Es la jornada máxima semanal desde el 1 de enero de 2027. Revisa turnos, contratos y horas extra.",
+    "swipe": true,
+    "icon": "clock"
+   },
+   {
+    "n": "04",
+    "h2": "Cálculo *anual* de ISR",
+    "body": "Por cada trabajador al cierre del año. La diferencia a cargo se entera a más tardar en febrero (art. 97 LISR).",
+    "swipe": true,
+    "icon": "calculator"
+   },
+   {
+    "n": "05",
+    "h2": "Prevé el *flujo* de enero",
+    "body": "Cuotas del IMSS, el ISR retenido en diciembre y el nuevo salario llegan juntos.",
+    "note": "¿Te ayudo con tu nómina? Escríbeme.",
+    "icon": "wallet"
+   }
+  ]
+ },
+ {
+  "id": "dic-17-reel-portada",
+  "size": "reel",
+  "slides": [
+   {
+    "kicker": "Reel",
+    "title": "3 cosas que reviso con mis clientes antes del *31*",
+    "body": "Odet Romero · Contadora en León",
+    "photo": "oficina.jpg"
+   }
+  ]
+ },
+ {
+  "id": "dic-18-regularizacion",
+  "theme": "light",
+  "slides": [
+   {
+    "kicker": "Ley de Ingresos 2027",
+    "big": "100%",
+    "title": "de estímulo en multas y *recargos* si te regularizas",
+    "tsize": "s",
+    "rule": true,
+    "body": "Adeudos de 2025 o anteriores, pagando en una sola exhibición a más tardar el **31 de diciembre de 2027**.",
+    "note": "Transitorio vigésimo primero de la LIF 2027. Hay excepciones: revisemos tu caso."
+   }
+  ]
+ },
+ {
+  "id": "dic-21-anual-enero",
+  "slides": [
+   {
+    "photo": "cafeteria-leon.jpg",
+    "kicker": "Declaración anual 2026",
+    "title": "Tu anual de abril se prepara en *enero*",
+    "tsize": "m",
+    "body": "Aparta tu asesoría para revisar tus ingresos, retenciones y deducciones con calma.",
+    "note": "En una cafetería de tu zona o en tu domicilio, en León.",
+    "cta": "Agenda en el link del perfil"
+   }
+  ]
+ },
+ {
+  "id": "dic-23-deducciones",
+  "theme": "light",
+  "slides": [
+   {
+    "kicker": "Deducciones personales",
+    "big": "31 dic",
+    "title": "último día para *pagarlas* y que cuenten en tu anual",
+    "tsize": "s",
+    "rule": true,
+    "body": "Con factura a tu RFC y pago con tarjeta, transferencia o cheque. **En efectivo no cuentan.**",
+    "note": "Tope general: 15% de tus ingresos o $213,973.20 (5 UMA anuales), lo que sea menor."
+   }
+  ]
+ },
+ {
+  "id": "dic-25-navidad",
+  "theme": "light",
+  "slides": [
+   {
+    "icon": "sparkles",
+    "kicker": "25 de diciembre",
+    "title": "Feliz *Navidad*",
+    "rule": true,
+    "body": "Gracias por confiarme tus números este año. Te deseo unos días de descanso con los tuyos.",
+    "note": "Hoy es descanso obligatorio. Si tu equipo trabaja, le toca su salario más un salario doble (arts. 74 y 75 LFT)."
+   }
+  ]
+ },
+ {
+  "id": "dic-28-enero-2027",
+  "slides": [
+   {
+    "kicker": "Calendario fiscal",
+    "title": "Lo que trae *enero 2027*",
+    "rule": true,
+    "swipe": true,
+    "icon": "calendar-days",
+    "photo": "puerto.jpg"
+   },
+   {
+    "n": "1 ene",
+    "h2": "Entra la *reforma fiscal*",
+    "body": "RESICO hasta $5 millones, opción de IVA de 7% y retención anual por intereses de 0.68%.",
+    "swipe": true,
+    "icon": "landmark"
+   },
+   {
+    "n": "1 ene",
+    "h2": "Salario mínimo nuevo y *46 horas*",
+    "body": "Ambos rigen desde el primer día del año. El monto del salario lo publica la CONASAMI en diciembre.",
+    "swipe": true,
+    "icon": "clock"
+   },
+   {
+    "n": "18 ene",
+    "h2": "Declaración mensual de *diciembre*",
+    "body": "El 17 cae en domingo, así que el plazo se recorre al lunes 18.",
+    "swipe": true,
+    "icon": "calendar-check"
+   },
+   {
+    "n": "30 días",
+    "h2": "Aviso del *IVA de 7%*",
+    "body": "Si eliges esa opción en RESICO, avisa al SAT dentro de los 30 días siguientes a tu primer cobro del año.",
+    "swipe": true,
+    "icon": "percent"
+   },
+   {
+    "n": "1 feb",
+    "h2": "Nueva *UMA*",
+    "body": "El INEGI publica su valor en enero y rige desde el 1 de febrero.",
+    "note": "Guárdalo y empieza el año en orden.",
+    "icon": "trending-up"
+   }
+  ]
+ },
+ {
+  "id": "dic-30-proposito",
+  "theme": "light",
+  "slides": [
+   {
+    "kicker": "Propósito 2027",
+    "title": "Que tus números cuenten la *misma historia*",
+    "tsize": "m",
+    "rule": true,
+    "body": "Lo que cobras, lo que facturas y lo que declaras. Si cuadran, el SAT no tiene nada que preguntarte.",
+    "note": "Separa tus cuentas, factura cada cobro y declara a tiempo."
+   }
+  ]
+ }
 ]

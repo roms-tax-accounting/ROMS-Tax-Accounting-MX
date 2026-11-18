@@ -1,27 +1,99 @@
 [
- {"id":"dic-10-reel","size":"reel","slides":[
-  {"kicker":"Reforma laboral","title":"En enero baja la *jornada*"},
-  {"big":"46 h","h2":"a la semana como máximo desde *enero de 2027*"},
-  {"h2":"Y bajará 2 horas cada año hasta *40 en 2030*"},
-  {"h2":"Sin reducir *sueldos* ni prestaciones"},
-  {"h2":"Revisa *turnos*, contratos y horas extra"},
-  {"title":"¿Ajustamos tu *nómina*?","body":"Escríbeme · 479 390 0639"}
- ]},
- {"id":"dic-24-reel","size":"reel","slides":[
-  {"kicker":"Nochebuena","title":"Antes de brindar, *revisa* esto"},
-  {"n":"01","h2":"Aguinaldo *pagado* y timbrado"},
-  {"n":"02","h2":"Deducciones pagadas *antes del 31*"},
-  {"n":"03","h2":"Facturas de diciembre *emitidas*"},
-  {"n":"04","h2":"Cómo vas a tributar en *2027*"},
-  {"title":"Feliz *Navidad*","body":"Te deseo una Navidad en paz"}
- ]},
- {"id":"dic-31-reel","size":"reel","slides":[
-  {"kicker":"Lo que viene","title":"2027 en *5 cifras*"},
-  {"big":"$5 M","h2":"tope de *RESICO* para personas físicas"},
-  {"big":"7%","h2":"IVA *opcional* en RESICO"},
-  {"big":"46 h","h2":"jornada *máxima* a la semana"},
-  {"big":"100%","h2":"de estímulo en multas y *recargos* si te regularizas"},
-  {"big":"18 ene","h2":"vence tu *primera* declaración del año"},
-  {"title":"Feliz *2027*","body":"Escríbeme · 479 390 0639"}
- ]}
+ {
+  "id": "dic-10-reel",
+  "size": "reel",
+  "slides": [
+   {
+    "kicker": "Reforma laboral",
+    "title": "En enero baja la *jornada*",
+    "photo": "oficina-noche.jpg"
+   },
+   {
+    "big": "46 h",
+    "h2": "a la semana como máximo desde *enero de 2027*"
+   },
+   {
+    "h2": "Y bajará 2 horas cada año hasta *40 en 2030*"
+   },
+   {
+    "h2": "Sin reducir *sueldos* ni prestaciones"
+   },
+   {
+    "h2": "Revisa *turnos*, contratos y horas extra"
+   },
+   {
+    "title": "¿Ajustamos tu *nómina*?",
+    "body": "Escríbeme · 479 390 0639",
+    "photo": "junta-equipo.jpg"
+   }
+  ]
+ },
+ {
+  "id": "dic-24-reel",
+  "size": "reel",
+  "slides": [
+   {
+    "kicker": "Nochebuena",
+    "title": "Antes de brindar, *revisa* esto",
+    "photo": "reloj-monedas.jpg"
+   },
+   {
+    "n": "01",
+    "h2": "Aguinaldo *pagado* y timbrado"
+   },
+   {
+    "n": "02",
+    "h2": "Deducciones pagadas *antes del 31*",
+    "photo": "calculadora-billetes.jpg"
+   },
+   {
+    "n": "03",
+    "h2": "Facturas de diciembre *emitidas*"
+   },
+   {
+    "n": "04",
+    "h2": "Cómo vas a tributar en *2027*"
+   },
+   {
+    "title": "Feliz *Navidad*",
+    "body": "Te deseo una Navidad en paz"
+   }
+  ]
+ },
+ {
+  "id": "dic-31-reel",
+  "size": "reel",
+  "slides": [
+   {
+    "kicker": "Lo que viene",
+    "title": "2027 en *5 cifras*",
+    "photo": "flecha-crecimiento.jpg"
+   },
+   {
+    "big": "$5 M",
+    "h2": "tope de *RESICO* para personas físicas"
+   },
+   {
+    "big": "7%",
+    "h2": "IVA *opcional* en RESICO"
+   },
+   {
+    "big": "46 h",
+    "h2": "jornada *máxima* a la semana"
+   },
+   {
+    "big": "100%",
+    "h2": "de estímulo en multas y *recargos* si te regularizas"
+   },
+   {
+    "big": "18 ene",
+    "h2": "vence tu *primera* declaración del año"
+   },
+   {
+    "title": "Feliz *2027*",
+    "body": "Escríbeme · 479 390 0639",
+    "photo": "apreton-manos.jpg"
+   }
+  ]
+ }
 ]

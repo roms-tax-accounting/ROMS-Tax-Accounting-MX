@@ -50,6 +50,9 @@ Las sigue la tarea programada mensual (y cualquier sesión de Claude que retome 
   En carruseles usa un ícono de línea por lámina (`"icon":"nombre"`, íconos de https://lucide.dev, p. ej. landmark, stamp, calendar-check,
   badge-check, wallet, receipt, file-check, shield-check, message-circle) que represente la idea de esa lámina; render.js lo pinta en la paleta.
   En la portada puede ir un ícono grande, tu foto o un número grande, nunca varios a la vez.
+- Fondos: las piezas oscuras pueden llevar foto (`photo`); en las claras se usa una ilustración de línea tenue de Lucide en la portada
+  (`"bgIcon":"nombre"`, distinta del `icon` de las láminas). No repitas una foto ni una ilustración dentro del mes ni respecto al mes anterior.
+- No pongas el precio de la asesoría en las imágenes.
 - Especificaciones de ejemplo en `redes/plantillas/*.json`. Cada lámina acepta: `kicker`, `title` (+ `tsize` m o s),
   `h2`, `n` (número grande), `big` (+ `bigClass: "sky"`), `body`, `list`, `note`, `cta`, `rule`, `swipe`,
   `photo` (archivo de `assets/img/` o `redes/fotos/`), `portrait` (foto de persona con texto abajo). `"size":"reel"` = 1080×1920.

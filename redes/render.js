@@ -11,6 +11,7 @@ const IMG = n => {
 const B64 = f => 'data:image/png;base64,' + fs.readFileSync(path.join(__dirname, 'marca', f)).toString('base64');
 const LOGO = B64('logo_monograma_claro.png'), LOGO_OSCURO = B64('logo_monograma_oscuro.png'); // monograma oficial (LOGOS ACTUALIZADOS): claro para fondo oscuro, azul marino para tema claro
 // Íconos de línea (Lucide, licencia ISC): "icon":"nombre" en la lámina, ver https://lucide.dev/icons
+const BGART = n => fs.readFileSync(path.join(__dirname, 'node_modules/lucide-static/icons', n + '.svg'), 'utf8').replace(/<!--[\s\S]*?-->/g, '').replace(/width="24"/, '').replace(/height="24"/, '').replace(/stroke-width="2"/, 'stroke-width="0.32"');
 const ICON = n => fs.readFileSync(path.join(__dirname, 'node_modules/lucide-static/icons', n + '.svg'), 'utf8')
   .replace(/<!--[\s\S]*?-->/g, '').replace(/width="24"/, 'width="84"').replace(/height="24"/, 'height="84"').replace(/stroke-width="2"/, 'stroke-width="1.4"');
 const css = `
@@ -64,6 +65,10 @@ p.b strong{color:#e8edf3;font-weight:700}
 .s.light .kicker{color:#c81e1e}.s.light .kicker::before{background:#c81e1e}.s.light .n{color:#dc2626}.s.light .big.sky{color:#0e7490}
 .s.light .count,.s.light .swipe,.s.light .foot{color:#64748b}.s.light .foot b{color:#0b1f33}
 .s.light .rule{background:linear-gradient(90deg,#c81e1e,rgba(200,30,30,0))}
+/* Ilustración de línea tenue de fondo (Lucide): "bgIcon":"nombre" en la lámina, distinta en cada pieza */
+.bgart{position:absolute;right:-170px;bottom:-120px;width:940px;height:940px;z-index:1;color:#0b1f33;opacity:.075;pointer-events:none}
+.bgart svg{width:100%;height:100%;display:block}
+.s:not(.light) .bgart{color:#e8edf3;opacity:.06}
 .head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px}
 .ico{flex:none;width:156px;height:156px;border-radius:50%;display:grid;place-items:center;color:#e8edf3;
  border:2px solid rgba(239,68,68,.75);background:radial-gradient(circle at 30% 25%,rgba(65,201,226,.16),rgba(239,68,68,.08) 70%)}
@@ -90,7 +95,7 @@ function slide(s, i, total, size, theme) {
   if (s.note) mid += `<p class="note">${md(s.note)}</p>`;
   if (s.cta) mid += `<span class="cta">${md(s.cta)}</span>`;
   const right = s.swipe ? '<span class="swipe">DESLIZA →</span>' : '<span>@romstaxaccountingmx</span>';
-  return `<div class="${cls.join(' ')}" style="${style}">${s.photo?'':'<div class="dots"></div>'}<div class="grain"></div>
+  return `<div class="${cls.join(' ')}" style="${style}">${s.photo?'':'<div class="dots"></div>'}<div class="grain"></div>${s.bgIcon ? '<div class="bgart">' + BGART(s.bgIcon) + '</div>' : ''}
    <div class="z top"><div class="brand"><img src="${light ? LOGO_OSCURO : LOGO}" alt="ROMS Tax &amp; Accounting MX"></div>${counter}</div>
    <div class="z mid" style="${size.h>1500?'justify-content:flex-end;padding-bottom:180px':''}">${mid}</div>
    <div class="z foot"><span><b>L.C.F. Odet Romero</b><br>León, Guanajuato</span>${right}</div></div>`;

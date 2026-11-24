@@ -91,7 +91,7 @@ function slide(s, i, total, size, theme) {
   if (s.h2) mid += `<h2>${md(s.h2)}</h2>`;
   if (s.rule) mid += `<div class="rule"></div>`;
   if (s.body) mid += `<p class="b">${md(s.body)}</p>`;
-  if (s.list) mid += `<div class="list">${s.list.map(x=>`<div>${md(x)}</div>`).join('')}</div>`;
+  if (s.list) mid += `<div class="list">${s.list.map(x=>`<div><span>${md(x)}</span></div>`).join('')}</div>`;
   if (s.note) mid += `<p class="note">${md(s.note)}</p>`;
   if (s.cta) mid += `<span class="cta">${md(s.cta)}</span>`;
   const right = s.swipe ? '<span class="swipe">DESLIZA →</span>' : '<span>@romstaxaccountingmx</span>';

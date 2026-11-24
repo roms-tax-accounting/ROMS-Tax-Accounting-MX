@@ -1,0 +1,30 @@
+[
+ {"id":"dic-01-abrir-negocio","theme":"light","slides":[
+  {"kicker":"Antes de emprender","title":"¿Estás a punto de abrir tu negocio? *Espera*","tsize":"m","rule":true,"body":"No lo hagas sin una firma fiscal que te dé el panorama completo.","swipe":true,"icon":"store","bgIcon":"lightbulb"},
+  {"n":"01","h2":"Una cuenta bancaria *solo* para el negocio","body":"Es lo primero. Así tus ventas no se mezclan con tus gastos personales, préstamos o regalos, y comprobar todo ante el SAT es más fácil.","swipe":true,"icon":"wallet"},
+  {"n":"02","h2":"Factura *todos* tus gastos e inversiones","body":"Desde el local y el equipo hasta la papelería. Sin factura a tu RFC, ese dinero no cuenta para tu negocio.","swipe":true,"icon":"receipt"},
+  {"n":"03","h2":"Todo se *contabiliza*","body":"Cada venta, compra, pago y depósito se registra. Tu contabilidad es la que respalda tus declaraciones.","swipe":true,"icon":"book-open-check"},
+  {"n":"04","h2":"¿Gasto o *costo*?","body":"**Costo** es lo que se va en tu producto o servicio: materia prima y mano de obra directa. **Gasto** es lo que mantiene abierto el negocio: renta, luz, publicidad.","swipe":true,"icon":"layers"},
+  {"n":"05","h2":"Calcula bien tus *precios*","body":"Costo por unidad + tu parte de gastos + tu utilidad. El IVA se cobra aparte y tus impuestos salen de la utilidad: si no los consideras, trabajas gratis.","swipe":true,"icon":"tag"},
+  {"kicker":"ROMS | Tax & Accounting MX","title":"Empieza con el *panorama completo*","tsize":"m","body":"Te acompaño desde antes de darte de alta: régimen, cuentas, facturación y precios. Te atiendo personalmente.","cta":"Escríbeme · 479 390 0639","icon":"message-circle"}
+ ]},
+ {"id":"dic-08-antes-de-comprar","slides":[
+  {"kicker":"Antes de comprar","title":"Tu coche, tu casa, tu patrimonio: consulta antes el *efecto fiscal*","tsize":"s","rule":true,"body":"Comprar a ciegas te hace perder beneficios que vas a necesitar después.","swipe":true,"icon":"house","bgIcon":"car"},
+  {"n":"01","h2":"¿A nombre de *quién* compras?","body":"No es lo mismo comprar como asalariado, con actividad empresarial o a nombre de una empresa. Cambia lo que puedes deducir y cómo lo justificas.","swipe":true,"icon":"user-check"},
+  {"n":"02","h2":"El auto tiene *tope*","body":"Si tu actividad lo permite, la inversión en un auto de combustión se deduce hasta **$175,000**, a 25% por año. Lo que pase de ahí no se deduce.","note":"Arts. 34 y 36, fr. II de la LISR.","swipe":true,"icon":"car-front"},
+  {"n":"03","h2":"Tu dinero debe *cuadrar*","body":"El SAT compara lo que compras con lo que declaras. Si gastas más de lo que reportas, puede presumir ingresos no declarados.","note":"Discrepancia fiscal, art. 91 de la LISR.","swipe":true,"icon":"search-check"},
+  {"n":"04","h2":"Paga y *documenta* bien","body":"Transferencia desde tu cuenta, factura o escritura a tu nombre, y comprobantes del origen del dinero: crédito, ahorro, herencia o venta de otro bien.","swipe":true,"icon":"file-check"},
+  {"kicker":"Antes de firmar","title":"Revisemos tu *compra*","tsize":"m","body":"Te digo cómo comprar para no perder beneficios fiscales ni generar una discrepancia.","cta":"Escríbeme · 479 390 0639","icon":"message-circle"}
+ ]},
+ {"id":"dic-15-movimientos-bancarios","theme":"light","slides":[
+  {"kicker":"Tus cuentas bancarias","title":"Mover dinero no es tan *simple*: el SAT lo revisa","tsize":"m","rule":true,"list":["Depósitos en efectivo de más de **$15,000** al mes: tu banco los reporta","Traspasos entre tus cuentas: deben identificarse","Préstamos de familiares: con contrato y comprobante"],"note":"Tu contabilidad es la que explica cada movimiento.","bgIcon":"credit-card"}
+ ]},
+ {"id":"dic-22-auditoria","slides":[
+  {"kicker":"Defensa fiscal","title":"¿Sabes cuál es el objeto de una *auditoría*?","tsize":"m","rule":true,"body":"¿Y si tienes lo necesario si un día el SAT te revisa?","swipe":true,"icon":"file-search","bgIcon":"search"},
+  {"n":"01","h2":"Comprobar que *cumpliste*","body":"El SAT revisa que hayas pagado bien tus impuestos y cumplido tus obligaciones. Es una facultad de comprobación.","note":"Art. 42 del Código Fiscal de la Federación.","swipe":true,"icon":"landmark"},
+  {"n":"02","h2":"Puede llegar de *tres* formas","list":["Visita en tu domicilio","Revisión de gabinete: te piden documentos","Revisión electrónica, por buzón tributario"],"swipe":true,"icon":"inbox"},
+  {"n":"03","h2":"Lo que *debes* tener a la mano","list":["Contabilidad al día","CFDI de ingresos y gastos","Estados de cuenta","Contratos y evidencia de cada operación"],"swipe":true,"icon":"folder-open"},
+  {"n":"04","h2":"Los *plazos* corren","body":"Una vez notificada, cada respuesta tiene fecha límite. Contestar tarde o incompleto puede convertir una revisión en un crédito fiscal.","swipe":true,"icon":"clock"},
+  {"kicker":"ROMS | Tax & Accounting MX","title":"¿Tendrías lo necesario *hoy*?","tsize":"m","body":"Revisamos tu expediente antes de que lo haga el SAT.","cta":"Escríbeme · 479 390 0639","icon":"shield-check"}
+ ]}
+]

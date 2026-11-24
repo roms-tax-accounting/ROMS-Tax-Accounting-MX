@@ -75,9 +75,13 @@ h4{font:700 36px/1.25 PJ;color:#0b1f33}
 .chk div{display:flex;gap:22px;align-items:center;font:400 38px/1.3 PJ;color:#fff}
 .chk svg{color:#f87171;flex:none}
 .cta{margin-top:56px;align-self:flex-start}
+.rt{display:flex;align-items:center;gap:26px}
+.tk{width:118px;height:118px;border-radius:50%;display:grid;place-items:center;color:#fff;background:radial-gradient(circle at 35% 30%,#ef4444,#c81e1e 55%,#9b1515);box-shadow:0 0 0 6px #0b1f33,0 0 0 8px rgba(248,113,113,.6)}
+.s:not(.dark) .tk{box-shadow:0 0 0 6px #f4f0e8,0 0 0 8px rgba(200,30,30,.45)}
 `;
-const page = (body, i, n, bg, dark) => `<!doctype html><html><head><meta charset="utf-8"><style>${css}</style></head><body><div class="s${dark?' dark':''}"><div class="dots"></div>${bg ? `<div class="bgart">${BG(bg)}</div>` : ''}
-<div class="z top"><img src="${dark?LOGOC:LOGO}" alt="ROMS"><span class="count">${String(i).padStart(2,'0')} / ${String(n).padStart(2,'0')}</span></div>
+const TK = n => `<span class="tk">${ICON(n, 62).replace('stroke-width="1.6"','stroke-width="1.8"')}</span>`;
+const page = (body, i, n, bg, dark, tok) => `<!doctype html><html><head><meta charset="utf-8"><style>${css}</style></head><body><div class="s${dark?' dark':''}"><div class="dots"></div>${bg ? `<div class="bgart">${BG(bg)}</div>` : ''}
+<div class="z top"><img src="${dark?LOGOC:LOGO}" alt="ROMS"><span class="rt"><span class="count">${String(i).padStart(2,'0')} / ${String(n).padStart(2,'0')}</span>${tok?TK(tok):''}</span></div>
 <div class="z mid">${body}</div>
 <div class="foot"><span><b>L.C.F. Odet Romero</b><br>León, Guanajuato</span><span>@romstaxaccountingmx</span></div></div></body></html>`;
 
@@ -162,15 +166,15 @@ const cover = (icon) => `<!doctype html><html><head><meta charset="utf-8"><style
   const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
   for (const [id, set] of Object.entries(sets)) {
     for (const [i, [body, dark]] of set.pages.entries()) {
-      await p.setContent(page(body, i + 1, set.pages.length, i === 0 ? set.bg : null, dark));
+      await p.setContent(page(body, i + 1, set.pages.length, i === 0 ? set.bg : null, dark, set.bg));
       await p.evaluate(() => document.fonts.ready);
       const over = await p.evaluate(() => { const m = document.querySelector('.mid'), f = document.querySelector('.foot'); const kids=[...m.children]; const last=kids[kids.length-1].getBoundingClientRect().bottom; const first=kids[0].getBoundingClientRect().top; return last > f.getBoundingClientRect().top - 20 || first < 380; });
       if (over) console.log('DESBORDA', id, i + 1);
       await p.screenshot({ path: path.join(out, `${id}-${i + 1}.png`) });
     }
   }
-  for (const ic of (process.argv[3]||'lightbulb').split(',')) {
-    await p.setContent(cover(ic)); await p.screenshot({ path: path.join(out, `caratula-destacada-${ic}.png`) });
+  for (const ic of Object.values(sets).map(x=>x.bg)) {
+    await p.setContent(cover(ic)); await p.screenshot({ path: path.join(out, `caratula-${Object.keys(sets).find(k=>sets[k].bg===ic).replace('hist-','')}.png`) });
   }
   await b.close(); console.log('ok');
 })();

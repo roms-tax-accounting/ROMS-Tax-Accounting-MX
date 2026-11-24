@@ -1,0 +1,10 @@
+[
+ {"id":"dic-29-empieza-a-facturar","theme":"light","slides":[
+  {"kicker":"Facturación","title":"¿Tu negocio aún no *factura*?","tsize":"m","rule":true,"body":"Estás perdiendo clientes. No te quedes atrás y no le temas a pagar impuestos.","swipe":true,"icon":"file-text","bgIcon":"receipt-text"},
+  {"n":"01","h2":"Muchos clientes *necesitan* factura","body":"Las empresas y los profesionistas solo pueden deducir lo que está amparado con un CFDI. Si no facturas, buscan a otro proveedor.","note":"Art. 27, fr. IV de la LISR.","swipe":true,"icon":"users"},
+  {"n":"02","h2":"Facturar te abre *puertas*","body":"Puedes venderle a empresas, entrar a licitaciones y plataformas, y comprobar tus ingresos ante el banco cuando pidas un crédito.","swipe":true,"icon":"trending-up"},
+  {"n":"03","h2":"Pagar impuestos no tiene que *asustarte*","body":"Hay regímenes pensados para negocios que empiezan. En RESICO, por ejemplo, las personas físicas pagan de **1% a 2.5%** sobre lo que cobran.","swipe":true,"icon":"scale"},
+  {"n":"04","h2":"Analizamos tu *perfil*","body":"Revisamos tu actividad, tus ingresos y tus gastos para elegir el régimen y la estrategia que optimicen tu carga tributaria, siempre dentro de la ley.","swipe":true,"icon":"user-search"},
+  {"kicker":"ROMS | Tax & Accounting MX","title":"Empieza a facturar con *estrategia*","tsize":"m","body":"Te doy de alta, te ayudo a emitir tus primeras facturas y llevo tu contabilidad. Te atiendo personalmente.","cta":"Escríbeme · 479 390 0639","icon":"handshake"}
+ ]}
+]
